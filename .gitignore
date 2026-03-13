@@ -1,0 +1,38 @@
+# Dependencias
+node_modules/
+vendor/
+
+# Assets compilados
+assets/css/*.min.css
+assets/css/*.min.css.map
+assets/js/*.min.js
+assets/js/*.min.js.map
+
+# Sass cache
+.sass-cache/
+assets/sass/.sass-cache/
+
+# Logs y temporales
+*.log
+.cache/
+*.tmp
+*.temp
+
+# Entorno local
+.env
+.env.local
+*.local
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDEs y editores
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# WordPress
+wp-config.php

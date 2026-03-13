@@ -1,0 +1,12 @@
+# Assets compilados
+assets/css/*.min.css
+assets/js/*.min.js
+
+# Imágenes
+assets/images/
+screenshot.png
+
+# Logs y temporales
+*.log
+.cache/
+node_modules/
