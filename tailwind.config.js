@@ -20,8 +20,11 @@ module.exports = {
     },
     extend: {
       colors: {
-        primary: '#e86240',
-        secondary: '#00aeef',
+        primary:   '#8B1A2F',
+        secondary: '#2E2E2E',
+        tertiary:  '#1A1A1A',
+        accent:    '#A0A0A0',
+        light:     '#E8E8E8',
       },
       fontFamily: {
         sans: ['Barlow', 'Helvetica', 'Arial', 'sans-serif'],
