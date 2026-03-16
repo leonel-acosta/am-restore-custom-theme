@@ -2,18 +2,56 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  body, p, li {
+    @apply font-sans text-base font-normal leading-relaxed;
+  }
+
+  h1 {
+    @apply font-sans text-4xl font-semibold leading-tight;
+  }
+
+  h2 {
+    @apply font-sans text-4xl font-medium leading-tight;
+  }
+
+  h3 {
+    @apply font-sans text-3xl font-medium leading-snug;
+  }
+
+  h4 {
+    @apply font-sans text-2xl font-medium leading-snug;
+  }
+
+  h5 {
+    @apply font-sans text-xl font-medium leading-normal;
+  }
+
+  h6 {
+    @apply font-sans text-base font-medium leading-normal;
+  }
+
+  @media (min-width: 1024px) {
+    h1 { font-size: 3.75rem; }
+    h2 { font-size: 3rem; }
+    h3 { font-size: 2.25rem; }
+    h4 { font-size: 1.5rem; }
+    h5 { font-size: 1.25rem; }
+  }
+}
+
 @layer components {
   .btn {
     @apply inline-flex items-center justify-center px-6 py-3 rounded font-medium transition-colors duration-200 cursor-pointer;
   }
   .btn-theme-primary {
-    @apply bg-primary text-white hover:bg-orange-600;
+    @apply bg-primary text-white hover:opacity-80;
   }
   .btn-theme-primary-outline {
     @apply border border-primary text-primary hover:bg-primary hover:text-white;
   }
   .btn-secondary-outline {
-    @apply border border-secondary text-secondary hover:bg-secondary hover:text-white;
+    @apply border border-accent text-secondary hover:bg-secondary hover:text-white;
   }
   .btn-lg {
     @apply px-8 py-4 text-lg;
