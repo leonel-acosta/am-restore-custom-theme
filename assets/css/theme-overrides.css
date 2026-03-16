@@ -2,6 +2,22 @@
    Theme Overrides — Parent theme resets + legacy component styles
    ============================================================= */
 
+/* ----------------------------------- FOOTER LOGO --- START */
+
+.footer-logo {
+  padding: 0rem 0 1rem;
+}
+
+.footer-logo .custom-logo-link {
+  display: inline-block;
+}
+
+.footer-logo .custom-logo {
+  max-height: 60px;
+  width: auto;
+}
+
+/* ----------------------------------- FOOTER LOGO --- ENDE */
 
 /* ----------------------------------- BACK BUTTON --- START */
 
@@ -12,8 +28,8 @@
   text-transform: uppercase;
   font-size: 1rem !important;
   font-weight: 600 !important;
-  color: #8B1A2F;
-  border: 1px solid #8B1A2F !important;
+  color: #8b1a2f;
+  border: 1px solid #8b1a2f !important;
   border-radius: 2px !important;
   background-color: transparent !important;
   float: right;
@@ -21,16 +37,15 @@
 
 .alg_back_button_input:hover {
   color: #fff;
-  background-color: #8B1A2F !important;
+  background-color: #8b1a2f !important;
 }
 
 pre {
   padding: 0px;
-  background-color: rgb(0,0,0,0);
+  background-color: rgb(0, 0, 0, 0);
 }
 
 /* ----------------------------------- BACK BUTTON --- ENDE */
-
 
 .site-branding img {
   max-height: 110px;
@@ -43,11 +58,11 @@ pre {
 }
 
 .site-header {
-  border-bottom: 1px solid #A0A0A0;
+  border-bottom: 1px solid #a0a0a0;
 }
 
 .home .site-header {
-  background: #2E2E2E !important;
+  background: #2e2e2e !important;
 }
 
 .home p {
@@ -73,15 +88,21 @@ pre {
   display: none !important;
 }
 
-
 /* Global Typography Overrides (parent theme reset) */
 body,
-h1, h2, h3, h4, h5, h6, p {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
   font-family: "Barlow", Helvetica, Arial, sans-serif !important;
   font-style: normal !important;
 }
 
-body, p {
+body,
+p {
   font-size: 1rem !important;
   font-weight: 400 !important;
   line-height: 1.625 !important;
@@ -104,7 +125,7 @@ h3 {
   font-weight: 500 !important;
   line-height: 1.3 !important;
   margin-top: 1.8rem !important;
-  color: #8B1A2F !important;
+  color: #8b1a2f !important;
 }
 
 h4 {
@@ -118,11 +139,21 @@ h5 {
 }
 
 @media (min-width: 1024px) {
-  h1 { font-size: 3.75rem !important; }
-  h2 { font-size: 3rem !important; }
-  h3 { font-size: 2.25rem !important; }
-  h4 { font-size: 1.5rem !important; }
-  h5 { font-size: 1.25rem !important; }
+  h1 {
+    font-size: 3.75rem !important;
+  }
+  h2 {
+    font-size: 3rem !important;
+  }
+  h3 {
+    font-size: 2.25rem !important;
+  }
+  h4 {
+    font-size: 1.5rem !important;
+  }
+  h5 {
+    font-size: 1.25rem !important;
+  }
 }
 
 .section-title {
@@ -137,7 +168,6 @@ h5 {
   font-weight: 400 !important;
 }
 
-
 /*----------- Content Views --- START */
 
 .pt-cv-mask {
@@ -149,7 +179,6 @@ h5 {
 }
 
 /*----------- Content Views --- ENDE */
-
 
 /*----------- Navigation --- START */
 
@@ -178,7 +207,6 @@ h5 {
 
 /*----------- Navigation --- ENDE */
 
-
 /*----------- Footer --- START */
 
 footer p {
@@ -189,12 +217,12 @@ footer p {
 .site-footer .sidebar .widget a {
   font-size: 1rem;
   text-decoration: none;
-  color: #8B1A2F;
+  color: #8b1a2f;
 }
 
 .site-footer .sidebar .widget a:hover {
   text-decoration: underline;
-  color: #A0A0A0;
+  color: #a0a0a0;
 }
 
 .site-copyright {
@@ -208,7 +236,6 @@ footer p {
 }
 
 /*----------- Footer --- ENDE */
-
 
 /*----------- Post - Navigation --- START */
 
@@ -245,7 +272,6 @@ footer p {
 
 /*----------- Post - Navigation --- ENDE */
 
-
 .slide_content h1 {
   font-size: 2.25rem;
 }
@@ -253,7 +279,6 @@ footer p {
 .slide_content .btn {
   margin-left: 0;
 }
-
 
 /*----------- ABOUT Startseite --- START */
 
@@ -277,7 +302,6 @@ footer p {
 
 /*----------- ABOUT Startseite --- ENDE */
 
-
 /*----------- LEISTUNGEN Startseite --- START */
 
 #leistungen .container,
@@ -289,7 +313,7 @@ footer p {
 
 #leistungen .custom-section-content,
 #leistungen-eng .custom-section-content {
-  background-color: #1A1A1A;
+  background-color: #1a1a1a;
 }
 
 #leistungen .pt-cv-title a,
@@ -310,8 +334,8 @@ footer p {
 #leistungen .pt-cv-view .pt-cv-readmore,
 #leistungen-eng .pt-cv-view .pt-cv-readmore {
   color: #fff !important;
-  background-color: #1A1A1A !important;
-  border: 1px solid #8B1A2F;
+  background-color: #1a1a1a !important;
+  border: 1px solid #8b1a2f;
   border-radius: 2px;
   font-weight: 500 !important;
   margin-top: 2rem;
@@ -319,11 +343,10 @@ footer p {
 
 #leistungen .pt-cv-view .pt-cv-rmwrap a:hover,
 #leistungen-eng .pt-cv-view .pt-cv-rmwrap a:hover {
-  background-color: #1A1A1A !important;
+  background-color: #1a1a1a !important;
 }
 
 /*----------- LEISTUNGEN Startseite --- ENDE */
-
 
 /*----------- VIDEO Startseite --- START */
 
@@ -333,12 +356,11 @@ footer p {
 
 /*----------- VIDEO Startseite --- ENDE */
 
-
 /*----------- TEAM Startseite --- START */
 
 .team-member-name a {
   font-size: 1.25rem;
-  color: #8B1A2F;
+  color: #8b1a2f;
   font-weight: 500;
 }
 
@@ -353,7 +375,6 @@ footer p {
 
 /*----------- TEAM Startseite --- ENDE */
 
-
 /*----------- KONTAKT Startseite --- START */
 
 #susicf-form label {
@@ -362,21 +383,18 @@ footer p {
 
 .home #susicf-form input,
 .home #susicf-form textarea {
-  background-color: #2E2E2E;
+  background-color: #2e2e2e;
   color: #fff;
   border-radius: 2px;
 }
 
 /*----------- KONTAKT Startseite --- ENDE */
 
-
 .nav-menu.nav-menu-mobile {
   top: 110px;
 }
 
-
 @media only screen and (max-width: 800px) {
-
   .nav-menu.nav-menu-mobile {
     top: 88px;
   }
@@ -443,7 +461,6 @@ footer p {
 
   /*----------- Post - Navigation --- ENDE */
 
-
   /*----------- Projekt - Slider --- START */
 
   #metaslider-id-2262 .caption {
@@ -473,5 +490,4 @@ footer p {
   }
 
   /*----------- Projekt - Slider --- ENDE */
-
 }
