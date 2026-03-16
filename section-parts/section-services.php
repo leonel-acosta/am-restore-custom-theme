@@ -27,26 +27,26 @@ $classes = 'section-services section-padding-lg section-meta screenr-section';
 		<?php } ?>
 		<?php if ( is_array( $items ) && ! empty( $items ) ) { ?>
 			<div class="section-content services-content">
-				<div class="row">
+				<div class="flex flex-wrap -mx-4">
 					<?php
 					global $post;
 					$count = 0;
 					$classes = '';
 					switch ( $layout ) {
 						case 1:
-							$classes = 'col-sm-12';
+							$classes = 'w-full px-4';
 							break;
 						case 2:
-							$classes = 'col-sm-6';
+							$classes = 'w-full sm:w-1/2 px-4';
 							break;
 						case 3:
-							$classes = 'col-sm-4';
+							$classes = 'w-full sm:w-1/3 px-4';
 							break;
 						case 4:
-							$classes = 'col-sm-3';
+							$classes = 'w-full sm:w-1/4 px-4';
 							break;
 						default:
-							$classes = 'col-sm-6';
+							$classes = 'w-full sm:w-1/2 px-4';
 					}
 
 					foreach ( $items as $item ) {

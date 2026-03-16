@@ -31,7 +31,7 @@ if ( ! screenr_is_selective_refresh() ) {
 
 	if ( is_array( $items ) && ! empty( $items ) ) {
 		?>
-		<div class="features-content features-<?php echo esc_attr( $layout ); ?>-columns card-group">
+		<div class="features-content features-<?php echo esc_attr( $layout ); ?>-columns flex flex-wrap gap-6">
 			<?php
 
 			global $post;
@@ -106,7 +106,7 @@ if ( ! screenr_is_selective_refresh() ) {
 
 				if ( $count % absint( $layout ) == 0 ) {
 					echo '</div><!-- /.features-content  -->' . "\n";
-					echo '<div class="features-content features-' . esc_attr( $layout ) . '-columns card-group">' . "\n";
+					echo '<div class="features-content features-' . esc_attr( $layout ) . '-columns flex flex-wrap gap-6">' . "\n";
 				}
 			}// end loop items
 			?>

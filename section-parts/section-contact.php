@@ -21,9 +21,9 @@ $classes    = 'section-contact section-padding onepage-section section-meta';
 		</div>
 		<?php } ?>
 		<div class="section-content">
-			<div class="row">
-				<div class="col-md-1"></div>
-				<div class="col-md-10">
+			<div class="flex flex-wrap -mx-4">
+				<div class="hidden md:block md:w-1/12 px-4"></div>
+				<div class="w-full md:w-10/12 px-4">
 					<?php
 					$items      = get_theme_mod( 'contact_items' );
 					if ( ! empty( $items ) ) {
@@ -58,7 +58,7 @@ $classes    = 'section-contact section-padding onepage-section section-meta';
 					</div>
 					<?php } ?>
 				</div>
-				<div class="col-md-1"></div>
+				<div class="hidden md:block md:w-1/12 px-4"></div>
 			</div>
 		</div>
 	</div>

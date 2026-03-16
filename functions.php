@@ -308,10 +308,9 @@ function am_restore_scripts()
 
 	wp_enqueue_style('am-restore-fa', get_template_directory_uri() . '/assets/fontawesome-v6/css/all.min.css', array(), '6.5.1');
 	wp_enqueue_style('am-restore-fa-shims', get_template_directory_uri() . '/assets/fontawesome-v6/css/v4-shims.min.css', array(), '6.5.1');
-	wp_enqueue_style('bootstrap', get_template_directory_uri() . '/assets/css/bootstrap.min.css', false, '4.0.0');
+	wp_enqueue_style('am-restore-tailwind', get_stylesheet_directory_uri() . '/assets/css/main.css', array(), $version);
 
 	wp_enqueue_script('am-restore-plugin', get_template_directory_uri() . '/assets/js/plugins.js', array('jquery'), '4.0.0', true);
-	wp_enqueue_script('bootstrap', get_template_directory_uri() . '/assets/js/bootstrap.bundle.min.js', array(), '4.0.0', true);
 
 	$am_restore_js = array(
 		'ajax_url'           => admin_url('admin-ajax.php'),
