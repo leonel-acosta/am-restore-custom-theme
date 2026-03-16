@@ -2,6 +2,44 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  body, p, li {
+    @apply font-sans text-base font-normal leading-relaxed;
+  }
+
+  h1 {
+    @apply font-sans text-4xl font-semibold leading-tight;
+  }
+
+  h2 {
+    @apply font-sans text-4xl font-medium leading-tight;
+  }
+
+  h3 {
+    @apply font-sans text-3xl font-medium leading-snug;
+  }
+
+  h4 {
+    @apply font-sans text-2xl font-medium leading-snug;
+  }
+
+  h5 {
+    @apply font-sans text-xl font-medium leading-normal;
+  }
+
+  h6 {
+    @apply font-sans text-base font-medium leading-normal;
+  }
+
+  @media (min-width: 1024px) {
+    h1 { font-size: 3.75rem; }
+    h2 { font-size: 3rem; }
+    h3 { font-size: 2.25rem; }
+    h4 { font-size: 1.5rem; }
+    h5 { font-size: 1.25rem; }
+  }
+}
+
 @layer components {
   .btn {
     @apply inline-flex items-center justify-center px-6 py-3 rounded font-medium transition-colors duration-200 cursor-pointer;

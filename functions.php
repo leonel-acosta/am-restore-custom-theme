@@ -306,6 +306,7 @@ function am_restore_scripts()
 	wp_enqueue_style('am-restore-fa', get_template_directory_uri() . '/assets/fontawesome-v6/css/all.min.css', array(), '6.5.1');
 	wp_enqueue_style('am-restore-fa-shims', get_template_directory_uri() . '/assets/fontawesome-v6/css/v4-shims.min.css', array(), '6.5.1');
 	wp_enqueue_style('am-restore-tailwind', get_stylesheet_directory_uri() . '/assets/css/main.css', array(), filemtime(get_stylesheet_directory() . '/assets/css/main.css'));
+	wp_enqueue_style('am-restore-overrides', get_stylesheet_directory_uri() . '/assets/css/theme-overrides.css', array('am-restore-tailwind'), filemtime(get_stylesheet_directory() . '/assets/css/theme-overrides.css'));
 
 	wp_enqueue_script('am-restore-plugin', get_template_directory_uri() . '/assets/js/plugins.js', array('jquery'), '4.0.0', true);
 
