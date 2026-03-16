@@ -265,10 +265,7 @@ add_action('widgets_init', 'am_restore_widgets_init');
  */
 function am_restore_editor_styles()
 {
-	$font_url = am_restore_fonts_url();
-	if ($font_url) {
-		add_editor_style(array('assets/css/editor-style.css', $font_url));
-	}
+	add_editor_style(array('assets/css/barlow.css', 'assets/css/editor-style.css'));
 }
 add_action('after_setup_theme', 'am_restore_editor_styles');
 
@@ -304,11 +301,11 @@ function am_restore_scripts()
 	$theme   = wp_get_theme();
 	$version = $theme->get('Version');
 
-	wp_enqueue_style('am-restore-fonts', am_restore_fonts_url(), array(), null);
+	wp_enqueue_style('am-restore-fonts', get_stylesheet_directory_uri() . '/assets/css/barlow.css', array(), '1.0.0');
 
 	wp_enqueue_style('am-restore-fa', get_template_directory_uri() . '/assets/fontawesome-v6/css/all.min.css', array(), '6.5.1');
 	wp_enqueue_style('am-restore-fa-shims', get_template_directory_uri() . '/assets/fontawesome-v6/css/v4-shims.min.css', array(), '6.5.1');
-	wp_enqueue_style('am-restore-tailwind', get_stylesheet_directory_uri() . '/assets/css/main.css', array(), $version);
+	wp_enqueue_style('am-restore-tailwind', get_stylesheet_directory_uri() . '/assets/css/main.css', array(), filemtime(get_stylesheet_directory() . '/assets/css/main.css'));
 
 	wp_enqueue_script('am-restore-plugin', get_template_directory_uri() . '/assets/js/plugins.js', array('jquery'), '4.0.0', true);
 
@@ -369,58 +366,11 @@ add_action('wp_enqueue_scripts', 'am_restore_scripts');
 
 if (!function_exists('am_restore_fonts_url')) :
 	/**
-	 * Register default Google fonts
+	 * Returns false — fonts are served locally via barlow.css.
 	 */
 	function am_restore_fonts_url()
 	{
-		$fonts_url = '';
-
-		/**
-		 * @since 1.2.5 Check if google is disabled function then return false.
-		 */
-		$settings = false;
-		if (function_exists('am_restore\GoogleFonts\Downloader\get_download_settings')) {
-			$settings = am_restore\GoogleFonts\Downloader\get_download_settings();
-		}
-
-		if ($settings && $settings['disable']) {
-			return false;
-		}
-
-		/*
-		  Translators: If there are characters in your language that are not
-		* supported by Open Sans, translate this to 'off'. Do not translate
-		* into your own language.
-		*/
-		$open_sans = _x('on', 'Open Sans font: on or off', 'am-restore');
-
-		/*
-		 Translators: If there are characters in your language that are not
-		* supported by Montserrat, translate this to 'off'. Do not translate
-		* into your own language.
-		*/
-		$montserrat = _x('on', 'Montserrat font: on or off', 'am-restore');
-
-		if ('off' !== $montserrat || 'off' !== $open_sans) {
-			$font_families = array();
-
-			if ('off' !== $open_sans) {
-				$font_families[] = 'Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic';
-			}
-
-			if ('off' !== $montserrat) {
-				$font_families[] = 'Montserrat:400,700';
-			}
-
-			$query_args = array(
-				'family' => urlencode(implode('|', $font_families)),
-				'subset' => urlencode('latin,latin-ext'),
-			);
-
-			$fonts_url = add_query_arg($query_args, 'https://fonts.googleapis.com/css');
-		}
-
-		return esc_url_raw($fonts_url);
+		return false;
 	}
 endif;
 

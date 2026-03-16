@@ -1,0 +1,49 @@
+/* Barlow - Self-hosted local font */
+
+@font-face {
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("../fonts/barlow/barlow-300.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/barlow/barlow-400.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Barlow";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/barlow/barlow-400italic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../fonts/barlow/barlow-600.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../fonts/barlow/barlow-700.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Barlow";
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../fonts/barlow/barlow-700italic.ttf") format("truetype");
+}

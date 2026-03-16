@@ -23,6 +23,9 @@ module.exports = {
         primary: '#e86240',
         secondary: '#00aeef',
       },
+      fontFamily: {
+        sans: ['Barlow', 'Helvetica', 'Arial', 'sans-serif'],
+      },
     },
   },
   plugins: [
