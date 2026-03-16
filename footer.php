@@ -66,6 +66,11 @@
 								$tw_col = isset( $col_map[ $col ] ) ? $col_map[ $col ] : 'md:w-full';
 								?>
 								<div id="footer-<?php echo esc_attr( $count + 1 ) ?>" class="w-full <?php echo esc_attr( $tw_col ); ?> px-4 footer-column widget-area sidebar" role="complementary">
+									<?php if ( $count === 0 && has_custom_logo() ) : ?>
+										<div class="footer-logo">
+											<?php the_custom_logo(); ?>
+										</div>
+									<?php endif; ?>
 									<?php dynamic_sidebar( $id ); ?>
 								</div>
 								<?php
