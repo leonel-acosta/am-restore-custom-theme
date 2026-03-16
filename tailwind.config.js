@@ -1,0 +1,32 @@
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    './*.php',
+    './**/*.php',
+    './assets/js/**/*.js',
+  ],
+  safelist: [
+    // Footer dynamic columns (md breakpoint, 12-col grid)
+    'md:w-1/12', 'md:w-2/12', 'md:w-3/12', 'md:w-4/12',
+    'md:w-5/12', 'md:w-6/12', 'md:w-7/12', 'md:w-8/12',
+    'md:w-9/12', 'md:w-10/12', 'md:w-11/12', 'md:w-full',
+    // Counter section dynamic lg widths
+    'lg:w-1/6', 'lg:w-1/4', 'lg:w-1/3', 'lg:w-1/2', 'lg:w-full',
+  ],
+  theme: {
+    container: {
+      center: true,
+      padding: '1rem',
+    },
+    extend: {
+      colors: {
+        primary: '#e86240',
+        secondary: '#00aeef',
+      },
+    },
+  },
+  plugins: [
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/typography'),
+  ],
+};

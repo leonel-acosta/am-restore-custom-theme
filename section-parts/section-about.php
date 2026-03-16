@@ -9,8 +9,8 @@ $classes = 'screenr-section section-about section-padding section-padding-larger
 <section id="<?php echo esc_attr( get_theme_mod( 'about_id', 'about' ) ); ?>" class="<?php echo esc_attr( apply_filters( 'screenr_section_class', $classes, 'about' ) ); ?>">
 <?php } ?>
 	<div class="container">
-		<div class="row">
-			<div class="col-md-5">
+		<div class="flex flex-wrap -mx-4">
+			<div class="w-full md:w-5/12 px-4">
 				<?php if ( $title || $subtitle || $desc ) { ?>
 				<div class="section-title-area">
 					<?php if ( $subtitle ) {
@@ -28,7 +28,7 @@ $classes = 'screenr-section section-about section-padding section-padding-larger
 			if ( $page_id && ( $post = get_post( $page_id ) ) ) {
 				setup_postdata( $post );
 				?>
-				<div class="col-md-7">
+				<div class="w-full md:w-7/12 px-4">
 					<div class="section-about-content">
 						<?php
 						if ( get_theme_mod( 'about_page_content_type' ) == 'content' ) {

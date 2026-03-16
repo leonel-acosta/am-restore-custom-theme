@@ -23,16 +23,16 @@ if ( ! $layout ) {
 $post_class = '';
 switch ( $layout ) {
 	case 1:
-		$post_class = 'col-md-12';
+		$post_class = 'w-full px-4';
 		break;
 	case 2:
-		$post_class = 'col-md-6';
+		$post_class = 'w-full md:w-1/2 px-4';
 		break;
 	case 4:
-		$post_class = 'col-md-6 col-lg-3';
+		$post_class = 'w-full md:w-1/2 lg:w-1/4 px-4';
 		break;
 	default:
-		$post_class = 'col-md-6 col-lg-4';
+		$post_class = 'w-full md:w-1/2 lg:w-1/3 px-4';
 		break;
 }
 
@@ -60,7 +60,7 @@ $classes = 'section-news section-padding section-padding-lg';
 			</div>
 		<?php } ?>
 		<div class="section-content section-news-content">
-			<div class="content-grid row" id="section-news-posts" data-layout="<?php echo esc_attr( $layout ); ?>">
+			<div class="content-grid flex flex-wrap -mx-4" id="section-news-posts" data-layout="<?php echo esc_attr( $layout ); ?>">
 				<?php if ( $latest_posts->have_posts() ) : ?>
 					<?php
 					while ( $latest_posts->have_posts() ) :

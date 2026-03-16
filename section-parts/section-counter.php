@@ -27,7 +27,16 @@ if ( ! screenr_is_selective_refresh() ) {
 			?>
 			<div class="counter-contents" data-layout="<?php echo esc_attr( $layout ); ?>">
 				<div class="section-content">
-					<div class="row">
+					<?php
+					$lg_col_map = [
+						2 => 'lg:w-1/2',
+						3 => 'lg:w-1/3',
+						4 => 'lg:w-1/4',
+						6 => 'lg:w-1/6',
+					];
+					$lg_col = isset( $lg_col_map[ $layout ] ) ? $lg_col_map[ $layout ] : 'lg:w-1/3';
+					?>
+					<div class="flex flex-wrap -mx-4">
 						<?php
 						foreach ( (array) $items as $item ) {
 							$item = wp_parse_args(
@@ -44,7 +53,7 @@ if ( ! screenr_is_selective_refresh() ) {
 							);
 
 							?>
-							<div class="col-sm-12 col-md-6 col-lg-<?php echo esc_attr( $layout ); ?>">
+							<div class="w-full md:w-1/2 <?php echo esc_attr( $lg_col ); ?> px-4">
 								<div
 									class="counter-item counter-item-<?php echo esc_attr( $item['style'] ); ?>" <?php if ( $item['bg_color'] ) {
 										?> style="background-color: #<?php echo esc_attr( str_replace( '#', '', $item['bg_color'] ) ); ?>" <?php } ?>>
