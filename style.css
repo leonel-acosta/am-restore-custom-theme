@@ -5749,6 +5749,7 @@ footer p {
   }
 }
 
+/* Global styling for page section*/
 .page-section {
   width: 100%;
   padding: 3rem 0;
@@ -5787,6 +5788,7 @@ footer p {
   color: #ffffff !important;
 }
 
+/* Page title styles*/
 .title-section h2 {
   color: white !important;
   text-transform: uppercase !important;
@@ -5799,3 +5801,85 @@ footer p {
 .title-section a {
   color: white !important;
 }
+
+
+*/ Team Members Grid  /*
+            /* Grid */
+            .team-member-grid {
+                display: grid;
+                grid-template-columns: repeat(<?php echo $columns; ?>, minmax(0, 1fr));
+                gap: 24px;
+                justify-items: center;
+            }
+
+            /* Card */
+            .team-card {
+                max-width: 360px;
+                width: 100%;
+                background: #f2f2f2;
+                color: inherit;
+                overflow: hidden;
+                color: #2e2e2e !important
+            }
+
+            /* Image */
+            .team-image-wrapper {
+                width: 100%;
+            }
+
+            .team-image {
+                width: 100%;
+                height: 420px;
+                object-fit: cover;
+                display: block;
+                object-position: top;
+            }
+
+            /* Content */
+            .team-content {
+                padding: 2em;
+                text-align: left;
+                
+            }
+
+            .team-name {
+                margin: 0 0 4px;
+                font-weight: 800;
+                margin: 0 0 1rem;
+
+            }
+
+            .team-role {
+                margin: 0 0 1em;
+                font-style: italic;
+                font-weight: 500 !important;
+
+            }
+
+            .team-bio {
+                font-size: 0.9em;
+            }
+
+
+            .team-links a {
+                margin: 0 6x 0 0;
+                color: var(--wp--preset--color--primary, currentColor);
+                font-size: 20px;
+            }
+
+            /* Mobile */
+            @media (max-width: 640px) {
+                .team-member-grid {
+                    grid-template-columns: 1fr !important;
+                }
+            }
+
+            /* Homepage Version */
+            #team .team-content p {
+                color: #222222
+            }
+
+            #team .team-links a {
+                color: #222222
+            }
+        </style>

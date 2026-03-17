@@ -38,6 +38,7 @@ get_header();
         </div><!-- #primary -->
 
     </div><!--#content-inside -->
+
 </div><!-- #content -->
 
 <?php get_footer(); ?>
