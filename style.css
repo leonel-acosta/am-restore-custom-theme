@@ -4849,3 +4849,602 @@ button.swiper-pagination-bullet {
     transform: scale(1);
   }
 }
+
+/* ==============================================================
+   AM RESTORE - Custom Overrides
+   (consolidated from theme-overrides.css)
+   ============================================================== */
+
+/* FOOTER LOGO */
+
+.footer-logo {
+  padding: 0rem 0 1rem;
+}
+
+.footer-logo .custom-logo-link {
+  display: inline-block;
+}
+
+.footer-logo .custom-logo {
+  max-height: 60px;
+  width: auto;
+}
+
+/* BACK BUTTON */
+
+.alg_back_button_input {
+  padding: 5px 10px;
+  margin-top: 1em;
+  width: auto;
+  text-transform: uppercase;
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  color: #8b1a2f;
+  border: 1px solid #8b1a2f !important;
+  border-radius: 2px !important;
+  background-color: transparent !important;
+  float: right;
+}
+
+.alg_back_button_input:hover {
+  color: #fff;
+  background-color: #8b1a2f !important;
+}
+
+pre {
+  padding: 0px;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+/* LOGO / BRANDING */
+
+.site-branding img {
+  max-height: 110px;
+  padding: 20px 0;
+}
+
+.site-header-wrapper.is-fixed .header-fixed img {
+  max-height: 70px;
+  padding: 10px 0;
+}
+
+.site-header {
+  border-bottom: 1px solid #000000;
+}
+
+.home .site-header {
+  background: #2e2e2e !important;
+}
+
+.home p {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.home .site-branding img {
+  content: url("http://am-restore.local/wp-content/uploads/2024/09/am-restore-logo_hell.png");
+}
+
+#page-header-cover {
+  display: none;
+}
+
+.entry-footer {
+  margin-bottom: 10px;
+  padding-top: 10px;
+  border-top: 0px;
+}
+
+.cat-links {
+  display: none !important;
+}
+
+/* TYPOGRAPHY */
+
+body,
+h1, h2, h3, h4, h5, h6, p {
+  font-family: "Barlow", Helvetica, Arial, sans-serif !important;
+  font-style: normal !important;
+}
+
+body, p {
+  font-size: 1rem !important;
+  font-weight: 400 !important;
+  line-height: 1.625 !important;
+}
+
+h1 {
+  font-size: 2.25rem !important;
+  font-weight: 600 !important;
+  line-height: 1.2 !important;
+}
+
+h2 {
+  font-size: 1.875rem !important;
+  font-weight: 500 !important;
+  line-height: 1.2 !important;
+}
+
+h3 {
+  font-size: 1.5rem !important;
+  font-weight: 500 !important;
+  line-height: 1.3 !important;
+  margin-top: 1.8rem !important;
+  color: #8b1a2f !important;
+}
+
+h4 {
+  font-size: 1.25rem !important;
+  font-weight: 500 !important;
+}
+
+h5 {
+  font-size: 1.125rem !important;
+  font-weight: 500 !important;
+}
+
+@media (min-width: 1024px) {
+  h1 { font-size: 3.75rem !important; }
+  h2 { font-size: 3rem !important; }
+  h3 { font-size: 2.25rem !important; }
+  h4 { font-size: 1.5rem !important; }
+  h5 { font-size: 1.25rem !important; }
+}
+
+.section-title {
+  font-family: "Barlow", Helvetica, Arial, sans-serif !important;
+  font-weight: 500 !important;
+  font-style: normal !important;
+}
+
+.entry-content p,
+.entry-content li {
+  font-size: 1rem !important;
+  font-weight: 400 !important;
+}
+
+/* CONTENT VIEWS */
+
+.pt-cv-mask {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.pt-cv-view .pt-cv-title a {
+  font-weight: 400;
+}
+
+/* NAVIGATION */
+
+.home .nav-menu > li > a {
+  color: #ffffff !important;
+}
+
+.home .nav-menu > li > a:hover,
+.home .nav-menu > li.current-menu-item > a {
+  color: #c8c8c8 !important;
+}
+
+.nav-menu a {
+  font-size: 1rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.035em;
+  padding-top: 2px;
+}
+
+.nav-menu .lang-item a {
+  padding-top: 0px;
+}
+
+.nav-menu ul li a {
+  font-size: 0.9375rem;
+  letter-spacing: 0.02em;
+  font-weight: 400;
+}
+
+.site-header-wrapper.is-fixed .lang-item img {
+  width: 100% !important;
+  height: auto !important;
+}
+
+/* FOOTER */
+
+footer p {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.site-footer .sidebar .widget a {
+  font-size: 1rem;
+  text-decoration: none;
+  color: #8b1a2f;
+}
+
+.site-footer .sidebar .widget a:hover {
+  text-decoration: underline;
+  color: #a0a0a0;
+}
+
+.site-copyright {
+  font-weight: 400;
+  color: #8B1A2F;
+  font-size: 0.9375rem;
+}
+
+#footer-3 p {
+  text-align: right;
+}
+
+/* POST NAVIGATION */
+
+.wp-post-nav h4 {
+  display: none !important;
+}
+
+.wp-post-nav #post-nav-previous-switched,
+.wp-post-nav #post-nav-previous-switched:hover {
+  width: 20vw;
+  right: -20vw;
+  border-radius: 10px 0px 0px 10px;
+}
+
+.wp-post-nav #post-nav-next-switched,
+.wp-post-nav #post-nav-next-switched:hover {
+  width: 20vw;
+  left: -20vw;
+  border-radius: 0px 10px 10px 0px;
+}
+
+#post-nav-previous-button {
+  border-radius: 10px 0px 0px 10px;
+}
+
+#post-nav-next-button {
+  border-radius: 0px 10px 10px 0px;
+}
+
+.wp-post-nav #post-nav-next-switched #post-nav-next-button::after,
+.wp-post-nav #post-nav-previous-switched #post-nav-previous-button::before {
+  padding-top: 5px;
+}
+
+/* SLIDER */
+
+.slide_content h1 {
+  font-size: 2.25rem;
+}
+
+.slide_content .btn {
+  margin-left: 0;
+}
+
+/* ABOUT */
+
+#about .section-title {
+  text-align: center;
+}
+
+.section-about .section-desc p {
+  font-weight: 400;
+}
+
+.col-md-5,
+.col-md-7 {
+  width: 100%;
+  clear: all;
+}
+
+.section-about-content {
+  padding-left: 0px !important;
+}
+
+/* LEISTUNGEN */
+
+#leistungen .container,
+#leistungen-eng .container {
+  max-width: 100vw !important;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+#leistungen .custom-section-content,
+#leistungen-eng .custom-section-content {
+  background-color: #1a1a1a;
+}
+
+#leistungen .pt-cv-title a,
+#leistungen-eng .pt-cv-title a {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #fff;
+  padding: 30px 0 20px 0;
+}
+
+#leistungen .pt-cv-content,
+#leistungen-eng .pt-cv-content {
+  font-weight: 400;
+  font-size: 1rem;
+  padding: 0 40px;
+}
+
+#leistungen .pt-cv-view .pt-cv-readmore,
+#leistungen-eng .pt-cv-view .pt-cv-readmore {
+  color: #fff !important;
+  background-color: #1a1a1a !important;
+  border: 1px solid #8b1a2f;
+  border-radius: 2px;
+  font-weight: 500 !important;
+  margin-top: 2rem;
+}
+
+#leistungen .pt-cv-view .pt-cv-rmwrap a:hover,
+#leistungen-eng .pt-cv-view .pt-cv-rmwrap a:hover {
+  background-color: #1a1a1a !important;
+}
+
+/* VIDEO */
+
+.parallax-videolightbox .section-padding-larger {
+  padding: 16.25rem 0rem !important;
+}
+
+/* TEAM */
+
+.team-member-name a {
+  font-size: 1.25rem;
+  color: #8b1a2f;
+  font-weight: 500;
+}
+
+.team-member .team-member-img .team-social-wrapper {
+  background: rgba(255, 255, 255, 0);
+  border: 2px solid rgba(0, 0, 0, 0.2);
+}
+
+.team-member .team-member-img img {
+  border-radius: 0px;
+}
+
+/* KONTAKT */
+
+#susicf-form label {
+  width: 100% !important;
+}
+
+.home #susicf-form input,
+.home #susicf-form textarea {
+  background-color: #2e2e2e;
+  color: #fff;
+  border-radius: 2px;
+}
+
+/* ==============================
+   HEADER — Fixed layout
+   ============================== */
+
+#masthead.site-header {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  z-index: 9999 !important;
+}
+
+.admin-bar #masthead.site-header {
+  top: 32px !important;
+}
+
+@media screen and (max-width: 782px) {
+  .admin-bar #masthead.site-header {
+    top: 46px !important;
+  }
+}
+
+.site-header-wrapper {
+  height: auto !important;
+}
+
+#page.site {
+  padding-top: 150px;
+}
+
+@media only screen and (max-width: 800px) {
+  #page.site {
+    padding-top: 130px;
+  }
+}
+
+.site-header .container {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  min-height: unset !important;
+  height: auto !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.site-header .header-right-wrapper {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+.header-fixed {
+  background: inherit !important;
+  box-shadow: none !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+#masthead.header-fixed {
+  top: 0 !important;
+}
+
+.admin-bar #masthead.header-fixed {
+  top: 32px !important;
+}
+
+/* ==============================
+   HAMBURGER / MOBILE NAV
+   ============================== */
+
+#nav-toggle {
+  position: relative;
+  z-index: 10001;
+  cursor: pointer;
+  height: 56px;
+  display: flex !important;
+  align-items: center;
+  pointer-events: auto !important;
+}
+
+@media (min-width: 1025px) {
+  #nav-toggle {
+    display: none !important;
+  }
+
+  .main-navigation .nav-menu {
+    display: flex !important;
+    position: static !important;
+    width: auto !important;
+    height: auto !important;
+  }
+}
+
+#nav-toggle span,
+#nav-toggle span::before,
+#nav-toggle span::after {
+  background-color: #2e2e2e !important;
+}
+
+.home #nav-toggle span,
+.home #nav-toggle span::before,
+.home #nav-toggle span::after {
+  background-color: #ffffff !important;
+}
+
+.home #nav-toggle.nav-is-visible span::before,
+.home #nav-toggle.nav-is-visible span::after {
+  background-color: #ffffff !important;
+}
+
+#nav-toggle.nav-is-visible span::before,
+#nav-toggle.nav-is-visible span::after {
+  background-color: #2e2e2e !important;
+}
+
+.nav-menu.nav-menu-mobile {
+  position: fixed !important;
+  top: 110px !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 9998 !important;
+  background-color: #ffffff;
+  overflow-y: auto;
+  padding: 0.5rem 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.home .nav-menu.nav-menu-mobile {
+  background-color: #2e2e2e;
+}
+
+.admin-bar .nav-menu.nav-menu-mobile {
+  top: 142px !important;
+}
+
+@media only screen and (max-width: 800px) {
+  .main-navigation .nav-menu:not(.nav-menu-mobile) {
+    display: none !important;
+  }
+
+  .main-navigation .nav-menu.nav-menu-mobile {
+    display: block !important;
+  }
+
+  .nav-menu.nav-menu-mobile {
+    top: 88px !important;
+  }
+
+  .admin-bar .nav-menu.nav-menu-mobile {
+    top: 134px !important;
+  }
+
+  .site-branding img {
+    max-height: 90px !important;
+    padding: 20px 0 !important;
+  }
+
+  .site-header-wrapper.is-fixed .lang-item img {
+    width: auto !important;
+    height: 100% !important;
+  }
+
+  .slide_content h1 {
+    line-height: 1.2;
+    font-size: 2.25rem;
+  }
+
+  .swiper-slider .swiper-slide.slide-align-left .swiper-slide-intro {
+    text-align: center;
+  }
+
+  #leistungen .pt-cv-ifield,
+  #leistungen-eng .pt-cv-ifield {
+    margin-bottom: 50px !important;
+  }
+
+  .footer-widgets p {
+    text-align: center !important;
+  }
+
+  .site-footer .site-info {
+    height: 200px;
+  }
+
+  .wp-post-nav #post-nav-previous-switched,
+  .wp-post-nav #post-nav-previous-switched:hover {
+    width: 30vw;
+    left: 85vw;
+    padding-right: 17vw;
+  }
+
+  .wp-post-nav #post-nav-next-switched,
+  .wp-post-nav #post-nav-next-switched:hover {
+    width: 30vw;
+    left: -15vw;
+    padding-left: 17vw;
+  }
+
+  .wp-post-nav .post-nav-title {
+    display: none;
+  }
+
+  #metaslider-id-2262 .caption {
+    padding: 5px 20px;
+  }
+
+  #metaslider-id-2262 h3,
+  #metaslider-id-2262 p {
+    margin-top: 0px !important;
+    line-height: 1.2 !important;
+  }
+
+  #metaslider-id-2262 h3 {
+    color: #fff !important;
+    font-size: 1.5rem !important;
+  }
+
+  #metaslider-id-2262 p {
+    font-size: 1rem !important;
+    display: none;
+  }
+
+  .flexslider .slides img {
+    object-position: -100px 0px;
+    height: 300px !important;
+    width: auto !important;
+  }
+}
