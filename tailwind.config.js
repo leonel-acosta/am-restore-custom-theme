@@ -29,6 +29,12 @@ module.exports = {
       fontFamily: {
         sans: ['Barlow', 'Helvetica', 'Arial', 'sans-serif'],
       },
+      ringColor: {
+        DEFAULT: '#8B1A2F',
+      },
+      ringOffsetColor: {
+        DEFAULT: '#ffffff',
+      },
     },
   },
   plugins: [
