@@ -3,6 +3,31 @@
 @tailwind utilities;
 
 @layer base {
+  [type='text']:focus,
+  [type='email']:focus,
+  [type='url']:focus,
+  [type='password']:focus,
+  [type='number']:focus,
+  [type='date']:focus,
+  [type='search']:focus,
+  [type='tel']:focus,
+  textarea:focus,
+  select:focus {
+    --tw-ring-color: #8B1A2F;
+    border-color: #8B1A2F;
+    outline-color: #8B1A2F;
+  }
+
+  [type='checkbox'],
+  [type='radio'] {
+    color: #8B1A2F;
+  }
+
+  [type='checkbox']:focus,
+  [type='radio']:focus {
+    --tw-ring-color: #8B1A2F;
+  }
+
   body, p, li {
     @apply font-sans text-base font-normal leading-relaxed;
   }
@@ -63,7 +88,7 @@
     @apply text-xl font-semibold mb-2;
   }
   .card-text {
-    @apply text-gray-600;
+    @apply text-secondary;
   }
   .card-block {
     @apply p-6;
