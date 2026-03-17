@@ -11,7 +11,11 @@
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
-            "wrapper": { "width": "", "class": "", "id": "" },
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "button_label": "Add Section",
             "min": "",
             "max": "",
@@ -21,8 +25,6 @@
                     "name": "project_details",
                     "label": "Project Details",
                     "display": "block",
-                    "min": "",
-                    "max": "",
                     "sub_fields": [
                         {
                             "key": "field_69b43544b0001",
@@ -33,7 +35,11 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
                             "default_value": "Project Title",
                             "maxlength": "",
                             "allow_in_bindings": 0,
@@ -50,7 +56,11 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
                             "default_value": "Betonrestaurierung",
                             "maxlength": "",
                             "allow_in_bindings": 0,
@@ -67,7 +77,11 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
                             "default_value": "Client",
                             "maxlength": "",
                             "allow_in_bindings": 0,
@@ -84,7 +98,11 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
                             "default_value": "",
                             "maxlength": "",
                             "allow_in_bindings": 0,
@@ -101,7 +119,11 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
                             "default_value": "6 Months",
                             "maxlength": "",
                             "allow_in_bindings": 0,
@@ -118,23 +140,27 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "", "class": "", "id": "" },
-                            "default_value": "1998",
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": 1998,
                             "maxlength": "",
                             "allow_in_bindings": 0,
                             "placeholder": "",
                             "prepend": "",
                             "append": ""
                         }
-                    ]
+                    ],
+                    "min": "",
+                    "max": ""
                 },
                 {
                     "key": "layout_69b43544la002",
                     "name": "project_about",
                     "label": "About",
                     "display": "block",
-                    "min": "",
-                    "max": "",
                     "sub_fields": [
                         {
                             "key": "field_69b43544c0001",
@@ -145,7 +171,11 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
                             "default_value": "",
                             "allow_in_bindings": 0,
                             "tabs": "all",
@@ -153,15 +183,15 @@
                             "media_upload": 1,
                             "delay": 0
                         }
-                    ]
+                    ],
+                    "min": "",
+                    "max": ""
                 },
                 {
                     "key": "layout_69b43544la003",
                     "name": "project_process",
                     "label": "Process",
                     "display": "block",
-                    "min": "",
-                    "max": "",
                     "sub_fields": [
                         {
                             "key": "field_69b43544d0001",
@@ -172,7 +202,11 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
                             "default_value": "",
                             "allow_in_bindings": 0,
                             "tabs": "all",
@@ -189,7 +223,11 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
                             "default_value": "",
                             "maxlength": 400,
                             "allow_in_bindings": 0,
@@ -197,15 +235,15 @@
                             "placeholder": "",
                             "new_lines": ""
                         }
-                    ]
+                    ],
+                    "min": "",
+                    "max": ""
                 },
                 {
                     "key": "layout_69b43544la004",
                     "name": "project_gallery",
                     "label": "Gallery",
                     "display": "block",
-                    "min": "",
-                    "max": "",
                     "sub_fields": [
                         {
                             "key": "field_69b43544e0001",
@@ -216,7 +254,11 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
                             "return_format": "array",
                             "library": "all",
                             "min": "",
@@ -232,7 +274,9 @@
                             "insert": "append",
                             "preview_size": "medium"
                         }
-                    ]
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             ]
         }
@@ -240,9 +284,30 @@
     "location": [
         [
             {
-                "param": "page_template",
+                "param": "post_category",
                 "operator": "==",
-                "value": "template-portfolios.php"
+                "value": "category:betonrestaurierung"
+            }
+        ],
+        [
+            {
+                "param": "post_category",
+                "operator": "==",
+                "value": "category:restaurierung"
+            }
+        ],
+        [
+            {
+                "param": "post_category",
+                "operator": "==",
+                "value": "category:sichtbetonretusche"
+            }
+        ],
+        [
+            {
+                "param": "post_category",
+                "operator": "==",
+                "value": "category:untersuchung"
             }
         ]
     ],
@@ -255,5 +320,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1773700000
+    "modified": 1773759595
 }

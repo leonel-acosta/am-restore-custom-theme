@@ -39,6 +39,14 @@ get_header();
 
     </div><!--#content-inside -->
 
+    <section class="page-section">
+        <div class="container">
+            <?php get_template_part( 'template-parts/projects-grid', null, [
+                'category' => 'betonrestaurierung',
+            ] ); ?>
+        </div>
+    </section>
+
 </div><!-- #content -->
 
 <?php get_footer(); ?>
