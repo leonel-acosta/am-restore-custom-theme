@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Template part for displaying project cards.
  */
@@ -9,41 +8,39 @@ $img_alt  = $args['img_alt']  ?? get_the_title();
 $type     = $args['type']     ?? '';
 $client   = $args['client']   ?? '';
 $location = $args['location'] ?? '';
-$year = $args['year'] ?? '';
+$year     = $args['year']     ?? '';
 ?>
 
-<a href="<?php the_permalink(); ?>" class="project-card flex-1 flex flex-col border-b-[3px] page-section--gray border-primary transition-all duration-200 hover:brightness-95 hover:shadow-md no-underline">
+<a href="<?php the_permalink(); ?>" class="am-card project-card">
 
-    <div class="project-card w-full aspect-square overflow-hidden">
-        <?php if ($img_src) : ?>
+    <div class="am-card-image">
+        <?php if ( $img_src ) : ?>
             <img
-                src="<?php echo esc_url($img_src); ?>"
-                alt="<?php echo esc_attr($img_alt); ?>"
-                class="project-image w-full h-full object-cover object-center">
+                src="<?php echo esc_url( $img_src ); ?>"
+                alt="<?php echo esc_attr( $img_alt ); ?>">
         <?php else : ?>
-            <div class="w-full h-full flex items-center justify-center">
-                <span class="text-light text-sm"><?php esc_html_e('No image', 'am-restore'); ?></span>
+            <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;">
+                <span style="color:#a0a0a0;font-size:0.8rem;"><?php esc_html_e( 'No image', 'am-restore' ); ?></span>
             </div>
         <?php endif; ?>
     </div>
 
-    <div class="project-content flex flex-col flex-1 text-left p-5">
-        <h4 class="project-title text-lg font-semibold mb-2 uppercase"><?php the_title(); ?></h4>
+    <div class="am-card-content">
+        <h4 class="am-card-title"><?php the_title(); ?></h4>
 
-        <!-- <?php if ($type) : ?>
-            <p class="project-type text-sm font-medium mb-1"><?php echo esc_html($type); ?></p>
-        <?php endif; ?> -->
+        <?php if ( $type ) : ?>
+            <p class="am-card-subtitle"><?php echo esc_html( $type ); ?></p>
+        <?php endif; ?>
 
-        <?php if ($client) ?>
-        <div class="flex flex-row justify-start">
-            <?php if ($location) : ?>
-                <h5 class="project-location text-sm  mt-auto"><?php echo esc_html($location); ?> -</h5>
-            <?php endif; ?>
+        <?php if ( $client ) : ?>
+            <p class="am-card-meta"><?php echo esc_html( $client ); ?></p>
+        <?php endif; ?>
 
-            <?php if ($client) : ?>
-                <h5 class="project-year text-sm  mb-1 mr-1"><?php echo esc_html($year); ?></h5>
-            <?php endif; ?>
-        </div>
+        <?php if ( $location || $year ) : ?>
+            <p class="am-card-meta am-card-footer">
+                <?php echo esc_html( implode( ' — ', array_filter( [ $location, $year ] ) ) ); ?>
+            </p>
+        <?php endif; ?>
     </div>
 
 </a>
