@@ -5786,3 +5786,16 @@ footer p {
   background-color: #8b1a2f;
   color: #ffffff !important;
 }
+
+.title-section h2 {
+  color: white !important;
+  text-transform: uppercase !important;
+}
+
+.title-section h4 {
+  color: white !important;
+}
+
+.title-section a {
+  color: white !important;
+}

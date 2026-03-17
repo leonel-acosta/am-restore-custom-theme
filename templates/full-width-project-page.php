@@ -18,26 +18,7 @@
 get_header();
 ?>
 <div id="content" class="site-content">
-    <header class="entry-header page-section--primary">
-        <div id="container" class="container">
-            <?php the_title('<h2 class="entry-title entry-title-section mx-auto"><a href="' . esc_url(get_permalink()) . '" rel="bookmark">', '</a></h2>'); ?>
-
-            <?php if ('post' === get_post_type()) : ?>
-                <div class="entry-meta">
-                    <?php screenr_posted_on(); ?>
-                </div><!-- .entry-meta -->
-            <?php
-            endif; ?>
-
-            <?php
-            if (has_post_thumbnail()) {
-                echo '<div class="entry-thumb">';
-                the_post_thumbnail(screenr_get_layout() == 'no' ? 'large' : 'screenr-blog-list');
-                echo '</div>';
-            }
-            ?>
-        </div>
-    </header>
+    <?php get_template_part('template-parts/page-title'); ?>
     <div id="content-inside" class="container no-sidebar">
 
         <div id="primary" class="content-area">
