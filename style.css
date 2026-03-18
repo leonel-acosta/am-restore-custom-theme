@@ -6444,7 +6444,7 @@ footer p {
   .text-section__heading--xl { font-size: 36px !important; }
 }
 
-/* Inner layout — mobile: column */
+/* Inner layout — column on mobile, row on desktop by default */
 .text-section__inner {
   display: flex;
   flex-direction: column;
@@ -6456,9 +6456,14 @@ footer p {
   width: 100%;
 }
 
-/* Desktop layout */
+/* direction="column": stays stacked on all screen sizes, full width */
+.text-section--column .text-section__inner {
+  flex-direction: column;
+}
+
+/* direction="row" (default): switches to row on desktop */
 @media (min-width: 940px) {
-  .text-section__inner {
+  .text-section:not(.text-section--column) .text-section__inner {
     flex-direction: row;
     align-items: flex-start;
     gap: 60px;
