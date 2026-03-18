@@ -11,7 +11,11 @@
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
-            "wrapper": { "width": "", "class": "", "id": "" },
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "button_label": "Add Section",
             "min": "",
             "max": "",
@@ -21,8 +25,6 @@
                     "name": "intro",
                     "label": "Intro",
                     "display": "block",
-                    "min": "",
-                    "max": "",
                     "sub_fields": [
                         {
                             "key": "field_69b448f0b0001",
@@ -33,10 +35,13 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
                             "default_value": "Every building holds a history worth preserving. Our work is to make sure it endures.",
                             "maxlength": "",
-                            "allow_in_bindings": 0,
                             "placeholder": "",
                             "prepend": "",
                             "append": ""
@@ -50,23 +55,64 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
                             "default_value": "AM-Restore is a Berlin-based studio specialising in the conservation, repair and restoration of architectural concrete and historic buildings. We combine scientific rigour with hands-on craftsmanship to preserve structures that matter — for those who built them, and for those who will inherit them.",
                             "maxlength": "",
                             "allow_in_bindings": 0,
                             "placeholder": "",
                             "prepend": "",
                             "append": ""
+                        },
+                        {
+                            "key": "field_69bab4e8cd50a",
+                            "label": "button text",
+                            "name": "button_text",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "Our Team",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": ""
+                        },
+                        {
+                            "key": "field_69bab500cd50b",
+                            "label": "button url",
+                            "name": "button_url",
+                            "aria-label": "",
+                            "type": "url",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "\/#team",
+                            "placeholder": ""
                         }
-                    ]
+                    ],
+                    "min": "",
+                    "max": ""
                 },
                 {
                     "key": "layout_69b448e0la002",
                     "name": "continuity",
                     "label": "Continuity",
                     "display": "block",
-                    "min": "",
-                    "max": "",
                     "sub_fields": [
                         {
                             "key": "field_69b448f0c0001",
@@ -77,7 +123,11 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
                             "default_value": "CONTINUITY",
                             "maxlength": "",
                             "allow_in_bindings": 0,
@@ -94,7 +144,11 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
                             "default_value": "We have been active in the practical conservation and restoration of restoration of architecture. Our focus on the material concrete since the beginning of 2000 and are working on the further development of methods and materials to optimize the results.",
                             "maxlength": "",
                             "allow_in_bindings": 0,
@@ -111,7 +165,11 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
                             "return_format": "array",
                             "library": "all",
                             "min_width": "",
@@ -124,15 +182,15 @@
                             "allow_in_bindings": 0,
                             "preview_size": "medium"
                         }
-                    ]
+                    ],
+                    "min": "",
+                    "max": ""
                 },
                 {
                     "key": "layout_69b448e0la003",
                     "name": "methodology",
                     "label": "Methodology",
                     "display": "block",
-                    "min": "",
-                    "max": "",
                     "sub_fields": [
                         {
                             "key": "field_69b448f0d0001",
@@ -143,7 +201,11 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
                             "default_value": "Methodology",
                             "maxlength": "",
                             "allow_in_bindings": 0,
@@ -160,7 +222,11 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
                             "default_value": "In the planning and execution of our projects, we apply our knowledge from the various fields of conservation, restoration, painting restoration, painting, sculpture, craftsmanship and the restoration of restoration of listed buildings. We work interdisciplinary.",
                             "maxlength": "",
                             "allow_in_bindings": 0,
@@ -177,7 +243,11 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
                             "return_format": "array",
                             "library": "all",
                             "min_width": "",
@@ -190,15 +260,15 @@
                             "allow_in_bindings": 0,
                             "preview_size": "medium"
                         }
-                    ]
+                    ],
+                    "min": "",
+                    "max": ""
                 },
                 {
                     "key": "layout_69b448e0la004",
                     "name": "results",
                     "label": "Results",
                     "display": "block",
-                    "min": "",
-                    "max": "",
                     "sub_fields": [
                         {
                             "key": "field_69b448f0e0001",
@@ -209,10 +279,13 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
                             "default_value": "Results",
                             "maxlength": "",
-                            "allow_in_bindings": 0,
                             "placeholder": "",
                             "prepend": "",
                             "append": ""
@@ -226,7 +299,11 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
                             "default_value": "We draw on many years of practical experience practical experience. Aspects and findings from past projects flow directly directly into our work.",
                             "maxlength": "",
                             "allow_in_bindings": 0,
@@ -243,7 +320,11 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
                             "default_value": "PROJECTS",
                             "maxlength": "",
                             "allow_in_bindings": 0,
@@ -260,7 +341,11 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
                             "default_value": "",
                             "allow_in_bindings": 0,
                             "placeholder": ""
@@ -270,27 +355,33 @@
                             "label": "Projects Gallery",
                             "name": "gallery",
                             "aria-label": "",
-                            "type": "gallery",
+                            "type": "relationship",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "", "class": "", "id": "" },
-                            "return_format": "array",
-                            "library": "all",
-                            "min": 6,
-                            "max": 12,
-                            "min_width": "",
-                            "min_height": "",
-                            "min_size": "",
-                            "max_width": "",
-                            "max_height": "",
-                            "max_size": "",
-                            "mime_types": "",
-                            "allow_in_bindings": 0,
-                            "insert": "append",
-                            "preview_size": "medium"
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "post_type": [
+                                "post"
+                            ],
+                            "post_status": [
+                                "publish"
+                            ],
+                            "taxonomy": "",
+                            "filters": [
+                                "post_type"
+                            ],
+                            "return_format": "object",
+                            "min": "",
+                            "max": "",
+                            "elements": ""
                         }
-                    ]
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             ]
         }
@@ -300,7 +391,7 @@
             {
                 "param": "page",
                 "operator": "==",
-                "value": "32"
+                "value": "2101"
             }
         ]
     ],
@@ -313,5 +404,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1773700000
+    "modified": 1773843737
 }
