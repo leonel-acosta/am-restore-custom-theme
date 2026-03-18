@@ -6015,8 +6015,20 @@ footer p {
   padding: 2rem 0;
   background: transparent;
   /* mask edges with fade */
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
-          mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 8%,
+    black 92%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 8%,
+    black 92%,
+    transparent 100%
+  );
 }
 
 .logo-track {
@@ -6032,7 +6044,7 @@ footer p {
 
 /* Fixed pixel width — makes translateX(-50%) reliable */
 .logo-item {
-  flex: 0 0 160px;
+  flex: 0 0 200px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -6040,31 +6052,50 @@ footer p {
 }
 
 @media (min-width: 640px) {
-  .logo-item { flex: 0 0 200px; }
+  .logo-item {
+    flex: 0 0 240px;
+  }
 }
 
 @media (min-width: 1024px) {
-  .logo-item { flex: 0 0 180px; }
+  .logo-item {
+    flex: 0 0 220px;
+  }
+
+  .logo-item img {
+    max-width: 100%;
+    height: 120px;
+  }
 }
 
 .logo-item img {
   max-width: 100%;
-  max-height: 60px;
+  height: 160px;
   width: auto;
-  height: auto;
   object-fit: contain;
   /* Desaturate + dim */
   filter: grayscale(100%) opacity(0.5);
   transition: filter 0.3s ease;
 }
 
+.logo-item a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-item a img,
 .logo-item img:hover {
   filter: grayscale(0%) opacity(1);
 }
 
 @keyframes logo-scroll {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 /* Respect reduced motion preference */
@@ -6072,4 +6103,8 @@ footer p {
   .logo-track {
     animation: none;
   }
+}
+
+.logo-slider-header {
+  text-align: center;
 }
