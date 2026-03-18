@@ -69,7 +69,7 @@ $page_id = get_the_ID();
         $results = get_field('results_section', $page_id) ?: [];
         if ($results) :
         ?>
-            <div class="about-results-section pb-10">
+            <div class="page-section--darker pb-10">
                 <?php
                 get_template_part('template-parts/text-section', null, [
                     'heading'        => $results['title']       ?? '',
@@ -95,7 +95,7 @@ $page_id = get_the_ID();
         <?php
         $team = get_field('team_section', $page_id) ?: [];
         ?>
-        <div class="about-team-section page-section--light" id="team">
+        <div class="page-section--light" id="team">
             <?php
             get_template_part('template-parts/text-section', null, [
                 'heading'        => $team['title']   ?? '',
@@ -117,12 +117,12 @@ $page_id = get_the_ID();
 
     </main>
 </div>
-
-<?php
-// Partners logos — reads partners_logos + section fields from this page (ID 2873)
-get_template_part('template-parts/logo-slider', null, ['post_id' => $page_id]);
-?>
-
+<div class="page-section--white py-5" id="partners">
+    <?php
+    // Partners logos — reads partners_logos + section fields from this page (ID 2873)
+    get_template_part('template-parts/logo-slider', null, ['post_id' => $page_id]);
+    ?>
+</div>
 <?php get_template_part('template-parts/cta'); ?>
 
 <?php get_footer(); ?>

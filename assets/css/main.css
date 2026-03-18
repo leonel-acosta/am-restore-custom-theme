@@ -1099,19 +1099,9 @@ h6 {
   border-width: 1px;
 }
 
-.bg-secondary {
-  --tw-bg-opacity: 1;
-  background-color: rgb(46 46 46 / var(--tw-bg-opacity, 1));
-}
-
 .bg-tertiary {
   --tw-bg-opacity: 1;
   background-color: rgb(26 26 26 / var(--tw-bg-opacity, 1));
-}
-
-.bg-white {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
 }
 
 .object-cover {
@@ -1140,10 +1130,6 @@ h6 {
 
 .pb-16 {
   padding-bottom: 4rem;
-}
-
-.pb-5 {
-  padding-bottom: 1.25rem;
 }
 
 .pt-20 {
