@@ -6350,17 +6350,12 @@ footer p {
 -------------------------------------------------------------- */
 
 /* Results: text-section + gallery share the same light background */
-.about-results-section {
-  background-color: #f5f5f3;
-}
 .about-results-section .text-section {
   background-color: transparent;
 }
 
 /* Team: text-section + grid share the same white background */
-.about-team-section {
-  background-color: #ffffff;
-}
+
 .about-team-section .text-section {
   background-color: transparent;
 }
@@ -6401,11 +6396,11 @@ footer p {
   margin: 0;
 }
 .text-section--dark .text-section__heading {
-  color: rgba(255, 255, 255, 0.95);
+  color: #ffffff;
 }
 .text-section--light .text-section__heading,
 .text-section--white .text-section__heading {
-  color: #1a1a1a;
+  color: #111111;
 }
 
 .text-section__heading--sm {
@@ -6427,11 +6422,11 @@ footer p {
   line-height: 1.8;
 }
 .text-section--dark .text-section__body {
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(255, 255, 255, 0.9);
 }
 .text-section--light .text-section__body,
 .text-section--white .text-section__body {
-  color: #3d3d3d;
+  color: #222222;
 }
 
 /* Optional top border on content column — hidden on mobile */
@@ -6590,11 +6585,11 @@ footer p {
 }
 
 .text-image-section--light .text-image-section__heading {
-  color: #1a1a1a;
+  color: #111111;
 }
 
 .text-image-section--light .text-image-section__body {
-  color: #3d3d3d;
+  color: #222222;
 }
 
 .text-image-section--light .text-image-section__btn {
@@ -6615,11 +6610,11 @@ footer p {
 }
 
 .text-image-section--white .text-image-section__heading {
-  color: #1a1a1a;
+  color: #111111;
 }
 
 .text-image-section--white .text-image-section__body {
-  color: #3d3d3d;
+  color: #222222;
 }
 
 .text-image-section--white .text-image-section__btn {
@@ -6666,12 +6661,12 @@ footer p {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: rgba(255, 255, 255, 0.95);
+  color: #ffffff;
   margin-bottom: 24px;
 }
 
 .text-image-section__body {
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(255, 255, 255, 0.9);
   font-size: 15px;
   line-height: 1.8;
 }
