@@ -59,10 +59,19 @@ if (empty($logos)) {
 <div id="<?php echo esc_attr($slider_id); ?>" class="logo-slider">
     <div class="logo-track">
         <?php foreach ($logos as $item) :
-            $logo = $item['logo'] ?? [];
-            $link = $item['link'] ?? '';
-            $src  = $logo['sizes']['medium'] ?? $logo['url'] ?? '';
-            $alt  = $logo['alt'] ?: $logo['title'] ?: '';
+            // Support both gallery field (image direct) and repeater field (logo + link sub-fields)
+            if (isset($item['url'])) {
+                // Gallery field: item is the image array directly
+                $src  = $item['sizes']['medium'] ?? $item['url'] ?? '';
+                $alt  = $item['alt'] ?? $item['title'] ?? '';
+                $link = '';
+            } else {
+                // Repeater field: item has logo + link sub-fields
+                $logo = $item['logo'] ?? [];
+                $link = $item['link'] ?? '';
+                $src  = $logo['sizes']['medium'] ?? $logo['url'] ?? '';
+                $alt  = $logo['alt'] ?? $logo['title'] ?? '';
+            }
         ?>
             <div class="logo-item">
                 <?php if ($link) : ?>

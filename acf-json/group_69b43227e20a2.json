@@ -1,6 +1,6 @@
 {
     "key": "group_69b43227e20a2",
-    "title": "General - Partners Section",
+    "title": "Global - Partners Section",
     "fields": [
         {
             "key": "field_69b43227e970c",
@@ -70,7 +70,7 @@
             "label": "Partners Logos",
             "name": "partners_logos",
             "aria-label": "",
-            "type": "repeater",
+            "type": "gallery",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -79,54 +79,19 @@
                 "class": "",
                 "id": ""
             },
-            "layout": "table",
-            "button_label": "Add Logo",
+            "return_format": "array",
+            "library": "all",
             "min": "",
             "max": "",
-            "sub_fields": [
-                {
-                    "key": "field_69b4470ab028e",
-                    "label": "Logo",
-                    "name": "logo",
-                    "aria-label": "",
-                    "type": "image",
-                    "instructions": "",
-                    "required": 1,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "return_format": "array",
-                    "library": "all",
-                    "min_width": "",
-                    "min_height": "",
-                    "min_size": "",
-                    "max_width": "",
-                    "max_height": "",
-                    "max_size": "",
-                    "mime_types": "",
-                    "preview_size": "medium"
-                },
-                {
-                    "key": "field_69b4470ab028f",
-                    "label": "Link",
-                    "name": "link",
-                    "aria-label": "",
-                    "type": "url",
-                    "instructions": "Optional. Makes the logo clickable.",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "https://"
-                }
-            ]
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "insert": "append",
+            "preview_size": "medium"
         }
     ],
     "location": [
@@ -134,7 +99,7 @@
             {
                 "param": "page",
                 "operator": "==",
-                "value": "2101"
+                "value": "2873"
             }
         ]
     ],
@@ -147,5 +112,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1773828732
+    "modified": 1773844984
 }
