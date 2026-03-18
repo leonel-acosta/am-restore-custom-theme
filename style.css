@@ -6346,6 +6346,148 @@ footer p {
   margin: 1rem 0 1.5rem;
 }
 
+/* Section: Text Only
+-------------------------------------------------------------- */
+
+/* Themes */
+.text-section { background-color: #1e1e1e; color: rgba(255,255,255,0.85); }
+.text-section--light { background-color: #f5f5f3; color: #333333; }
+.text-section--white { background-color: #ffffff; color: #333333; }
+
+/* Section border */
+.text-section--bordered {
+  border-top: 1px solid #3d3d3d;
+  border-bottom: 1px solid #3d3d3d;
+}
+.text-section--light.text-section--bordered,
+.text-section--white.text-section--bordered {
+  border-top-color: #999999;
+  border-bottom-color: #999999;
+}
+
+/* Heading sizes */
+.text-section__heading {
+  font-family: "Barlow", Helvetica, Arial, sans-serif;
+  font-weight: 400 !important;
+  line-height: 1.15 !important;
+  margin: 0;
+}
+.text-section--dark .text-section__heading   { color: rgba(255,255,255,0.95); }
+.text-section--light .text-section__heading,
+.text-section--white .text-section__heading  { color: #1a1a1a; }
+
+.text-section__heading--sm { font-size: 18px !important; }
+.text-section__heading--md { font-size: 28px !important; }
+.text-section__heading--lg { font-size: 40px !important; }
+.text-section__heading--xl { font-size: 56px !important; }
+
+/* Content column */
+.text-section__body {
+  font-size: 15px;
+  line-height: 1.8;
+}
+.text-section--dark  .text-section__body { color: rgba(255,255,255,0.65); }
+.text-section--light .text-section__body,
+.text-section--white .text-section__body { color: #555555; }
+
+/* Optional top border on content column — hidden on mobile */
+.text-section__content--bordered {
+  padding-top: 0;
+}
+@media (min-width: 940px) {
+  .text-section__content--bordered {
+    border-top: 1px solid #3d3d3d;
+    padding-top: 28px;
+  }
+  .text-section--light .text-section__content--bordered,
+  .text-section--white .text-section__content--bordered {
+    border-top-color: #999999;
+  }
+}
+
+/* Button */
+.text-section__btn {
+  display: inline-block;
+  margin-top: 32px;
+  padding: 12px 32px;
+  border: 1px solid rgba(255,255,255,0.6);
+  color: rgba(255,255,255,0.85);
+  font-family: "Barlow", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+.text-section--light .text-section__btn,
+.text-section--white .text-section__btn {
+  border-color: rgba(0,0,0,0.4);
+  color: #333333;
+}
+.text-section__btn:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: rgba(255,255,255,0.9);
+  color: #fff;
+  text-decoration: none;
+}
+.text-section--light .text-section__btn:hover,
+.text-section--white .text-section__btn:hover {
+  background: rgba(0,0,0,0.06);
+  border-color: #333333;
+  color: #1a1a1a;
+}
+
+/* Responsive heading sizes */
+@media (max-width: 940px) {
+  .text-section__heading--lg { font-size: 28px !important; }
+  .text-section__heading--xl { font-size: 36px !important; }
+}
+
+/* Inner layout — mobile: column */
+.text-section__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.text-section__heading-col,
+.text-section__content {
+  width: 100%;
+}
+
+/* Desktop layout */
+@media (min-width: 940px) {
+  .text-section__inner {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 60px;
+  }
+
+  /* equal: 50 / 50 */
+  .text-section--equal .text-section__heading-col { width: 50%; }
+  .text-section--equal .text-section__content     { width: 50%; }
+
+  /* heading-wide: 60 / 40 */
+  .text-section--heading-wide .text-section__heading-col { width: 60%; }
+  .text-section--heading-wide .text-section__content     { width: 40%; }
+
+  /* content-wide: 40 / 60 */
+  .text-section--content-wide .text-section__heading-col { width: 40%; }
+  .text-section--content-wide .text-section__content     { width: 60%; }
+}
+
+/* Vertical padding */
+.text-section--padding-sm .text-section__inner { padding-top: 40px;  padding-bottom: 40px;  }
+.text-section--padding-md .text-section__inner { padding-top: 80px;  padding-bottom: 80px;  }
+.text-section--padding-lg .text-section__inner { padding-top: 120px; padding-bottom: 120px; }
+
+@media (max-width: 940px) {
+  .text-section--padding-sm .text-section__inner { padding-top: 32px; padding-bottom: 32px; }
+  .text-section--padding-md .text-section__inner { padding-top: 48px; padding-bottom: 48px; }
+  .text-section--padding-lg .text-section__inner { padding-top: 64px; padding-bottom: 64px; }
+}
+
 /* Section: Text + Image
 -------------------------------------------------------------- */
 
