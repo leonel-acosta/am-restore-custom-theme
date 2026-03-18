@@ -270,25 +270,19 @@
                             "label": "Projects Gallery",
                             "name": "gallery",
                             "aria-label": "",
-                            "type": "gallery",
-                            "instructions": "",
+                            "type": "relationship",
+                            "instructions": "Select 6–12 project posts to feature in the carousel.",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": { "width": "", "class": "", "id": "" },
-                            "return_format": "array",
-                            "library": "all",
+                            "post_type": ["post"],
+                            "taxonomy": [],
+                            "filters": ["search", "taxonomy"],
+                            "elements": ["featured_image"],
                             "min": 6,
                             "max": 12,
-                            "min_width": "",
-                            "min_height": "",
-                            "min_size": "",
-                            "max_width": "",
-                            "max_height": "",
-                            "max_size": "",
-                            "mime_types": "",
-                            "allow_in_bindings": 0,
-                            "insert": "append",
-                            "preview_size": "medium"
+                            "return_format": "object",
+                            "allow_in_bindings": 0
                         }
                     ]
                 }
