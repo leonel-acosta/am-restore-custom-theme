@@ -48,9 +48,9 @@ $cols = ($about && $has_meta) ? 3 : 2;
             <?php endif; ?>
 
             <?php if ($has_meta) : ?>
-                <div class="project-intro__meta lg:my-5 lg:mx-10 my-5">
+                <div class="project-intro__meta lg:my-5">
                     <?php if ($client) : ?>
-                        <div class="project-intro__meta-item">
+                        <div class=" project-intro__meta-item">
                             <span class="project-intro__meta-label"><?php esc_html_e('Client', 'am-restore'); ?></span>
                             <span class="project-intro__meta-value"><?php echo esc_html($client); ?></span>
                         </div>
