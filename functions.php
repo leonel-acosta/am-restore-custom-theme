@@ -273,27 +273,28 @@ add_action('after_setup_theme', 'am_restore_editor_styles');
  * Enqueue scripts and styles.
  */
 
-function am_restore_enqueue_styles() {
-    wp_enqueue_style(
-        'screenr-parent-style',
-        get_template_directory_uri() . '/style.css'
-    );
-    wp_enqueue_style(
-        'am-restore-style',
-        get_stylesheet_directory_uri() . '/style.css',
-        ['screenr-parent-style', 'am-restore-tailwind'],
-        wp_get_theme()->get('Version')
-    );
+function am_restore_enqueue_styles()
+{
+	wp_enqueue_style(
+		'screenr-parent-style',
+		get_template_directory_uri() . '/style.css'
+	);
+	wp_enqueue_style(
+		'am-restore-style',
+		get_stylesheet_directory_uri() . '/style.css',
+		['screenr-parent-style', 'am-restore-tailwind'],
+		wp_get_theme()->get('Version')
+	);
 }
 add_action('wp_enqueue_scripts', 'am_restore_enqueue_styles');
 
-add_filter('acf/settings/save_json', function($path) {
-    return get_stylesheet_directory() . '/acf-json';
+add_filter('acf/settings/save_json', function ($path) {
+	return get_stylesheet_directory() . '/acf-json';
 });
 
-add_filter('acf/settings/load_json', function($paths) {
-    $paths[] = get_stylesheet_directory() . '/acf-json';
-    return $paths;
+add_filter('acf/settings/load_json', function ($paths) {
+	$paths[] = get_stylesheet_directory() . '/acf-json';
+	return $paths;
 });
 
 function am_restore_scripts()
@@ -376,19 +377,29 @@ endif;
 
 // Parent theme handles all inc/ file requires.
 
-add_filter('register_post_type_args', function($args, $post_type) {
-    if ($post_type === 'team') {
-        $args['capability_type'] = 'post';
-        $args['map_meta_cap'] = true;
-        $args['capabilities'] = array(
-            'edit_post'          => 'edit_post',
-            'read_post'          => 'read_post',
-            'delete_post'        => 'delete_post',
-            'edit_posts'         => 'edit_posts',
-            'edit_others_posts'  => 'edit_others_posts',
-            'publish_posts'      => 'publish_posts',
-            'read_private_posts' => 'read_private_posts',
-        );
-    }
-    return $args;
+add_filter('single_template', function ($template) {
+	if (!is_singular('post')) return $template;
+	$post_categories = ['betonrestaurierung', 'restaurierung', 'sichtbetonretusche', 'untersuchungen'];
+	if (in_category($post_categories)) {
+		$custom = get_stylesheet_directory() . '/templates/project-page.php';
+		if (file_exists($custom)) return $custom;
+	}
+	return $template;
+});
+
+add_filter('register_post_type_args', function ($args, $post_type) {
+	if ($post_type === 'team') {
+		$args['capability_type'] = 'post';
+		$args['map_meta_cap'] = true;
+		$args['capabilities'] = array(
+			'edit_post'          => 'edit_post',
+			'read_post'          => 'read_post',
+			'delete_post'        => 'delete_post',
+			'edit_posts'         => 'edit_posts',
+			'edit_others_posts'  => 'edit_others_posts',
+			'publish_posts'      => 'publish_posts',
+			'read_private_posts' => 'read_private_posts',
+		);
+	}
+	return $args;
 }, 10, 2);
