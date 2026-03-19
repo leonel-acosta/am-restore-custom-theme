@@ -16,6 +16,7 @@ $page_id = get_the_ID();
     <?php get_template_part('template-parts/project-hero'); ?>
     <main id="main" class="site-main" role="main">
         <?php get_template_part('template-parts/project-intro', null, ['post_id' => $page_id]); ?>
+        <?php get_template_part('template-parts/project-masonry', null, ['post_id' => $page_id]); ?>
     </main>
 </div>
 
