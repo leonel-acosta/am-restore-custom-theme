@@ -19,6 +19,27 @@
             "layout": "block",
             "sub_fields": [
                 {
+                    "key": "field_69b43544a0001",
+                    "label": "Section Label",
+                    "name": "section_label",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Label shown in the first column (e.g. \"About\")",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "About",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "About",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
                     "key": "field_69b43544b0001",
                     "label": "Title",
                     "name": "title",
