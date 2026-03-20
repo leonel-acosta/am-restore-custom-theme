@@ -6,25 +6,27 @@
  * Args:
  *   post_id   int   Post ID to pull ACF fields from
  *
- * Grid: 3 cols × 2 rows per block. Big image = 2 cols × 2 rows.
+ * Process row (3 cols):
+ *   [ label ] [ content ] [ image 0 ]
+ *   Long content (>400 chars) → [ label ] [ content ×2 ] [ image 0 ]
  *
- *   Block A (even — big left):
- *     [    big    ] [ sm0 ]
- *     [    big    ] [ sm1 ]
+ * Masonry blocks (each 3 cols × 2 rows, alternating big-left / big-right):
+ *   Block A (even):  [    big    ] [ sm0 ]
+ *                    [    big    ] [ sm1 ]
  *
- *   Block B (odd — big right):
- *     [ sm0 ] [    big    ]
- *     [ sm1 ] [    big    ]
+ *   Block B (odd):   [ sm0 ] [    big    ]
+ *                    [ sm1 ] [    big    ]
  *
- * If additional_info exists, one small cell is replaced by a text panel.
- * Slot (0 or 1) is seeded by post ID for consistency per post.
+ * additional_info text cell replaces sm1 by default.
+ * Long additional_info (>150 chars) → text spans both rows (sm0 + sm1 replaced).
  */
 
 $post_id         = $args['post_id'] ?? get_the_ID();
 $data            = get_field('project_page', $post_id) ?: [];
-$images          = $data['gallery']         ?? [];
-$additional_info = $data['additional_info'] ?? '';
-$process         = $data['process']         ?? '';
+$images          = $data['gallery']                ?? [];
+$additional_info = $data['additional_info']        ?? '';
+$process         = $data['second_section_content'] ?? '';
+$process_label   = $data['second_section_label']   ?? 'Process';
 
 if (empty($images)) return;
 
@@ -33,14 +35,16 @@ $all_images = array_values(array_map(fn($img) => [
     'alt' => $img['alt'] ?? '',
 ], $images));
 
-$text_block_index = -1;
-$text_slot        = 0;
+// Long-text flags
+$process_long = $process && strlen(strip_tags($process)) > 300;
+$info_long    = $additional_info && strlen(strip_tags($additional_info)) > 300;
 
+// Which masonry block gets the additional_info text cell
+$text_block_index = -1;
 if ($additional_info) {
-    $start            = $process ? 1 : 0; // process row consumes 1 image
+    $start            = $process ? 1 : 0;
     $full_blocks      = max(1, intdiv(count($images) - $start, 3));
     $text_block_index = $post_id % $full_blocks;
-    $text_slot        = 1; // always the second (bottom) small square
 }
 
 $image_index = 0;
@@ -53,11 +57,11 @@ $uid         = 'pm-' . $post_id;
     <div class="project-masonry" id="<?php echo esc_attr($uid); ?>">
 
         <?php if ($process) : ?>
-            <section class="project-process">
+            <section class="project-process<?php echo $process_long ? ' project-process--wide' : ''; ?>">
 
                 <div class="project-process__label">
                     <h2 class="project-process__heading text-section__heading text-section__heading--md">
-                        <?php esc_html_e('Process', 'am-restore'); ?>
+                        <?php echo esc_html($process_label); ?>
                     </h2>
                 </div>
 
@@ -86,8 +90,6 @@ $uid         = 'pm-' . $post_id;
             </section>
         <?php endif; ?>
 
-        <?php // Full blocks: require 1 big + 2 smalls (3 images) 
-        ?>
         <?php while (count($images) - $image_index >= 3) :
             $big_left    = ($block_index % 2 === 0);
             $block_class = $big_left ? 'project-masonry__block--big-left' : 'project-masonry__block--big-right';
@@ -112,35 +114,43 @@ $uid         = 'pm-' . $post_id;
                 </button>
                 <?php $modal_index++; ?>
 
-                <?php foreach ([0, 1] as $slot) :
-                    if ($is_text && $slot === $text_slot) : ?>
-                        <div class="project-masonry__cell project-masonry__text">
-                            <div class="project-masonry__text-inner">
-                                <?php echo wp_kses_post($additional_info); ?>
-                            </div>
+                <?php if ($is_text && $info_long) : ?>
+                    <?php /* Long text: spans both small rows, no small images */ ?>
+                    <div class="project-masonry__cell project-masonry__text project-masonry__text--tall">
+                        <div class="project-masonry__text-inner">
+                            <?php echo wp_kses_post($additional_info); ?>
                         </div>
-                    <?php elseif ($sm[$slot]) : ?>
-                        <button class="project-masonry__cell project-masonry__small"
-                            data-modal="<?php echo esc_attr($uid); ?>"
-                            data-index="<?php echo $modal_index; ?>"
-                            aria-label="<?php echo esc_attr($sm[$slot]['alt'] ?? ''); ?>">
-                            <img src="<?php echo esc_url($sm[$slot]['url']); ?>"
-                                alt="<?php echo esc_attr($sm[$slot]['alt'] ?? ''); ?>"
-                                loading="lazy">
-                        </button>
-                        <?php $modal_index++; ?>
-                <?php endif;
-                endforeach; ?>
+                    </div>
+                <?php else : ?>
+                    <?php foreach ([0, 1] as $slot) :
+                        if ($is_text && $slot === 1) : ?>
+                            <div class="project-masonry__cell project-masonry__text">
+                                <div class="project-masonry__text-inner">
+                                    <?php echo wp_kses_post($additional_info); ?>
+                                </div>
+                            </div>
+                        <?php elseif ($sm[$slot]) : ?>
+                            <button class="project-masonry__cell project-masonry__small"
+                                data-modal="<?php echo esc_attr($uid); ?>"
+                                data-index="<?php echo $modal_index; ?>"
+                                aria-label="<?php echo esc_attr($sm[$slot]['alt'] ?? ''); ?>">
+                                <img src="<?php echo esc_url($sm[$slot]['url']); ?>"
+                                    alt="<?php echo esc_attr($sm[$slot]['alt'] ?? ''); ?>"
+                                    loading="lazy">
+                            </button>
+                            <?php $modal_index++; ?>
+                    <?php endif;
+                    endforeach; ?>
+                <?php endif; ?>
 
             </div>
 
         <?php
-            $image_index += ($is_text ? 2 : 3); // text block only consumes big + 1 small
+            // Long text only consumes big image; normal text consumes big + sm0
+            $image_index += ($is_text ? ($info_long ? 1 : 2) : 3);
             $block_index++;
         endwhile; ?>
 
-        <?php // Remainder: 1 or 2 leftover images shown as small squares 
-        ?>
         <?php $remainder = array_slice($images, $image_index);
         if (!empty($remainder)) : ?>
             <div class="project-masonry__remainder">

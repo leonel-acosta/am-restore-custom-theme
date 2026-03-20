@@ -1010,23 +1010,9 @@ h6 {
   position: sticky;
 }
 
-.m-5 {
-  margin: 1.25rem;
-}
-
 .-mx-4 {
   margin-left: -1rem;
   margin-right: -1rem;
-}
-
-.mx-5 {
-  margin-left: 1.25rem;
-  margin-right: 1.25rem;
-}
-
-.my-5 {
-  margin-top: 1.25rem;
-  margin-bottom: 1.25rem;
 }
 
 .mb-8 {
@@ -1105,10 +1091,6 @@ h6 {
   gap: 1.5rem;
 }
 
-.gap-5 {
-  gap: 1.25rem;
-}
-
 .overflow-hidden {
   overflow: hidden;
 }
@@ -1147,10 +1129,6 @@ h6 {
 
 .pt-20 {
   padding-top: 5rem;
-}
-
-.pt-10 {
-  padding-top: 2.5rem;
 }
 
 .shadow {
@@ -1200,10 +1178,6 @@ h6 {
 }
 
 @media (min-width: 768px) {
-  .md\:m-5 {
-    margin: 1.25rem;
-  }
-
   .md\:block {
     display: block;
   }
@@ -1270,24 +1244,6 @@ h6 {
 }
 
 @media (min-width: 1024px) {
-  .lg\:m-5 {
-    margin: 1.25rem;
-  }
-
-  .lg\:m-10 {
-    margin: 2.5rem;
-  }
-
-  .lg\:my-5 {
-    margin-top: 1.25rem;
-    margin-bottom: 1.25rem;
-  }
-
-  .lg\:mx-10 {
-    margin-left: 2.5rem;
-    margin-right: 2.5rem;
-  }
-
   .lg\:w-1\/2 {
     width: 50%;
   }

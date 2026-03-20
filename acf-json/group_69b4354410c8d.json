@@ -19,53 +19,11 @@
             "layout": "block",
             "sub_fields": [
                 {
-                    "key": "field_69b43544a0001",
-                    "label": "Section Label",
-                    "name": "section_label",
-                    "aria-label": "",
-                    "type": "text",
-                    "instructions": "Label shown in the first column (e.g. \"About\")",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "About",
-                    "maxlength": "",
-                    "allow_in_bindings": 0,
-                    "placeholder": "About",
-                    "prepend": "",
-                    "append": ""
-                },
-                {
-                    "key": "field_69b43544b0001",
-                    "label": "Title",
-                    "name": "title",
-                    "aria-label": "",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "Project Title",
-                    "maxlength": "",
-                    "allow_in_bindings": 0,
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": ""
-                },
-                {
                     "key": "field_69b43544b0002",
                     "label": "Type",
                     "name": "type",
                     "aria-label": "",
-                    "type": "text",
+                    "type": "checkbox",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -74,12 +32,20 @@
                         "class": "",
                         "id": ""
                     },
-                    "default_value": "Betonrestaurierung",
-                    "maxlength": "",
-                    "allow_in_bindings": 0,
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": ""
+                    "choices": {
+                        "Betonrestaurierung": "Betonrestaurierung",
+                        "Sichtbetonretusche": "Sichtbetonretusche",
+                        "Restaurierung": "Restaurierung",
+                        "Untersuchungen": "Untersuchungen",
+                        "Plannung": "Plannung"
+                    },
+                    "default_value": [],
+                    "return_format": "value",
+                    "allow_custom": 0,
+                    "layout": "vertical",
+                    "toggle": 0,
+                    "save_custom": 0,
+                    "custom_choice_button_text": "Add new choice"
                 },
                 {
                     "key": "field_69b43544b0003",
@@ -98,6 +64,26 @@
                     "default_value": "Client",
                     "maxlength": "",
                     "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_69bd197e34bec",
+                    "label": "Architects",
+                    "name": "architects",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "Architects",
+                    "maxlength": "",
                     "placeholder": "",
                     "prepend": "",
                     "append": ""
@@ -166,12 +152,32 @@
                     "append": ""
                 },
                 {
+                    "key": "field_69b43544a0001",
+                    "label": "First Section Label",
+                    "name": "first_section_label",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Label shown in the first column (e.g. \"About\")",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "About",
+                    "maxlength": "",
+                    "placeholder": "About",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
                     "key": "field_69b43544c0001",
-                    "label": "About",
+                    "label": "First Section Content",
                     "name": "about",
                     "aria-label": "",
                     "type": "wysiwyg",
-                    "instructions": "",
+                    "instructions": "Max. 300 characters",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -180,19 +186,38 @@
                         "id": ""
                     },
                     "default_value": "",
-                    "allow_in_bindings": 0,
-                    "tabs": "all",
-                    "toolbar": "full",
+                    "tabs": "visual",
+                    "toolbar": "basic",
                     "media_upload": 1,
                     "delay": 0
                 },
                 {
+                    "key": "field_69bd190734beb",
+                    "label": "Second Section Label",
+                    "name": "second_section_label",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Label shown in the first column (e.g. \"About\")",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "About",
+                    "maxlength": "",
+                    "placeholder": "About",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
                     "key": "field_69b43544d0001",
-                    "label": "Process",
-                    "name": "process",
+                    "label": "Second Section Content",
+                    "name": "second_section_content",
                     "aria-label": "",
                     "type": "wysiwyg",
-                    "instructions": "",
+                    "instructions": "Max. 300 characters",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -201,7 +226,6 @@
                         "id": ""
                     },
                     "default_value": "",
-                    "allow_in_bindings": 0,
                     "tabs": "all",
                     "toolbar": "full",
                     "media_upload": 1,
@@ -212,8 +236,8 @@
                     "label": "Additional Info (Optional)",
                     "name": "additional_info",
                     "aria-label": "",
-                    "type": "textarea",
-                    "instructions": "",
+                    "type": "wysiwyg",
+                    "instructions": "Max. 300 characters",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -222,11 +246,10 @@
                         "id": ""
                     },
                     "default_value": "",
-                    "maxlength": 400,
-                    "allow_in_bindings": 0,
-                    "rows": "",
-                    "placeholder": "",
-                    "new_lines": ""
+                    "tabs": "all",
+                    "toolbar": "full",
+                    "media_upload": 1,
+                    "delay": 0
                 },
                 {
                     "key": "field_69b43544e0001",
@@ -306,5 +329,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1773914383
+    "modified": 1774021643
 }
