@@ -1099,11 +1099,6 @@ h6 {
   border-width: 1px;
 }
 
-.bg-tertiary {
-  --tw-bg-opacity: 1;
-  background-color: rgb(26 26 26 / var(--tw-bg-opacity, 1));
-}
-
 .object-cover {
   -o-object-fit: cover;
      object-fit: cover;
