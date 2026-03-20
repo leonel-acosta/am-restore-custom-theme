@@ -20,6 +20,7 @@ $page_id = get_the_ID();
     </main>
 </div>
 
+<?php get_template_part('template-parts/featured-projects', null, ['post_id' => $page_id]); ?>
 <?php get_template_part('template-parts/cta'); ?>
 
 <?php get_footer(); ?>
