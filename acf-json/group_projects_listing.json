@@ -1,0 +1,130 @@
+{
+    "key": "group_6proj_listing_001",
+    "title": "Projects Listing Page",
+    "fields": [
+        {
+            "key": "field_6proj_heading",
+            "label": "Page Heading",
+            "name": "page_heading",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Overrides the page title. Leave empty to use the page title (or category name for single-category template).",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": { "width": "", "class": "", "id": "" },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_6proj_subtitle",
+            "label": "Page Subtitle",
+            "name": "page_subtitle",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": { "width": "", "class": "", "id": "" },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 0
+        },
+        {
+            "key": "field_6proj_theme",
+            "label": "Sections Theme",
+            "name": "sections_theme",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "Background colour for the project grid sections.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": { "width": "", "class": "", "id": "" },
+            "choices": {
+                "light": "Light",
+                "white": "White",
+                "dark": "Dark"
+            },
+            "default_value": "light",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_6proj_per_section",
+            "label": "Posts per Section",
+            "name": "posts_per_section",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "How many project cards to show per category section (default 9). A \u201cMore Projects\u201d link appears automatically when there are more.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": { "width": "", "class": "", "id": "" },
+            "default_value": 9,
+            "min": 1,
+            "max": 50,
+            "step": 1,
+            "placeholder": "9",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_6proj_cat_filter",
+            "label": "Category",
+            "name": "category_filter",
+            "aria-label": "",
+            "type": "taxonomy",
+            "instructions": "Used by the \u201cProjects - Single Category\u201d template. Ignored on the all-categories template. New categories appear here automatically.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": { "width": "", "class": "", "id": "" },
+            "taxonomy": "category",
+            "add_term": 0,
+            "save_terms": 0,
+            "load_terms": 0,
+            "return_format": "object",
+            "field_type": "select",
+            "allow_null": 1,
+            "multiple": 0
+        },
+        {
+            "key": "field_6proj_enable_pag",
+            "label": "Display Mode",
+            "name": "enable_pagination",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "On: show posts paginated (uses \u201cPosts per Section\u201d as page size). Off: show all posts at once.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": { "width": "", "class": "", "id": "" },
+            "message": "",
+            "default_value": 1,
+            "ui": 1,
+            "ui_on_text": "Paginated",
+            "ui_off_text": "Full list"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_template",
+                "operator": "==",
+                "value": "templates\/projects-single-category.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0
+}
