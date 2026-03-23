@@ -297,6 +297,27 @@ add_filter('acf/settings/load_json', function ($paths) {
 	return $paths;
 });
 
+// Migrate stale radio-button slug to a proper term ID for the taxonomy field.
+// Covers both frontend (load_value) and admin field rendering (prepare_field).
+// Safe to remove once all pages have been re-saved with the new taxonomy dropdown.
+function am_restore_migrate_category_filter_slug( $value ) {
+	if ( ! $value || is_numeric( $value ) ) {
+		return $value;
+	}
+	$term = get_term_by( 'slug', $value, 'category' );
+	return ( $term && ! is_wp_error( $term ) ) ? $term->term_id : null;
+}
+add_filter( 'acf/load_value/name=category_filter', 'am_restore_migrate_category_filter_slug', 1 );
+
+// Also sanitize during admin field preparation so ACF doesn't try to load
+// the old string slug as a term ID before our load_value filter can run.
+add_filter( 'acf/prepare_field/name=category_filter', function ( $field ) {
+	if ( ! empty( $field['value'] ) && ! is_numeric( $field['value'] ) ) {
+		$field['value'] = am_restore_migrate_category_filter_slug( $field['value'] );
+	}
+	return $field;
+} );
+
 function am_restore_scripts()
 {
 	$theme   = wp_get_theme();

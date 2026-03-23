@@ -1,0 +1,184 @@
+{
+    "key": "group_6proj_all_cats_001",
+    "title": "Projects - All Categories Page",
+    "fields": [
+        {
+            "key": "field_6proj_all_sections",
+            "label": "Category Sections",
+            "name": "category_sections",
+            "aria-label": "",
+            "type": "flexible_content",
+            "instructions": "Add one section per category. Drag to reorder.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layouts": {
+                "layout_6proj_cat_section": {
+                    "key": "layout_6proj_cat_section",
+                    "name": "category_section",
+                    "label": "Category Section",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_6proj_all_cat",
+                            "label": "Category",
+                            "name": "category",
+                            "aria-label": "",
+                            "type": "taxonomy",
+                            "instructions": "Which category to display. New categories appear here automatically.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "taxonomy": "category",
+                            "add_term": 0,
+                            "save_terms": 0,
+                            "load_terms": 0,
+                            "return_format": "object",
+                            "field_type": "select",
+                            "allow_null": 1,
+                            "multiple": 0
+                        },
+                        {
+                            "key": "field_6proj_all_title",
+                            "label": "Section Title",
+                            "name": "section_title",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "Leave empty to use the category name.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": ""
+                        },
+                        {
+                            "key": "field_6proj_all_subtitle",
+                            "label": "Subtitle",
+                            "name": "section_subtitle",
+                            "aria-label": "",
+                            "type": "wysiwyg",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "tabs": "all",
+                            "toolbar": "basic",
+                            "media_upload": 0,
+                            "delay": 0
+                        },
+                        {
+                            "key": "field_6proj_all_link",
+                            "label": "More Projects Link",
+                            "name": "more_link",
+                            "aria-label": "",
+                            "type": "url",
+                            "instructions": "Optional. Overrides the automatic link to \/projekte\/{category-slug}\/.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_6proj_all_theme",
+                            "label": "Theme",
+                            "name": "theme",
+                            "aria-label": "",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "light": "Light",
+                                "white": "White",
+                                "dark": "Dark"
+                            },
+                            "default_value": "light",
+                            "return_format": "value",
+                            "multiple": 0,
+                            "allow_null": 0,
+                            "ui": 0,
+                            "ajax": 0,
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_6proj_all_limit",
+                            "label": "Posts per Section",
+                            "name": "posts_limit",
+                            "aria-label": "",
+                            "type": "number",
+                            "instructions": "How many cards to show. A “More Projects” link appears when there are more.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": 9,
+                            "min": 1,
+                            "max": 50,
+                            "step": 1,
+                            "placeholder": 9,
+                            "prepend": "",
+                            "append": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                }
+            },
+            "min": "",
+            "max": "",
+            "button_label": "Add Category Section"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_template",
+                "operator": "==",
+                "value": "templates\/projects-listing.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1774275275
+}
