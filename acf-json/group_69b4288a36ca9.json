@@ -154,6 +154,13 @@
                 "operator": "==",
                 "value": "templates\/project-page.php"
             }
+        ],
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "13"
+            }
         ]
     ],
     "menu_order": 5,
@@ -165,5 +172,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1774035715
+    "modified": 1774341275
 }
