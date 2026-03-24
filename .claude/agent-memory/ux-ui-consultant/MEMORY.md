@@ -60,5 +60,22 @@
 - outline: none on focus states (a, details:focus, btn) — accessibility concern
 - Section titles use text-transform: uppercase — appropriate for the brand tone
 
-## Details Link
-See full review delivered on 2026-03-16.
+## Contact Page / Text-Media Section Form
+- Template: templates/contact-page.php + template-parts/text-media-section.php
+- ACF field group: group_contact_page_001.json (default theme in ACF = 'light', not 'dark')
+- Form rendered via do_shortcode() inside .text-image-section__embed
+- Form CSS lives in compiled style.css lines ~6572–6889 (no dedicated SCSS partial yet — written directly to style.css)
+- No .wpcf7-not-valid error state styles defined anywhere in the theme
+- No prefers-reduced-motion guard on any animation in the theme
+- outline: none applied globally to inputs (line 6690) — focus ring completely absent
+- Label opacity: 0.7 — fails WCAG AA in dark theme (#1e1e1e bg): white*0.7 = ~rgba(255,255,255,0.7) = approx 10.8:1 (passes); body text rgba(255,255,255,0.85) = ~12.6:1 (passes). Light/white theme: 0.7 opacity on #333333 over #f5f5f3 ≈ 4.2:1 — FAILS AA by small margin
+- Placeholder: rgba(255,255,255,0.4) on #1e1e1e ≈ 2.9:1 — FAILS; rgba(0,0,0,0.35) on #f5f5f3 ≈ 3.2:1 — FAILS (placeholders exempt from WCAG but still a usability concern)
+- Textarea: 80px height, resize: none — too compact for message fields
+- Checkbox/radio: 14x14px — below 24x24px recommended touch target
+- Submit button: transparent bg, low-contrast border — does not read as primary CTA
+- No wpcf7 spinner/loading state styled
+- text-media-section.php uses same .text-image-section CSS classes (shared with image variant)
+
+## Details Links
+- Full site review delivered on 2026-03-16.
+- Contact form audit delivered on 2026-03-24.
