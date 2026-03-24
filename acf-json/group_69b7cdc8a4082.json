@@ -25,8 +25,6 @@
                     "name": "intro",
                     "label": "Intro",
                     "display": "block",
-                    "min": "",
-                    "max": "",
                     "sub_fields": [
                         {
                             "key": "field_69b7d100b0001",
@@ -37,7 +35,11 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
                             "default_value": "Specialist services for every stage of concrete conservation and restoration.",
                             "maxlength": "",
                             "allow_in_bindings": 0,
@@ -54,7 +56,11 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
                             "default_value": "",
                             "allow_in_bindings": 0,
                             "tabs": "all",
@@ -62,15 +68,15 @@
                             "media_upload": 1,
                             "delay": 0
                         }
-                    ]
+                    ],
+                    "min": "",
+                    "max": ""
                 },
                 {
                     "key": "layout_69b7d100a0002",
                     "name": "planning",
                     "label": "Planning",
                     "display": "block",
-                    "min": "",
-                    "max": "",
                     "sub_fields": [
                         {
                             "key": "field_69b7d100c0001",
@@ -81,7 +87,11 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
                             "default_value": "Planning",
                             "maxlength": "",
                             "allow_in_bindings": 0,
@@ -98,7 +108,11 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
                             "default_value": "Every successful restoration begins with a precise understanding of the structure. Our planning services cover damage assessment, condition surveys, restoration concepts and full project supervision — ensuring that every intervention is documented, justified and aligned with heritage protection requirements.",
                             "allow_in_bindings": 0,
                             "tabs": "all",
@@ -115,7 +129,11 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
                             "default_value": "KNOW MORE",
                             "maxlength": "",
                             "allow_in_bindings": 0,
@@ -132,7 +150,11 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
                             "default_value": "",
                             "allow_in_bindings": 0,
                             "placeholder": ""
@@ -146,7 +168,11 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
                             "return_format": "array",
                             "library": "all",
                             "min_width": "",
@@ -159,15 +185,15 @@
                             "allow_in_bindings": 0,
                             "preview_size": "medium"
                         }
-                    ]
+                    ],
+                    "min": "",
+                    "max": ""
                 },
                 {
                     "key": "layout_69b7d100a0004",
                     "name": "execution",
                     "label": "Execution",
                     "display": "block",
-                    "min": "",
-                    "max": "",
                     "sub_fields": [
                         {
                             "key": "field_69b7d100e0001",
@@ -178,7 +204,11 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
                             "default_value": "Execution",
                             "maxlength": "",
                             "allow_in_bindings": 0,
@@ -195,7 +225,11 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
                             "default_value": "With decades of hands-on experience in concrete repair, retouching and conservation, our execution services translate planning into results. We work with historic concrete, exposed architectural surfaces and listed structures — applying the methods and materials that each specific case demands.",
                             "allow_in_bindings": 0,
                             "tabs": "all",
@@ -212,7 +246,11 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
                             "default_value": "KNOW MORE",
                             "maxlength": "",
                             "allow_in_bindings": 0,
@@ -229,7 +267,11 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
                             "default_value": "",
                             "allow_in_bindings": 0,
                             "placeholder": ""
@@ -243,7 +285,11 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
                             "return_format": "array",
                             "library": "all",
                             "min_width": "",
@@ -256,15 +302,15 @@
                             "allow_in_bindings": 0,
                             "preview_size": "medium"
                         }
-                    ]
+                    ],
+                    "min": "",
+                    "max": ""
                 },
                 {
                     "key": "layout_69b7d100a0003",
                     "name": "about_section",
                     "label": "About Section",
                     "display": "block",
-                    "min": "",
-                    "max": "",
                     "sub_fields": [
                         {
                             "key": "field_69b7d100d0001",
@@ -275,7 +321,11 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
                             "default_value": "We are qualified restorers, artists, sculptors, concrete workers and craftsmen.",
                             "maxlength": "",
                             "allow_in_bindings": 0,
@@ -292,7 +342,11 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
                             "default_value": "In the planning and execution of our projects, we apply our knowledge from the various fields of conservation, restoration, painting restoration, painting, sculpture, craftsmanship and the restoration of restoration of listed buildings.",
                             "maxlength": "",
                             "allow_in_bindings": 0,
@@ -309,7 +363,11 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
                             "default_value": "PROJECTS",
                             "maxlength": "",
                             "allow_in_bindings": 0,
@@ -326,7 +384,11 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
                             "default_value": "",
                             "allow_in_bindings": 0,
                             "placeholder": ""
@@ -340,7 +402,11 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
                             "return_format": "array",
                             "library": "all",
                             "min": 6,
@@ -356,7 +422,9 @@
                             "insert": "append",
                             "preview_size": "medium"
                         }
-                    ]
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             ]
         }
@@ -366,7 +434,7 @@
             {
                 "param": "page",
                 "operator": "==",
-                "value": "32"
+                "value": "13"
             }
         ]
     ],
@@ -376,8 +444,8 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": true,
+    "active": false,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1773700000
+    "modified": 1774341300
 }
