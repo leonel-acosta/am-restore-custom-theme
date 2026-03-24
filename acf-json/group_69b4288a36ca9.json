@@ -161,6 +161,13 @@
                 "operator": "==",
                 "value": "13"
             }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "templates\/service-type-page.php"
+            }
         ]
     ],
     "menu_order": 5,
@@ -172,5 +179,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1774341275
+    "modified": 1774348823
 }
