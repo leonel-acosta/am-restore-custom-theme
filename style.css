@@ -6560,8 +6560,8 @@ footer p {
     padding-bottom: 32px;
   }
   .text-section--padding-md .text-section__inner {
-    padding-top: 48px;
-    padding-bottom: 48px;
+    padding-top: 5rem;
+    padding-bottom: 2.5rem;
   }
   .text-section--padding-lg .text-section__inner {
     padding-top: 64px;
@@ -6628,18 +6628,21 @@ footer p {
   color: #1a1a1a;
 }
 
-/* Border top + bottom — dark scheme: gris muy claro */
-.text-image-section--bordered {
-  border-top: 1px solid #3d3d3d;
-  border-bottom: 1px solid #3d3d3d;
-}
+/* Border — dark scheme */
+.text-image-section--bordered,
+.text-image-section--border-both  { border-top: 1px solid #3d3d3d; border-bottom: 1px solid #3d3d3d; }
+.text-image-section--border-top   { border-top: 1px solid #3d3d3d; }
+.text-image-section--border-bottom { border-bottom: 1px solid #3d3d3d; }
 
-/* Border — light + white scheme: gris oscuro */
+/* Border — light + white scheme */
 .text-image-section--light.text-image-section--bordered,
-.text-image-section--white.text-image-section--bordered {
-  border-top-color: #999999;
-  border-bottom-color: #999999;
-}
+.text-image-section--white.text-image-section--bordered,
+.text-image-section--light.text-image-section--border-both,
+.text-image-section--white.text-image-section--border-both  { border-top-color: #999999; border-bottom-color: #999999; }
+.text-image-section--light.text-image-section--border-top,
+.text-image-section--white.text-image-section--border-top   { border-top-color: #999999; }
+.text-image-section--light.text-image-section--border-bottom,
+.text-image-section--white.text-image-section--border-bottom { border-bottom-color: #999999; }
 
 .text-image-section__text {
   padding: 80px 60px 80px 0;
@@ -6653,6 +6656,243 @@ footer p {
   aspect-ratio: 4 / 3;
   max-width: 500px;
   flex-shrink: 0;
+}
+
+/* When the wrap contains a form embed, lift the image constraints */
+.text-image-section__image-wrap:has(.text-image-section__embed) {
+  aspect-ratio: unset;
+  max-width: none;
+  flex-shrink: 1;
+  align-self: stretch;
+  width: 100%;
+}
+
+.text-image-section__embed {
+  width: 100%;
+}
+.text-image-section__embed iframe,
+.text-image-section__embed > * {
+  width: 100%;
+  display: block;
+}
+
+/* Contact form inside embed column
+-------------------------------------------------------------- */
+.text-image-section__embed .wpcf7,
+.text-image-section__embed form {
+  text-align: left;
+}
+
+/* Inputs & textarea */
+.text-image-section__embed input[type="text"],
+.text-image-section__embed input[type="email"],
+.text-image-section__embed input[type="tel"],
+.text-image-section__embed input[type="url"],
+.text-image-section__embed textarea {
+  width: 100%;
+  display: block;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 0;
+  padding: 10px 0;
+  color: inherit;
+  font-size: 16px; /* prevents iOS Safari auto-zoom on focus */
+  line-height: 1.5;
+  outline: none;
+  transition: border-color 0.2s ease, border-bottom-width 0.1s ease;
+}
+
+/* Mouse focus — subtle underline change only */
+.text-image-section__embed input[type="text"]:focus:not(:focus-visible),
+.text-image-section__embed input[type="email"]:focus:not(:focus-visible),
+.text-image-section__embed input[type="tel"]:focus:not(:focus-visible),
+.text-image-section__embed input[type="url"]:focus:not(:focus-visible),
+.text-image-section__embed textarea:focus:not(:focus-visible) {
+  outline: none;
+  border-bottom-color: currentColor;
+}
+
+/* Keyboard focus — thicker underline + subtle shadow for visibility */
+.text-image-section__embed input[type="text"]:focus-visible,
+.text-image-section__embed input[type="email"]:focus-visible,
+.text-image-section__embed input[type="tel"]:focus-visible,
+.text-image-section__embed input[type="url"]:focus-visible,
+.text-image-section__embed textarea:focus-visible {
+  outline: none;
+  border-bottom-width: 2px;
+  border-bottom-color: currentColor;
+  box-shadow: 0 2px 0 0 currentColor;
+}
+
+/* Light / white theme — dark border */
+.text-image-section--light .text-image-section__embed input[type="text"],
+.text-image-section--light .text-image-section__embed input[type="email"],
+.text-image-section--light .text-image-section__embed input[type="tel"],
+.text-image-section--light .text-image-section__embed input[type="url"],
+.text-image-section--light .text-image-section__embed textarea,
+.text-image-section--white .text-image-section__embed input[type="text"],
+.text-image-section--white .text-image-section__embed input[type="email"],
+.text-image-section--white .text-image-section__embed input[type="tel"],
+.text-image-section--white .text-image-section__embed input[type="url"],
+.text-image-section--white .text-image-section__embed textarea {
+  border-bottom-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Textarea — taller + resizable */
+.text-image-section__embed textarea {
+  height: 120px;
+  min-height: 80px;
+  resize: vertical;
+}
+
+/* Placeholder contrast */
+.text-image-section__embed input::placeholder,
+.text-image-section__embed textarea::placeholder {
+  color: rgba(255, 255, 255, 0.55);
+}
+.text-image-section--light .text-image-section__embed input::placeholder,
+.text-image-section--light .text-image-section__embed textarea::placeholder,
+.text-image-section--white .text-image-section__embed input::placeholder,
+.text-image-section--white .text-image-section__embed textarea::placeholder {
+  color: rgba(0, 0, 0, 0.45);
+}
+
+/* Labels — explicit color per theme instead of opacity (WCAG AA contrast) */
+.text-image-section__embed label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  width: 100%;
+  margin-bottom: 18px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.75); /* ~11:1 on #1e1e1e */
+  text-align: left;
+}
+.text-image-section--light .text-image-section__embed label,
+.text-image-section--white .text-image-section__embed label {
+  color: #5a5a5a; /* 5.9:1 on light/white — passes WCAG AA */
+}
+.text-image-section__embed .wpcf7-form-control-wrap {
+  display: block;
+  width: 100%;
+}
+
+/* Checkbox & radio */
+.text-image-section__embed input[type="checkbox"],
+.text-image-section__embed input[type="radio"] {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  padding: 0;
+  accent-color: #8b1a2f;
+  cursor: pointer;
+}
+.text-image-section__embed .wpcf7-checkbox,
+.text-image-section__embed .wpcf7-radio,
+.text-image-section__embed .wpcf7-acceptance {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 0;
+}
+.text-image-section__embed .wpcf7-checkbox .wpcf7-list-item,
+.text-image-section__embed .wpcf7-radio .wpcf7-list-item,
+.text-image-section__embed .wpcf7-acceptance .wpcf7-list-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  min-height: 44px; /* adequate touch target */
+  padding: 4px 0;
+  cursor: pointer;
+}
+.text-image-section__embed .wpcf7-checkbox .wpcf7-list-item label,
+.text-image-section__embed .wpcf7-radio .wpcf7-list-item label,
+.text-image-section__embed .wpcf7-acceptance .wpcf7-list-item label {
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 0;
+  font-size: 13px;
+  letter-spacing: 0;
+  text-transform: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+/* Submit button — primary color, all themes */
+.text-image-section__embed input[type="submit"],
+.text-image-section__embed .wpcf7-submit {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 12px 36px;
+  background: #8b1a2f;
+  border: 2px solid #8b1a2f;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+.text-image-section__embed input[type="submit"]:hover,
+.text-image-section__embed .wpcf7-submit:hover {
+  background: #6e1525;
+  border-color: #6e1525;
+  color: #ffffff;
+}
+.text-image-section__embed input[type="submit"]:focus-visible,
+.text-image-section__embed .wpcf7-submit:focus-visible {
+  outline: 2px solid #8b1a2f;
+  outline-offset: 3px;
+}
+
+/* Submitting state — prevent double-submit */
+.text-image-section__embed form.submitting input[type="submit"],
+.text-image-section__embed form.submitting .wpcf7-submit {
+  opacity: 0.55;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+.text-image-section__embed form.submitting .wpcf7-submit::after {
+  content: " …";
+}
+
+/* Error states — visible validation feedback */
+.text-image-section__embed .wpcf7-not-valid {
+  border-bottom-color: #e05050 !important;
+  border-bottom-width: 2px;
+}
+.text-image-section__embed .wpcf7-not-valid-tip {
+  display: block;
+  margin-top: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: none;
+  color: #e05050;
+  opacity: 1;
+}
+.text-image-section__embed .wpcf7-response-output {
+  margin-top: 16px;
+  padding: 10px 14px;
+  border-left: 3px solid currentColor;
+  font-size: 13px;
+  opacity: 0.9;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .text-image-section__embed form.submitting .wpcf7-submit::after {
+    animation: none;
+    content: " …";
+  }
 }
 
 .text-image-section__heading {
@@ -6701,9 +6941,24 @@ footer p {
 }
 
 @media (max-width: 940px) {
+  .text-image-section .text-image-section__inner {
+    padding-top: 5rem;
+    padding-bottom: 2.5rem;
+  }
   .text-image-section__text,
   .text-image-section--reversed .text-image-section__text {
-    padding: 48px 24px 32px;
+    padding: 0;
+  }
+  /* Let the form column grow to fit content on mobile */
+  .text-image-section__image-wrap:has(.text-image-section__embed) {
+    width: 100%;
+    height: auto;
+    aspect-ratio: unset;
+    max-width: none;
+  }
+  .text-image-section__embed .wpcf7,
+  .text-image-section__embed form {
+    padding-bottom: 1rem;
   }
 }
 
