@@ -6713,6 +6713,90 @@ footer p {
   }
 }
 
+/* Page Intro
+-------------------------------*/
+
+.page-intro {
+  padding: 0;
+}
+
+.page-intro__inner {
+  display: flex;
+  align-items: flex-start;
+}
+
+.page-intro__label {
+  flex: 0 0 50%;
+}
+
+.page-intro__label-text {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  margin: 0;
+  padding-top: 0.25rem;
+}
+
+.page-intro__content {
+  flex: 0 0 50%;
+}
+
+@media (min-width: 940px) {
+  .page-intro__content--bordered {
+    border-top: 1px solid #3d3d3d;
+    padding-top: 28px;
+  }
+
+  .page-intro--light .page-intro__content--bordered,
+  .page-intro--white .page-intro__content--bordered {
+    border-top-color: #999999;
+  }
+
+  .page-intro--dark .page-intro__content--bordered {
+    border-top-color: rgba(255,255,255,0.3);
+  }
+}
+
+.page-intro__body > *:first-child { margin-top: 0; }
+.page-intro__body > *:last-child  { margin-bottom: 0; }
+
+.page-intro__btn {
+  display: inline-block;
+  margin-top: 1.5rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+}
+
+/* Themes */
+.page-intro--light {
+  background-color: var(--color-light, #f0f0ee);
+  color: var(--color-dark, #1e1e1e);
+}
+.page-intro--light .page-intro__btn { color: var(--color-dark, #1e1e1e); }
+
+.page-intro--white {
+  background-color: #fff;
+  color: var(--color-dark, #1e1e1e);
+}
+.page-intro--white .page-intro__btn { color: var(--color-dark, #1e1e1e); }
+
+.page-intro--dark {
+  background-color: var(--color-dark, #1e1e1e);
+  color: #fff;
+}
+.page-intro--dark .page-intro__btn { color: #fff; }
+
+@media (max-width: 768px) {
+  .page-intro__inner {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .page-intro__label { flex: none; }
+}
+
 /* Service Card
 -------------------------------*/
 
