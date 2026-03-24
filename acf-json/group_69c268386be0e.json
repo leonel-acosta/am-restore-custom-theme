@@ -301,6 +301,32 @@
                     "allow_null": 0,
                     "layout": "horizontal",
                     "parent_repeater": "field_69c2683885819"
+                },
+                {
+                    "key": "field_69c26838f0001",
+                    "label": "Border",
+                    "name": "border",
+                    "aria-label": "",
+                    "type": "button_group",
+                    "instructions": "Add a 1px border matching the container width.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "": "None",
+                        "top": "Top",
+                        "bottom": "Bottom",
+                        "both": "Both"
+                    },
+                    "default_value": "",
+                    "return_format": "value",
+                    "allow_null": 1,
+                    "layout": "horizontal",
+                    "parent_repeater": "field_69c2683885819"
                 }
             ]
         },
