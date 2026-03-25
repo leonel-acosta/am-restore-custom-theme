@@ -5546,13 +5546,11 @@ footer p {
 }
 
 #page.site {
-  padding-top: 150px;
+  padding-top: var(--am-header-h);
 }
 
-@media only screen and (max-width: 800px) {
-  #page.site {
-    padding-top: 130px;
-  }
+.admin-bar #page.site {
+  padding-top: calc(var(--am-header-h) + 32px);
 }
 
 .site-header .container {
@@ -8079,4 +8077,276 @@ footer p {
   position: absolute;
   top: -2rem;
   margin: 0;
+}
+
+
+/* ============================================================
+   AM Header — new custom header
+   ============================================================ */
+
+:root {
+  --am-header-h: 85px;
+}
+
+/* Default — light header (all pages except homepage) */
+.am-header {
+  --am-header-bg:         #ffffff;
+  --am-header-border:     rgba(0, 0, 0, 0.08);
+  --am-header-link:       rgba(0, 0, 0, 0.6);
+  --am-header-link-hover: #111111;
+  --am-header-bar:        #1a1a1a;
+  --am-header-sub-link:   rgba(0, 0, 0, 0.45);
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--am-header-h);
+  background: var(--am-header-bg);
+  border-bottom: 1px solid var(--am-header-border);
+  z-index: 200;
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+/* Homepage — dark header */
+.home .am-header {
+  --am-header-bg:         #1a1a1a;
+  --am-header-border:     rgba(255, 255, 255, 0.08);
+  --am-header-link:       rgba(255, 255, 255, 0.7);
+  --am-header-link-hover: #ffffff;
+  --am-header-bar:        #ffffff;
+  --am-header-sub-link:   rgba(255, 255, 255, 0.45);
+}
+
+.admin-bar .am-header { top: 32px; }
+
+.am-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--am-header-h);
+  width: 100%;
+}
+
+/* Logo
+-------------------------------------------------------------- */
+.am-header__logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  text-decoration: none;
+}
+
+.am-header__logo-img {
+  display: block;
+  height: 40px;
+  width: auto;
+}
+
+/* Invert dark logo to white on the dark homepage header */
+.home .am-header__logo-img {
+  filter: brightness(0) invert(1);
+}
+
+.am-header__logo-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--am-header-link-hover);
+  text-decoration: none;
+}
+
+/* Desktop nav
+-------------------------------------------------------------- */
+.am-header__nav {
+  margin-left: auto;
+}
+
+.am-header__menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 4px;
+}
+
+.am-header__menu li {
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+.am-header__menu > li > a {
+  display: block;
+  padding: 6px 14px;
+  color: var(--am-header-link);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.am-header__menu > li > a:hover,
+.am-header__menu > li.current-menu-item > a,
+.am-header__menu > li.current-menu-ancestor > a {
+  color: var(--am-header-link-hover);
+}
+
+/* Desktop sub-menu
+-------------------------------------------------------------- */
+.am-header__menu .sub-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 200px;
+  background: var(--am-header-bg);
+  border: 1px solid var(--am-header-border);
+  list-style: none;
+  margin: 0;
+  padding: 8px 0;
+  z-index: 201;
+}
+
+.am-header__menu li:hover > .sub-menu { display: block; }
+
+.am-header__menu .sub-menu a {
+  display: block;
+  padding: 10px 20px;
+  color: var(--am-header-sub-link);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.am-header__menu .sub-menu a:hover {
+  color: var(--am-header-link-hover);
+}
+
+/* Burger — hidden on desktop
+-------------------------------------------------------------- */
+.am-header__burger {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  width: 44px;
+  height: var(--am-header-h);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.am-header__bars {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  transition: transform 0.3s ease;
+}
+
+.am-header__bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--am-header-bar);
+  border-radius: 1px;
+}
+
+/* Open state: rotate bars 90° */
+.am-header__burger.is-open .am-header__bars {
+  transform: rotate(90deg);
+}
+
+/* Mobile — ≤ 1140px
+-------------------------------------------------------------- */
+@media (max-width: 1140px) {
+
+  /* Dropdown: animate with opacity + slide */
+  .am-header__nav {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-6px);
+    transition: opacity    0.25s ease,
+                transform  0.25s ease,
+                visibility 0s linear 0.25s;
+
+    position: fixed;
+    top: var(--am-header-h);
+    left: 0;
+    right: 0;
+    background: var(--am-header-bg);
+    border-bottom: 1px solid var(--am-header-border);
+    padding: 12px 0 20px;
+    z-index: 199;
+    overflow-y: auto;
+    max-height: calc(100vh - var(--am-header-h));
+    margin-left: 0;
+  }
+
+  .admin-bar .am-header__nav {
+    top: calc(var(--am-header-h) + 32px);
+    max-height: calc(100vh - var(--am-header-h) - 32px);
+  }
+
+  .am-header__nav.is-open {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+    transition: opacity    0.25s ease,
+                transform  0.25s ease,
+                visibility 0s linear 0s;
+  }
+
+  /* Burger visible, pinned to right */
+  .am-header__burger {
+    display: flex;
+  }
+
+  /* Nav list: stacked */
+  .am-header__menu {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    padding: 0 1rem;
+  }
+
+  .am-header__menu > li {
+    width: 100%;
+    border-bottom: 1px solid var(--am-header-border);
+  }
+
+  .am-header__menu > li:first-child {
+    border-top: 1px solid var(--am-header-border);
+  }
+
+  .am-header__menu > li > a {
+    padding: 14px 0;
+    font-size: 13px;
+  }
+
+  /* Sub-menus: always visible, indented */
+  .am-header__menu .sub-menu {
+    display: block;
+    position: static;
+    background: transparent;
+    border: none;
+    padding: 0 0 8px 16px;
+  }
+
+  .am-header__menu .sub-menu a {
+    padding: 8px 0;
+    font-size: 12px;
+    color: var(--am-header-sub-link);
+  }
+
+  .am-header__menu .sub-menu a:hover {
+    color: var(--am-header-link-hover);
+  }
 }
