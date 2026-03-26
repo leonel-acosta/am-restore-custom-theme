@@ -5549,10 +5549,6 @@ footer p {
   padding-top: var(--am-header-h);
 }
 
-.admin-bar #page.site {
-  padding-top: calc(var(--am-header-h) + 32px);
-}
-
 .site-header .container {
   display: flex !important;
   align-items: center !important;
@@ -8092,11 +8088,12 @@ footer p {
 .am-header {
   --am-header-bg:         #ffffff;
   --am-header-border:     rgba(0, 0, 0, 0.08);
-  --am-header-link:       rgba(0, 0, 0, 0.6);
-  --am-header-link-hover: #111111;
+  --am-header-link:       rgba(0, 0, 0, 0.78);
+  --am-header-link-hover: #000000;
   --am-header-bar:        #1a1a1a;
-  --am-header-sub-link:   rgba(0, 0, 0, 0.45);
+  --am-header-sub-link:   rgba(0, 0, 0, 0.65);
 
+  box-sizing: border-box;
   position: fixed;
   top: 0;
   left: 0;
@@ -8111,14 +8108,17 @@ footer p {
 /* Homepage — dark header */
 .home .am-header {
   --am-header-bg:         #1a1a1a;
-  --am-header-border:     rgba(255, 255, 255, 0.08);
-  --am-header-link:       rgba(255, 255, 255, 0.7);
+  --am-header-border:     rgba(255, 255, 255, 0.12);
+  --am-header-link:       rgba(255, 255, 255, 0.88);
   --am-header-link-hover: #ffffff;
   --am-header-bar:        #ffffff;
-  --am-header-sub-link:   rgba(255, 255, 255, 0.45);
+  --am-header-sub-link:   rgba(255, 255, 255, 0.7);
 }
 
 .admin-bar .am-header { top: 32px; }
+@media screen and (max-width: 782px) {
+  .admin-bar .am-header { top: 46px; }
+}
 
 .am-header__inner {
   display: flex;
@@ -8204,6 +8204,7 @@ footer p {
   min-width: 200px;
   background: var(--am-header-bg);
   border: 1px solid var(--am-header-border);
+  border-top: 2px solid #8b1a2f;
   list-style: none;
   margin: 0;
   padding: 8px 0;
@@ -8225,6 +8226,8 @@ footer p {
 
 .am-header__menu .sub-menu a:hover {
   color: var(--am-header-link-hover);
+  padding-left: 24px;
+  border-left: 3px solid #8b1a2f;
 }
 
 /* Burger — hidden on desktop
@@ -8331,13 +8334,15 @@ footer p {
     font-size: 13px;
   }
 
-  /* Sub-menus: always visible, indented */
+  /* Sub-menus: always visible, indented with bordeaux left accent */
   .am-header__menu .sub-menu {
     display: block;
     position: static;
     background: transparent;
     border: none;
-    padding: 0 0 8px 16px;
+    border-left: 2px solid #8b1a2f;
+    padding: 0 0 8px 14px;
+    margin-left: 2px;
   }
 
   .am-header__menu .sub-menu a {
@@ -8347,6 +8352,6 @@ footer p {
   }
 
   .am-header__menu .sub-menu a:hover {
-    color: var(--am-header-link-hover);
+    color: #8b1a2f;
   }
 }

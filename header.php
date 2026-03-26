@@ -20,7 +20,8 @@
 <div id="page" class="site">
     <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'screenr' ); ?></a>
 
-    <header id="masthead" class="am-header" role="banner">
+    <?php $header_layout = get_theme_mod( 'header_layout', 'default' ); ?>
+    <header id="masthead" class="am-header<?php echo $header_layout === 'transparent' ? ' am-header--transparent' : ''; ?>" role="banner">
         <div class="container">
             <div class="am-header__inner">
 
