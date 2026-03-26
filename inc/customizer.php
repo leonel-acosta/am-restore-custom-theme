@@ -365,6 +365,54 @@ function screenr_customize_register( $wp_customize ) {
         )
     ));
 
+    // Header Height
+    $wp_customize->add_setting( 'am_header_height',
+        array(
+            'sanitize_callback' => 'absint',
+            'default'           => 85,
+        )
+    );
+    $wp_customize->add_control( 'am_header_height',
+        array(
+            'type'        => 'number',
+            'label'       => esc_html__( 'Header Height (px)', 'screenr' ),
+            'section'     => 'header_settings',
+            'input_attrs' => array( 'min' => 40, 'max' => 200, 'step' => 1 ),
+        )
+    );
+
+    // Logo Max Height
+    $wp_customize->add_setting( 'am_logo_height',
+        array(
+            'sanitize_callback' => 'absint',
+            'default'           => 40,
+        )
+    );
+    $wp_customize->add_control( 'am_logo_height',
+        array(
+            'type'        => 'number',
+            'label'       => esc_html__( 'Logo Max Height (px)', 'screenr' ),
+            'section'     => 'header_settings',
+            'input_attrs' => array( 'min' => 20, 'max' => 150, 'step' => 1 ),
+        )
+    );
+
+    // Menu Font Size
+    $wp_customize->add_setting( 'am_menu_font_size',
+        array(
+            'sanitize_callback' => 'absint',
+            'default'           => 12,
+        )
+    );
+    $wp_customize->add_control( 'am_menu_font_size',
+        array(
+            'type'        => 'number',
+            'label'       => esc_html__( 'Menu Font Size (px)', 'screenr' ),
+            'section'     => 'header_settings',
+            'input_attrs' => array( 'min' => 10, 'max' => 24, 'step' => 1 ),
+        )
+    );
+
     /* Page Header
    ----------------------------------------------------------------------*/
 

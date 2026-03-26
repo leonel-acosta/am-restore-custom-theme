@@ -303,199 +303,79 @@ function screenr_custom_style() {
 	$layout = get_theme_mod( 'header_layout' );
 	ob_start();
 
-	if ( $layout != 'transparent' ) {
-		 /**
-		 * Header background
-		 */
-		$header_bg_color = get_theme_mod( 'header_bg_color' );
-		if ( $header_bg_color ) {
-			?>
-		.site-header, .is-fixed .site-header.header-fixed.transparent {
-			background: #<?php echo esc_attr( $header_bg_color ); ?>;
-			border-bottom: 0px none;
-		}
-			<?php
-		} // END $header_bg_color
-
-		/**
-		 * Menu color
-		 */
-		$menu_color = get_theme_mod( 'menu_color' );
-		if ( $menu_color ) {
-			?>
-		.nav-menu > li > a{
-			color: #<?php echo esc_attr( $menu_color ); ?>;
-		}
-
-			<?php
-		} // END $menu_color
-
-		/**
-		 * Menu hover color
-		 */
-		$menu_hover_color = get_theme_mod( 'menu_hover_color' );
-		if ( $menu_hover_color ) {
-			?>
-		.nav-menu > li > a:hover,
-		.nav-menu > li.current-menu-item > a {
-			color: #<?php echo esc_attr( $menu_hover_color ); ?>;
-			-webkit-transition: all 0.5s ease-in-out;
-			-moz-transition: all 0.5s ease-in-out;
-			-o-transition: all 0.5s ease-in-out;
-			transition: all 0.5s ease-in-out;
-		}
-			<?php
-		} // END $menu_hover_color
-
-		/**
-		 * Menu hover background color
-		 */
-		$menu_hover_bg = get_theme_mod( 'menu_hover_bg_color' );
-		if ( $menu_hover_bg ) {
-			?>
-		@media screen and (min-width: 1140px) {
-			.nav-menu > li:last-child > a {
-				padding-right: 17px;
-			}
-
-			.nav-menu > li > a:hover,
-			.nav-menu > li.current-menu-item > a {
-				background: #<?php echo esc_attr( $menu_hover_bg ); ?>;
-				-webkit-transition: all 0.5s ease-in-out;
-				-moz-transition: all 0.5s ease-in-out;
-				-o-transition: all 0.5s ease-in-out;
-				transition: all 0.5s ease-in-out;
-			}
-		}
-
-			<?php
-		} // END $menu_hover_bg
-	} else { // header transparent mod
-
-		/**
-		 * Header background
-		 */
-		$header_bg_color = get_theme_mod( 'header_t_bg_color' );
-		if ( $header_bg_color ) {
-			?>
-	.site-header.header-fixed.transparent {
-		background-color: <?php echo esc_attr( $header_bg_color ); ?>;
-		border-bottom: 0px none;
-	}
-			<?php
-		} // END $header_bg_color
-
-		/**
-		 * Menu color
-		 */
-		$menu_color = get_theme_mod( 'menu_t_color' );
-		if ( $menu_color ) {
-			?>
-		.nav-menu > li > a,
-		.no-scroll .sticky-header.transparent .nav-menu > li > a,
-		.sticky-header.transparent .nav-menu > li > a {
-			color: #<?php echo esc_attr( $menu_color ); ?>;
-		}
-
-			<?php
-		} // END $menu_color
-
-		/**
-		 * Menu hover color
-		 */
-		$menu_hover_color = get_theme_mod( 'menu_t_hover_color' );
-		if ( $menu_hover_color ) {
-			?>
-		.nav-menu > li > a:hover,
-		.nav-menu > li.current-menu-item > a,
-		.no-scroll .sticky-header.transparent .nav-menu > li.current-menu-item > a,
-		.sticky-header.transparent .nav-menu > li.current-menu-item > a {
-			color: #<?php echo esc_attr( $menu_hover_color ); ?>;
-			-webkit-transition: all 0.5s ease-in-out;
-			-moz-transition: all 0.5s ease-in-out;
-			-o-transition: all 0.5s ease-in-out;
-			transition: all 0.5s ease-in-out;
-		}
-		.sticky-header.transparent .nav-menu > li:hover > a::after, .sticky-header.transparent .nav-menu > li.current-menu-item > a::after {
-			border-bottom-color: #<?php echo esc_attr( $menu_hover_color ); ?>;
-		}
-			<?php
-		} // END $menu_hover_color
-
-		$menu_border_color = get_theme_mod( 'menu_t_hover_border_color' );
-		if ( $menu_border_color ) {
-			?>
-		.sticky-header.transparent .nav-menu > li:hover > a::after,
-		.sticky-header.transparent .nav-menu > li.current-menu-item > a::after {
-			border-bottom-color: #<?php echo esc_attr( $menu_border_color ); ?>;
-		}
-			<?php
-		}
-
-		/**
-		 * Menu hover background color
-		 */
-		$menu_hover_bg = get_theme_mod( 'menu_t_hover_bg_color' );
-		if ( $menu_hover_bg ) {
-			?>
-		@media screen and (min-width: 1140px) {
-			.nav-menu > li:last-child > a {
-				padding-right: 17px;
-			}
-
-			.nav-menu > li > a:hover,
-			.nav-menu > li.current-menu-item > a {
-				background: #<?php echo esc_attr( $menu_hover_bg ); ?>;
-				-webkit-transition: all 0.5s ease-in-out;
-				-moz-transition: all 0.5s ease-in-out;
-				-o-transition: all 0.5s ease-in-out;
-				transition: all 0.5s ease-in-out;
-			}
-		}
-			<?php
-		} // END $menu_hover_bg
-	} // end header & menu
-
 	/**
-	 * Reponsive Mobie button color
+	 * Header CSS custom properties
+	 * All colour/size settings for .am-header are output as CSS vars so every
+	 * child element that references them updates automatically.
 	 */
-	$menu_button_color = get_theme_mod( 'menu_toggle_button_color' );
-	if ( $menu_button_color ) {
-		?>
-	#nav-toggle span,
-	#nav-toggle span::before,
-	#nav-toggle span::after,
-	#nav-toggle.nav-is-visible span::before,
-	#nav-toggle.nav-is-visible span::after,
+	$header_vars = array();
 
-	.transparent #nav-toggle span,
-	.transparent #nav-toggle span::before,
-	.transparent #nav-toggle span::after,
-	.transparent #nav-toggle.nav-is-visible span::before,
-	.transparent #nav-toggle.nav-is-visible span::after
-	{
-		background-color: #<?php echo esc_attr( $menu_button_color ); ?>;
+	if ( $layout != 'transparent' ) {
+		$v = get_theme_mod( 'header_bg_color' );
+		if ( $v ) $header_vars[] = '--am-header-bg: #' . esc_attr( $v );
+
+		$v = get_theme_mod( 'menu_color' );
+		if ( $v ) $header_vars[] = '--am-header-link: #' . esc_attr( $v );
+
+		$v = get_theme_mod( 'menu_hover_color' );
+		if ( $v ) $header_vars[] = '--am-header-link-hover: #' . esc_attr( $v );
+	} else {
+		$v = get_theme_mod( 'header_t_bg_color' );
+		if ( $v ) $header_vars[] = '--am-header-bg: ' . esc_attr( $v );
+
+		$v = get_theme_mod( 'menu_t_color' );
+		if ( $v ) $header_vars[] = '--am-header-link: #' . esc_attr( $v );
+
+		$v = get_theme_mod( 'menu_t_hover_color' );
+		if ( $v ) $header_vars[] = '--am-header-link-hover: #' . esc_attr( $v );
 	}
 
-		<?php
+	$v = get_theme_mod( 'menu_toggle_button_color' );
+	if ( $v ) $header_vars[] = '--am-header-bar: #' . esc_attr( $v );
+
+	if ( $header_vars ) {
+		echo '.am-header {' . "\n\t" . implode( ";\n\t", $header_vars ) . ";\n}\n";
 	}
 
 	/**
-	 * Site Title
+	 * Logo text color (text-only logo fallback)
 	 */
 	$logo_text_color = get_theme_mod( 'logo_text_color' );
 	if ( $logo_text_color ) {
 		?>
-	.site-branding .site-title,
-	.site-branding .site-text-logo,
-	.site-branding .site-title a,
-	.site-branding .site-text-logo a,
-	.site-branding .site-description,
-	.transparent .site-branding .site-description,
-	.transparent .site-branding .site-title a {
+	.am-header__logo-name {
 		color: #<?php echo esc_attr( $logo_text_color ); ?>;
 	}
+		<?php
+	}
 
+	/**
+	 * Header height
+	 */
+	$header_h = absint( get_theme_mod( 'am_header_height', 85 ) );
+	if ( $header_h && $header_h !== 85 ) {
+		?>
+	:root { --am-header-h: <?php echo $header_h; ?>px; }
+		<?php
+	}
+
+	/**
+	 * Logo image max-height
+	 */
+	$logo_h = absint( get_theme_mod( 'am_logo_height', 40 ) );
+	if ( $logo_h && $logo_h !== 40 ) {
+		?>
+	.am-header__logo-img { height: <?php echo $logo_h; ?>px; }
+		<?php
+	}
+
+	/**
+	 * Menu font size
+	 */
+	$font_size = absint( get_theme_mod( 'am_menu_font_size', 12 ) );
+	if ( $font_size && $font_size !== 12 ) {
+		?>
+	.am-header__menu > li > a { font-size: <?php echo $font_size; ?>px; }
 		<?php
 	}
 
@@ -706,7 +586,7 @@ function screenr_custom_style() {
 	if ( screenr_is_selective_refresh() ) {
 		return $css;
 	} else {
-		wp_add_inline_style( 'screenr-style', $css );
+		wp_add_inline_style( 'screenr-parent-style', $css );
 	}
 }
 
