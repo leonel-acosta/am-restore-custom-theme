@@ -174,6 +174,9 @@ function screenr_customizer_partials( $wp_customize )
         'menu_t_hover_border_color',
         'logo_text_color',
         'menu_toggle_button_color',
+        'am_header_height',
+        'am_logo_height',
+        'am_menu_font_size',
         // footer
         'footer_widgets_bg',
         'footer_widgets_color',
@@ -200,7 +203,7 @@ function screenr_customizer_partials( $wp_customize )
     }
 
     $wp_customize->selective_refresh->add_partial( 'custom_style' , array(
-        'selector' => '#screenr-style-inline-css',
+        'selector' => '#screenr-parent-style-inline-css',
         'settings' => $custom_css,
         'render_callback' => 'screenr_custom_style',
     ));
