@@ -8526,17 +8526,50 @@ footer p {
   color: inherit;
 }
 
-/* ── Prev / Next arrows ── */
-.hp-hero__arrow {
+/* ── Content alignment ── */
+.hp-hero__slide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hp-hero__slide--align-bottom {
+  justify-content: flex-end;
+}
+
+.hp-hero__slide--align-bottom .container {
+  padding-bottom: 5rem;
+}
+
+/* ── Parallax background ── */
+.hp-hero__slide[data-parallax="1"] .hp-hero__bg--image {
+  top: -20%;
+  bottom: -20%;
+  height: 140%;
+  will-change: transform;
+}
+
+/* ── Controls bar (arrows + counter) ── */
+.hp-hero__controls {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  bottom: 1.5rem;
+  right: 1.5rem;
   z-index: 10;
   display: flex;
   align-items: center;
+  gap: 0;
+}
+
+/* ── Prev / Next arrows ── */
+.hp-hero__arrow {
+  position: static;
+  transform: none;
+  z-index: auto;
+  display: flex;
+  align-items: center;
   justify-content: center;
-  width: 44px;
-  height: 44px;
+  width: 40px;
+  height: 40px;
   background: rgba(0, 0, 0, 0.35);
   border: none;
   color: #fff;
@@ -8548,8 +8581,26 @@ footer p {
   background: rgba(0, 0, 0, 0.6);
 }
 
-.hp-hero__arrow--prev { left: 1.25rem; }
-.hp-hero__arrow--next { right: 1.25rem; }
+/* ── Slide counter ── */
+.hp-hero__counter {
+  display: flex;
+  align-items: center;
+  gap: 0.2em;
+  padding: 0 0.75rem;
+  height: 40px;
+  background: rgba(0, 0, 0, 0.35);
+  color: #fff;
+  font-family: "Barlow", Helvetica, Arial, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.hp-hero__counter-sep {
+  opacity: 0.6;
+}
 
 /* ── Dot indicators ── */
 .hp-hero__dots {
@@ -8608,7 +8659,7 @@ footer p {
     align-items: flex-start;
   }
 
-  .hp-hero__arrow {
+  .hp-hero__controls {
     display: none;
   }
 }
