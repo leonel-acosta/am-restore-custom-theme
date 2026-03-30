@@ -57,7 +57,7 @@ $uid         = 'pm-' . $post_id;
     <div class="project-masonry" id="<?php echo esc_attr($uid); ?>">
 
         <?php if ($process) : ?>
-            <section class="project-process<?php echo $process_long ? ' project-process--wide' : ''; ?>">
+            <section class="project-process<?php echo $process_long ? ' project-process--wide' : ''; ?>" data-aos="fade-up">
 
                 <div class="project-process__label">
                     <h2 class="project-process__heading text-section__heading text-section__heading--md">
@@ -102,7 +102,7 @@ $uid         = 'pm-' . $post_id;
             ];
         ?>
 
-            <div class="project-masonry__block <?php echo esc_attr($block_class); ?>">
+            <div class="project-masonry__block <?php echo esc_attr($block_class); ?>" data-aos="fade-up">
 
                 <button class="project-masonry__cell project-masonry__big"
                     data-modal="<?php echo esc_attr($uid); ?>"
@@ -153,7 +153,7 @@ $uid         = 'pm-' . $post_id;
 
         <?php $remainder = array_slice($images, $image_index);
         if (!empty($remainder)) : ?>
-            <div class="project-masonry__remainder">
+            <div class="project-masonry__remainder" data-aos="fade-up">
                 <?php foreach ($remainder as $img) : ?>
                     <button class="project-masonry__cell project-masonry__small"
                         data-modal="<?php echo esc_attr($uid); ?>"

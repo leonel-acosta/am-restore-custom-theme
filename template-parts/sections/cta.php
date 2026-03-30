@@ -17,7 +17,7 @@ if (! $heading && ! $content) return;
 
 <section class="cta-section page-section--dark py-10">
     <div class="container">
-        <div class="cta-inner">
+        <div class="cta-inner" data-aos="fade-up">
 
             <?php if ($heading) : ?>
                 <h2 class="cta-heading"><?php echo esc_html($heading); ?></h2>

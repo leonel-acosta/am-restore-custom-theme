@@ -46,13 +46,16 @@ $card_class = 'service-card service-card--' . $theme;
 if ($reversed) {
     $card_class .= ' service-card--reversed';
 }
+
+$text_aos  = $reversed ? 'fade-left'  : 'fade-right';
+$image_aos = $reversed ? 'fade-right' : 'fade-left';
 ?>
 
 <section class="service-card-section">
     <div class="container">
         <div class="<?php echo esc_attr($card_class); ?>">
 
-            <div class="service-card__text">
+            <div class="service-card__text" data-aos="<?php echo esc_attr($text_aos); ?>">
                 <?php if ($heading) : ?>
                     <h2 class="service-card__heading"><?php echo esc_html($heading); ?></h2>
                 <?php endif; ?>
@@ -69,7 +72,7 @@ if ($reversed) {
             </div>
 
             <?php if ($image_url) : ?>
-                <div class="service-card__image" aria-hidden="true">
+                <div class="service-card__image" aria-hidden="true" data-aos="<?php echo esc_attr($image_aos); ?>" data-aos-delay="100">
                     <img
                         src="<?php echo esc_url($image_url); ?>"
                         alt="<?php echo esc_attr($image_alt); ?>"
