@@ -1,6 +1,6 @@
 {
     "key": "group_69b448e0c57e3",
-    "title": "About Us Page",
+    "title": "Page: About",
     "fields": [
         {
             "key": "field_69b448f0a0000",
@@ -92,7 +92,7 @@
                         "class": "",
                         "id": ""
                     },
-                    "default_value": "\/#team",
+                    "default_value": "/#team",
                     "placeholder": ""
                 }
             ]

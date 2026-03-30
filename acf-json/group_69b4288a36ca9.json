@@ -1,6 +1,6 @@
 {
     "key": "group_69b4288a36ca9",
-    "title": "Global - Related Projects Section",
+    "title": "Global: Related Projects",
     "fields": [
         {
             "key": "field_69b4288a36a1c",
@@ -152,7 +152,7 @@
             {
                 "param": "post_template",
                 "operator": "==",
-                "value": "templates\/project-page.php"
+                "value": "templates/template-project.php"
             }
         ],
         [
@@ -166,7 +166,7 @@
             {
                 "param": "page_template",
                 "operator": "==",
-                "value": "templates\/service-type-page.php"
+                "value": "templates/template-service-type.php"
             }
         ]
     ],

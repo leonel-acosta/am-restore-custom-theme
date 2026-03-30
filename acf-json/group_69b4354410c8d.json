@@ -1,6 +1,6 @@
 {
     "key": "group_69b4354410c8d",
-    "title": "Project Page",
+    "title": "Page: Project",
     "fields": [
         {
             "key": "field_69b43544a3944",
@@ -316,7 +316,7 @@
             {
                 "param": "post_template",
                 "operator": "==",
-                "value": "templates\/project-page.php"
+                "value": "templates/template-project.php"
             }
         ]
     ],
