@@ -14,6 +14,7 @@
  *   heading_size    string   'sm' | 'md' | 'lg' | 'xl'  (default: 'md')
  *   direction       string   'row' (default) | 'column'
  *   layout          string   'equal' | 'heading-wide' | 'content-wide'  (default: 'equal') — only applies to 'row'
+ *   align           string   'left' (default) | 'center'
  *   padding         string   'sm' | 'md' | 'lg'  (default: 'md')
  *   theme           string   'dark' | 'light' | 'white'  (default: 'dark')
  *   border          bool     1px top + bottom border on section  (default: false)
@@ -28,6 +29,7 @@ $button_url     = $args['button_url']     ?? '';
 $heading_size   = $args['heading_size']   ?? 'md';
 $direction      = $args['direction']      ?? 'row';
 $layout         = $args['layout']         ?? 'equal';
+$align          = $args['align']          ?? 'left';
 $padding        = $args['padding']        ?? 'md';
 $theme          = $args['theme']          ?? 'dark';
 $border         = ! empty($args['border']);
@@ -47,6 +49,7 @@ $valid_themes     = ['dark', 'light', 'white'];
 $heading_size = in_array($heading_size, $valid_sizes,      true) ? $heading_size : 'md';
 $direction    = in_array($direction,    $valid_directions, true) ? $direction    : 'row';
 $layout       = in_array($layout,       $valid_layouts,    true) ? $layout       : 'equal';
+$align        = in_array($align,        ['left', 'center'], true) ? $align       : 'left';
 $padding      = in_array($padding,      $valid_padding,    true) ? $padding      : 'md';
 $theme        = in_array($theme,        $valid_themes,     true) ? $theme        : 'dark';
 
@@ -59,6 +62,7 @@ $section_class = implode(' ', array_filter([
     'text-section--' . $direction,
     $layout_class,
     'text-section--padding-' . $padding,
+    $align === 'center' ? 'text-section--align-center' : '',
     $border ? 'text-section--bordered' : '',
     $extra_class,
 ]));

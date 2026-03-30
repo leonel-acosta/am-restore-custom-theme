@@ -7,30 +7,45 @@
  * an image OR an embed / shortcode string.
  *
  * Args:
- *   heading      string   Section heading
- *   text         string   Body text / HTML
- *   button_text  string   Optional button label
- *   button_url   string   Optional button URL
- *   media_type   string   'image' | 'embed'  (default: 'image')
- *   image        array    ACF image array { url, alt }  — used when media_type = 'image'
- *   embed        string   Shortcode or raw embed HTML  — used when media_type = 'embed'
- *   reversed     bool     Media left, text right (default: false = text left, media right)
- *   theme        string   'dark' (default) | 'light' | 'white'
- *   border       string   'top' | 'bottom' | 'both' | ''  (default: '')
- *   class        string   Extra classes on the <section> element
+ *   heading        string   Section heading
+ *   text           string   Body text / HTML
+ *   button_text    string   Optional button label
+ *   button_url     string   Optional button URL
+ *   media_type     string   'image' | 'embed'  (default: 'image')
+ *   image          array    ACF image array { url, alt }  — used when media_type = 'image'
+ *   embed          string   Shortcode or raw embed HTML  — used when media_type = 'embed'
+ *   embed_type     string   'video' | 'form' | ''  (default: '') — 'video' enforces 16:9 aspect ratio
+ *   reversed       bool     Media left, text right (default: false = text left, media right)
+ *   theme          string   'dark' (default) | 'light' | 'white'
+ *   column_layout  string   'equal' (default) | 'text-wide' | 'media-wide' | 'one-column'
+ *   align          string   'left' (default) | 'center'
+ *   padding        string   'sm' | 'md' (default) | 'lg'
+ *   border         string   'top' | 'bottom' | 'both' | ''  (default: '')
+ *   border_content bool     Add 1px top border above the text column (default: false)
+ *   class          string   Extra classes on the <section> element
  */
 
-$heading     = $args['heading']     ?? '';
-$text        = $args['text']        ?? '';
-$button_text = $args['button_text'] ?? '';
-$button_url  = $args['button_url']  ?? '';
-$media_type  = $args['media_type']  ?? 'image';
-$image       = $args['image']       ?? null;
-$embed       = $args['embed']       ?? '';
-$reversed    = ! empty($args['reversed']);
-$theme       = $args['theme']       ?? 'dark';
-$border      = $args['border']      ?? '';
-$extra_class = $args['class']       ?? '';
+$heading       = $args['heading']       ?? '';
+$text          = $args['text']          ?? '';
+$button_text   = $args['button_text']   ?? '';
+$button_url    = $args['button_url']    ?? '';
+$media_type    = $args['media_type']    ?? 'image';
+$image         = $args['image']         ?? null;
+$embed         = $args['embed']         ?? '';
+$embed_type    = $args['embed_type']    ?? '';
+$reversed      = ! empty($args['reversed']);
+$theme         = $args['theme']         ?? 'dark';
+$column_layout = $args['column_layout'] ?? 'equal';
+$align         = $args['align']         ?? 'left';
+$padding       = $args['padding']       ?? 'md';
+$border         = $args['border']        ?? '';
+$border_content = ! empty($args['border_content']);
+$extra_class    = $args['class']         ?? '';
+
+$valid_col_layouts = ['equal', 'text-wide', 'media-wide', 'one-column'];
+$column_layout = in_array($column_layout, $valid_col_layouts, true) ? $column_layout : 'equal';
+$align         = in_array($align, ['left', 'center'], true) ? $align : 'left';
+$padding       = in_array($padding, ['sm', 'md', 'lg'], true) ? $padding : 'md';
 
 // Resolve image
 $image_url = '';
@@ -52,12 +67,18 @@ $valid_borders = ['top', 'bottom', 'both'];
 $theme  = in_array($theme,  $valid_themes,  true) ? $theme  : 'dark';
 $border = in_array($border, $valid_borders, true) ? $border : '';
 
-$row_dir = $reversed ? 'md:flex-row-reverse' : 'md:flex-row';
+// One-column: always stacked, no side-by-side layout
+$one_column = $column_layout === 'one-column';
+
+$row_dir = $one_column ? '' : ($reversed ? 'md:flex-row-reverse' : 'md:flex-row');
 
 $section_class = implode(' ', array_filter([
     'text-image-section',
     'text-image-section--' . $theme,
-    $reversed ? 'text-image-section--reversed' : '',
+    'text-image-section--padding-' . $padding,
+    $reversed && ! $one_column ? 'text-image-section--reversed' : '',
+    $column_layout !== 'equal' ? 'text-image-section--layout-' . $column_layout : '',
+    $align === 'center' ? 'text-image-section--align-center' : '',
     $border   ? 'text-image-section--border-' . $border : '',
     $extra_class,
 ]));
@@ -65,9 +86,9 @@ $section_class = implode(' ', array_filter([
 
 <section class="<?php echo esc_attr($section_class); ?>">
     <div class="container">
-        <div class="text-image-section__inner flex flex-col <?php echo esc_attr($row_dir); ?> items-center gap-10 py-10">
+        <div class="text-image-section__inner flex flex-col <?php echo esc_attr($row_dir); ?> items-center gap-10">
 
-            <div class="text-image-section__text w-full md:w-1/2 py-5">
+            <div class="text-image-section__text<?php echo $border_content ? ' text-image-section__text--bordered' : ''; ?> w-full <?php echo $one_column ? '' : 'md:w-1/2'; ?> py-5">
                 <?php if ($heading) : ?>
                     <h2 class="text-image-section__heading"><?php echo esc_html($heading); ?></h2>
                 <?php endif; ?>
@@ -84,11 +105,19 @@ $section_class = implode(' ', array_filter([
             </div>
 
             <?php if ($has_media) : ?>
-                <div class="text-image-section__image-wrap w-full md:w-1/2">
+                <div class="text-image-section__image-wrap w-full <?php echo $one_column ? '' : 'md:w-1/2'; ?>">
                     <?php if ($media_type === 'embed' && $embed) : ?>
-                        <div class="text-image-section__embed">
-                            <?php echo do_shortcode($embed); ?>
-                        </div>
+                        <?php if ($embed_type === 'video') : ?>
+                            <div class="text-image-section__embed text-image-section__embed--video">
+                                <div class="text-image-section__video-container">
+                                    <?php echo do_shortcode($embed); ?>
+                                </div>
+                            </div>
+                        <?php else : ?>
+                            <div class="text-image-section__embed">
+                                <?php echo do_shortcode($embed); ?>
+                            </div>
+                        <?php endif; ?>
                     <?php elseif ($image_url) : ?>
                         <img
                             src="<?php echo esc_url($image_url); ?>"
