@@ -408,6 +408,21 @@ add_filter('single_template', function ($template) {
 	return $template;
 });
 
+/**
+ * Force the homepage template for the front page, regardless of the
+ * template assigned in WP admin. This ensures our custom homepage
+ * layout always loads for the front page.
+ */
+add_filter('template_include', function ($template) {
+    if (is_front_page()) {
+        $hp = get_template_directory() . '/templates/template-homepage.php';
+        if (file_exists($hp)) {
+            return $hp;
+        }
+    }
+    return $template;
+}, 99);
+
 add_filter('register_post_type_args', function ($args, $post_type) {
 	if ($post_type === 'team') {
 		$args['capability_type'] = 'post';
