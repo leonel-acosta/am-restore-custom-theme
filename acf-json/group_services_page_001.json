@@ -1,6 +1,6 @@
 {
     "key": "group_services_page_001",
-    "title": "Services Page",
+    "title": "Page: Services",
     "fields": [
         {
             "key": "field_svc_intro",
@@ -428,7 +428,7 @@
             {
                 "param": "post_template",
                 "operator": "==",
-                "value": "templates\/services-page.php"
+                "value": "templates/template-services.php"
             }
         ]
     ],

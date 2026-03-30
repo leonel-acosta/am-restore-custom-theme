@@ -1,6 +1,6 @@
 {
     "key": "group_69b7d300000001",
-    "title": "Home Page",
+    "title": "Page: Homepage",
     "fields": [
         {
             "key": "field_69b7d300fc001",
@@ -11,7 +11,11 @@
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
-            "wrapper": { "width": "", "class": "", "id": "" },
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "button_label": "Add Section",
             "min": "",
             "max": "",
@@ -33,7 +37,11 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
                             "layout": "block",
                             "pagination": 0,
                             "min": 1,
@@ -51,8 +59,15 @@
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
-                                    "wrapper": { "width": "", "class": "", "id": "" },
-                                    "choices": { "image": "Image", "video": "Video" },
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "choices": {
+                                        "image": "Image",
+                                        "video": "Video"
+                                    },
                                     "default_value": "image",
                                     "allow_null": 0,
                                     "other_choice": 0,
@@ -69,10 +84,20 @@
                                     "type": "image",
                                     "instructions": "",
                                     "required": 0,
-                                    "conditional_logic": [[
-                                        { "field": "field_hp_slide_bg_type", "operator": "==", "value": "image" }
-                                    ]],
-                                    "wrapper": { "width": "", "class": "", "id": "" },
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_hp_slide_bg_type",
+                                                "operator": "==",
+                                                "value": "image"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
                                     "return_format": "array",
                                     "library": "all",
                                     "min_width": "",
@@ -93,10 +118,20 @@
                                     "type": "url",
                                     "instructions": "Direct URL to an .mp4 file",
                                     "required": 0,
-                                    "conditional_logic": [[
-                                        { "field": "field_hp_slide_bg_type", "operator": "==", "value": "video" }
-                                    ]],
-                                    "wrapper": { "width": "", "class": "", "id": "" },
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_hp_slide_bg_type",
+                                                "operator": "==",
+                                                "value": "video"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
                                     "default_value": "",
                                     "allow_in_bindings": 0,
                                     "placeholder": ""
@@ -110,7 +145,11 @@
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
-                                    "wrapper": { "width": "50", "class": "", "id": "" },
+                                    "wrapper": {
+                                        "width": "50",
+                                        "class": "",
+                                        "id": ""
+                                    },
                                     "default_value": "#000000",
                                     "enable_opacity": 0,
                                     "return_format": "string",
@@ -125,7 +164,11 @@
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
-                                    "wrapper": { "width": "50", "class": "", "id": "" },
+                                    "wrapper": {
+                                        "width": "50",
+                                        "class": "",
+                                        "id": ""
+                                    },
                                     "default_value": 40,
                                     "min": 0,
                                     "max": 100,
@@ -143,7 +186,11 @@
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
-                                    "wrapper": { "width": "", "class": "", "id": "" },
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
                                     "default_value": "",
                                     "maxlength": "",
                                     "allow_in_bindings": 0,
@@ -160,12 +207,16 @@
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
-                                    "wrapper": { "width": "50", "class": "", "id": "" },
+                                    "wrapper": {
+                                        "width": "50",
+                                        "class": "",
+                                        "id": ""
+                                    },
                                     "choices": {
-                                        "sm":  "Small (1.5rem)",
-                                        "md":  "Medium (2rem)",
-                                        "lg":  "Large (2.5rem)",
-                                        "xl":  "Extra Large (3rem)",
+                                        "sm": "Small (1.5rem)",
+                                        "md": "Medium (2rem)",
+                                        "lg": "Large (2.5rem)",
+                                        "xl": "Extra Large (3rem)",
                                         "xxl": "2X Large (4rem)"
                                     },
                                     "default_value": "xl",
@@ -186,7 +237,11 @@
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
-                                    "wrapper": { "width": "50", "class": "", "id": "" },
+                                    "wrapper": {
+                                        "width": "50",
+                                        "class": "",
+                                        "id": ""
+                                    },
                                     "default_value": "#ffffff",
                                     "enable_opacity": 0,
                                     "return_format": "string",
@@ -201,7 +256,11 @@
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
-                                    "wrapper": { "width": "", "class": "", "id": "" },
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
                                     "default_value": "",
                                     "maxlength": "",
                                     "allow_in_bindings": 0,
@@ -218,7 +277,11 @@
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
-                                    "wrapper": { "width": "", "class": "", "id": "" },
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
                                     "default_value": "#ffffff",
                                     "enable_opacity": 0,
                                     "return_format": "string",
@@ -233,7 +296,11 @@
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
-                                    "wrapper": { "width": "50", "class": "", "id": "" },
+                                    "wrapper": {
+                                        "width": "50",
+                                        "class": "",
+                                        "id": ""
+                                    },
                                     "default_value": "",
                                     "maxlength": "",
                                     "allow_in_bindings": 0,
@@ -250,7 +317,11 @@
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
-                                    "wrapper": { "width": "50", "class": "", "id": "" },
+                                    "wrapper": {
+                                        "width": "50",
+                                        "class": "",
+                                        "id": ""
+                                    },
                                     "default_value": "",
                                     "allow_in_bindings": 0,
                                     "placeholder": ""
@@ -264,8 +335,15 @@
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
-                                    "wrapper": { "width": "50", "class": "", "id": "" },
-                                    "choices": { "filled": "Filled", "outline": "Outline" },
+                                    "wrapper": {
+                                        "width": "50",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "choices": {
+                                        "filled": "Filled",
+                                        "outline": "Outline"
+                                    },
                                     "default_value": "filled",
                                     "return_format": "value",
                                     "multiple": 0,
@@ -284,7 +362,11 @@
                                     "instructions": "Filled: background. Outline: border + text.",
                                     "required": 0,
                                     "conditional_logic": 0,
-                                    "wrapper": { "width": "50", "class": "", "id": "" },
+                                    "wrapper": {
+                                        "width": "50",
+                                        "class": "",
+                                        "id": ""
+                                    },
                                     "default_value": "#8b1a2f",
                                     "enable_opacity": 0,
                                     "return_format": "string",
@@ -299,7 +381,11 @@
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
-                                    "wrapper": { "width": "50", "class": "", "id": "" },
+                                    "wrapper": {
+                                        "width": "50",
+                                        "class": "",
+                                        "id": ""
+                                    },
                                     "default_value": "",
                                     "maxlength": "",
                                     "allow_in_bindings": 0,
@@ -316,7 +402,11 @@
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
-                                    "wrapper": { "width": "50", "class": "", "id": "" },
+                                    "wrapper": {
+                                        "width": "50",
+                                        "class": "",
+                                        "id": ""
+                                    },
                                     "default_value": "",
                                     "allow_in_bindings": 0,
                                     "placeholder": ""
@@ -330,8 +420,15 @@
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
-                                    "wrapper": { "width": "50", "class": "", "id": "" },
-                                    "choices": { "filled": "Filled", "outline": "Outline" },
+                                    "wrapper": {
+                                        "width": "50",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "choices": {
+                                        "filled": "Filled",
+                                        "outline": "Outline"
+                                    },
                                     "default_value": "outline",
                                     "return_format": "value",
                                     "multiple": 0,
@@ -350,7 +447,11 @@
                                     "instructions": "Filled: background. Outline: border + text.",
                                     "required": 0,
                                     "conditional_logic": 0,
-                                    "wrapper": { "width": "50", "class": "", "id": "" },
+                                    "wrapper": {
+                                        "width": "50",
+                                        "class": "",
+                                        "id": ""
+                                    },
                                     "default_value": "#ffffff",
                                     "enable_opacity": 0,
                                     "return_format": "string",
@@ -365,7 +466,11 @@
                                     "instructions": "Vertical position of the heading/text within the slide.",
                                     "required": 0,
                                     "conditional_logic": 0,
-                                    "wrapper": { "width": "50", "class": "", "id": "" },
+                                    "wrapper": {
+                                        "width": "50",
+                                        "class": "",
+                                        "id": ""
+                                    },
                                     "choices": {
                                         "middle": "Middle",
                                         "bottom": "Bottom"
@@ -387,10 +492,20 @@
                                     "type": "true_false",
                                     "instructions": "Subtle scroll parallax effect on the background image (image backgrounds only).",
                                     "required": 0,
-                                    "conditional_logic": [[
-                                        { "field": "field_hp_slide_bg_type", "operator": "==", "value": "image" }
-                                    ]],
-                                    "wrapper": { "width": "50", "class": "", "id": "" },
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_hp_slide_bg_type",
+                                                "operator": "==",
+                                                "value": "image"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "50",
+                                        "class": "",
+                                        "id": ""
+                                    },
                                     "message": "Enable parallax",
                                     "default_value": 0,
                                     "ui": 1,
@@ -417,7 +532,11 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
                             "default_value": "",
                             "maxlength": "",
                             "allow_in_bindings": 0,
@@ -434,7 +553,11 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
                             "default_value": "",
                             "allow_in_bindings": 0,
                             "tabs": "all",
@@ -451,7 +574,11 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
                             "default_value": "",
                             "maxlength": "",
                             "allow_in_bindings": 0,
@@ -468,7 +595,11 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
                             "default_value": "",
                             "allow_in_bindings": 0,
                             "placeholder": ""
@@ -482,7 +613,11 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
                             "choices": {
                                 "dark": "Dark",
                                 "light": "Light",
@@ -506,7 +641,11 @@
                             "instructions": "Row: heading left, content right. Column: centered, stacked.",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
                             "choices": {
                                 "row": "Row (heading left, content right)",
                                 "column": "Column (centered)"
@@ -529,8 +668,15 @@
                             "instructions": "Horizontal alignment of content within the section.",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "50", "class": "", "id": "" },
-                            "choices": { "left": "Left", "center": "Center" },
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "left": "Left",
+                                "center": "Center"
+                            },
                             "default_value": "left",
                             "allow_null": 0,
                             "other_choice": 0,
@@ -548,8 +694,16 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "50", "class": "", "id": "" },
-                            "choices": { "sm": "Small", "md": "Medium", "lg": "Large" },
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "sm": "Small",
+                                "md": "Medium",
+                                "lg": "Large"
+                            },
                             "default_value": "md",
                             "allow_null": 0,
                             "other_choice": 0,
@@ -567,7 +721,11 @@
                             "instructions": "Show a 1px line above the content column (desktop only).",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "50", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
                             "message": "Enable top border",
                             "default_value": 0,
                             "ui": 1,
@@ -592,7 +750,11 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
                             "default_value": "Planning",
                             "maxlength": "",
                             "allow_in_bindings": 0,
@@ -609,7 +771,11 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
                             "default_value": "Every successful restoration begins with a precise understanding of the structure. Our planning services cover damage assessment, condition surveys, restoration concepts and full project supervision — ensuring that every intervention is documented, justified and aligned with heritage protection requirements.",
                             "allow_in_bindings": 0,
                             "tabs": "all",
@@ -626,7 +792,11 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
                             "default_value": "Click here",
                             "maxlength": "",
                             "allow_in_bindings": 0,
@@ -643,7 +813,11 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
                             "default_value": "",
                             "allow_in_bindings": 0,
                             "placeholder": ""
@@ -657,7 +831,11 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
                             "return_format": "array",
                             "library": "all",
                             "min_width": "",
@@ -679,8 +857,15 @@
                             "instructions": "Which side the image appears on.",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "50", "class": "", "id": "" },
-                            "choices": { "image_right": "Image Right", "image_left": "Image Left" },
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "image_right": "Image Right",
+                                "image_left": "Image Left"
+                            },
                             "default_value": "image_right",
                             "return_format": "value",
                             "multiple": 0,
@@ -699,8 +884,16 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "50", "class": "", "id": "" },
-                            "choices": { "dark": "Dark", "light": "Light", "white": "White" },
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "dark": "Dark",
+                                "light": "Light",
+                                "white": "White"
+                            },
                             "default_value": "dark",
                             "return_format": "value",
                             "multiple": 0,
@@ -719,10 +912,14 @@
                             "instructions": "Controls the text / image column width ratio.",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "50", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
                             "choices": {
-                                "equal":      "Equal (50 / 50)",
-                                "text-wide":  "Text Wide (60 / 40)",
+                                "equal": "Equal (50 / 50)",
+                                "text-wide": "Text Wide (60 / 40)",
                                 "image-wide": "Image Wide (40 / 60)",
                                 "one-column": "One Column (stacked)"
                             },
@@ -744,8 +941,15 @@
                             "instructions": "Horizontal alignment of text content.",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "50", "class": "", "id": "" },
-                            "choices": { "left": "Left", "center": "Center" },
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "left": "Left",
+                                "center": "Center"
+                            },
                             "default_value": "left",
                             "allow_null": 0,
                             "other_choice": 0,
@@ -763,8 +967,16 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "50", "class": "", "id": "" },
-                            "choices": { "sm": "Small", "md": "Medium", "lg": "Large" },
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "sm": "Small",
+                                "md": "Medium",
+                                "lg": "Large"
+                            },
                             "default_value": "md",
                             "allow_null": 0,
                             "other_choice": 0,
@@ -782,7 +994,11 @@
                             "instructions": "Show a 1px line above the text column (desktop only).",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "50", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
                             "message": "Enable top border",
                             "default_value": 0,
                             "ui": 1,
@@ -807,7 +1023,11 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
                             "default_value": "Execution",
                             "maxlength": "",
                             "allow_in_bindings": 0,
@@ -824,7 +1044,11 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
                             "default_value": "With decades of hands-on experience in concrete repair, retouching and conservation, our execution services translate planning into results. We work with historic concrete, exposed architectural surfaces and listed structures — applying the methods and materials that each specific case demands.",
                             "allow_in_bindings": 0,
                             "tabs": "all",
@@ -841,7 +1065,11 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
                             "default_value": "Click here",
                             "maxlength": "",
                             "allow_in_bindings": 0,
@@ -858,7 +1086,11 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
                             "default_value": "",
                             "allow_in_bindings": 0,
                             "placeholder": ""
@@ -872,7 +1104,11 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
                             "return_format": "array",
                             "library": "all",
                             "min_width": "",
@@ -894,8 +1130,15 @@
                             "instructions": "Which side the image appears on.",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "50", "class": "", "id": "" },
-                            "choices": { "image_right": "Image Right", "image_left": "Image Left" },
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "image_right": "Image Right",
+                                "image_left": "Image Left"
+                            },
                             "default_value": "image_left",
                             "return_format": "value",
                             "multiple": 0,
@@ -914,8 +1157,16 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "50", "class": "", "id": "" },
-                            "choices": { "dark": "Dark", "light": "Light", "white": "White" },
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "dark": "Dark",
+                                "light": "Light",
+                                "white": "White"
+                            },
                             "default_value": "dark",
                             "return_format": "value",
                             "multiple": 0,
@@ -934,10 +1185,14 @@
                             "instructions": "Controls the text / image column width ratio.",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "50", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
                             "choices": {
-                                "equal":      "Equal (50 / 50)",
-                                "text-wide":  "Text Wide (60 / 40)",
+                                "equal": "Equal (50 / 50)",
+                                "text-wide": "Text Wide (60 / 40)",
                                 "image-wide": "Image Wide (40 / 60)",
                                 "one-column": "One Column (stacked)"
                             },
@@ -959,8 +1214,15 @@
                             "instructions": "Horizontal alignment of text content.",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "50", "class": "", "id": "" },
-                            "choices": { "left": "Left", "center": "Center" },
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "left": "Left",
+                                "center": "Center"
+                            },
                             "default_value": "left",
                             "allow_null": 0,
                             "other_choice": 0,
@@ -978,8 +1240,16 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "50", "class": "", "id": "" },
-                            "choices": { "sm": "Small", "md": "Medium", "lg": "Large" },
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "sm": "Small",
+                                "md": "Medium",
+                                "lg": "Large"
+                            },
                             "default_value": "md",
                             "allow_null": 0,
                             "other_choice": 0,
@@ -997,7 +1267,11 @@
                             "instructions": "Show a 1px line above the text column (desktop only).",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "50", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
                             "message": "Enable top border",
                             "default_value": 0,
                             "ui": 1,
@@ -1022,7 +1296,11 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "50", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
                             "default_value": "In Numbers",
                             "maxlength": "",
                             "allow_in_bindings": 0,
@@ -1039,9 +1317,13 @@
                             "instructions": "Background colour of the whole section.",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "50", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
                             "choices": {
-                                "dark":  "Dark",
+                                "dark": "Dark",
                                 "light": "Light",
                                 "white": "White"
                             },
@@ -1063,7 +1345,11 @@
                             "instructions": "Optional text displayed below the section heading.",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
                             "default_value": "",
                             "maxlength": "",
                             "allow_in_bindings": 0,
@@ -1080,9 +1366,13 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "50", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
                             "choices": {
-                                "normal":   "Normal",
+                                "normal": "Normal",
                                 "semibold": "Semibold"
                             },
                             "default_value": "normal",
@@ -1102,9 +1392,13 @@
                             "instructions": "Horizontal alignment of content inside every column.",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "50", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
                             "choices": {
-                                "left":   "Left",
+                                "left": "Left",
                                 "center": "Center"
                             },
                             "default_value": "left",
@@ -1124,7 +1418,11 @@
                             "instructions": "Columns fade and slide in when scrolled into view.",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "50", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
                             "message": "Enable entrance animation",
                             "default_value": 1,
                             "ui": 1,
@@ -1139,7 +1437,11 @@
                             "instructions": "2–4 columns. Each can have an image, icon, label, heading, text and a button.",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
                             "layout": "block",
                             "pagination": 0,
                             "min": 2,
@@ -1157,10 +1459,14 @@
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
-                                    "wrapper": { "width": "", "class": "", "id": "" },
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
                                     "choices": {
-                                        "none":       "None",
-                                        "image":      "Image",
+                                        "none": "None",
+                                        "image": "Image",
                                         "icon_class": "Icon (CSS class)"
                                     },
                                     "default_value": "none",
@@ -1179,10 +1485,20 @@
                                     "type": "image",
                                     "instructions": "",
                                     "required": 0,
-                                    "conditional_logic": [[
-                                        { "field": "field_nb_col_icon_type", "operator": "==", "value": "image" }
-                                    ]],
-                                    "wrapper": { "width": "", "class": "", "id": "" },
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_nb_col_icon_type",
+                                                "operator": "==",
+                                                "value": "image"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
                                     "return_format": "array",
                                     "library": "all",
                                     "min_width": "",
@@ -1203,10 +1519,20 @@
                                     "type": "text",
                                     "instructions": "e.g. fa-solid fa-star",
                                     "required": 0,
-                                    "conditional_logic": [[
-                                        { "field": "field_nb_col_icon_type", "operator": "==", "value": "icon_class" }
-                                    ]],
-                                    "wrapper": { "width": "", "class": "", "id": "" },
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_nb_col_icon_type",
+                                                "operator": "==",
+                                                "value": "icon_class"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
                                     "default_value": "",
                                     "maxlength": "",
                                     "allow_in_bindings": 0,
@@ -1223,7 +1549,11 @@
                                     "instructions": "Small text above the value (e.g. 'Since', 'Projects').",
                                     "required": 0,
                                     "conditional_logic": 0,
-                                    "wrapper": { "width": "50", "class": "", "id": "" },
+                                    "wrapper": {
+                                        "width": "50",
+                                        "class": "",
+                                        "id": ""
+                                    },
                                     "default_value": "",
                                     "maxlength": "",
                                     "allow_in_bindings": 0,
@@ -1240,7 +1570,11 @@
                                     "instructions": "Prominent text displayed large (stat, name, short title…).",
                                     "required": 0,
                                     "conditional_logic": 0,
-                                    "wrapper": { "width": "50", "class": "", "id": "" },
+                                    "wrapper": {
+                                        "width": "50",
+                                        "class": "",
+                                        "id": ""
+                                    },
                                     "default_value": "",
                                     "maxlength": "",
                                     "allow_in_bindings": 0,
@@ -1257,7 +1591,11 @@
                                     "instructions": "Optional body text below the value.",
                                     "required": 0,
                                     "conditional_logic": 0,
-                                    "wrapper": { "width": "", "class": "", "id": "" },
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
                                     "default_value": "",
                                     "maxlength": "",
                                     "allow_in_bindings": 0,
@@ -1274,7 +1612,11 @@
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
-                                    "wrapper": { "width": "50", "class": "", "id": "" },
+                                    "wrapper": {
+                                        "width": "50",
+                                        "class": "",
+                                        "id": ""
+                                    },
                                     "default_value": "",
                                     "maxlength": "",
                                     "allow_in_bindings": 0,
@@ -1291,7 +1633,11 @@
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
-                                    "wrapper": { "width": "50", "class": "", "id": "" },
+                                    "wrapper": {
+                                        "width": "50",
+                                        "class": "",
+                                        "id": ""
+                                    },
                                     "default_value": "",
                                     "allow_in_bindings": 0,
                                     "placeholder": ""
@@ -1305,11 +1651,15 @@
                                     "instructions": "Generates contrast against the section theme.",
                                     "required": 0,
                                     "conditional_logic": 0,
-                                    "wrapper": { "width": "", "class": "", "id": "" },
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
                                     "choices": {
-                                        "none":     "None (transparent)",
-                                        "card":     "Card (contrasting shade)",
-                                        "accent":   "Accent (brand colour)"
+                                        "none": "None (transparent)",
+                                        "card": "Card (contrasting shade)",
+                                        "accent": "Accent (brand colour)"
                                     },
                                     "default_value": "card",
                                     "return_format": "value",
@@ -1341,7 +1691,11 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "50", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
                             "default_value": "Our Projects",
                             "maxlength": "",
                             "allow_in_bindings": 0,
@@ -1358,7 +1712,11 @@
                             "instructions": "Optional link shown next to the heading.",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "50", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
                             "default_value": "",
                             "allow_in_bindings": 0,
                             "placeholder": ""
@@ -1372,7 +1730,11 @@
                             "instructions": "Optional subtitle shown below the heading.",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
                             "default_value": "",
                             "allow_in_bindings": 0,
                             "tabs": "all",
@@ -1389,7 +1751,11 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "33", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "33",
+                                "class": "",
+                                "id": ""
+                            },
                             "choices": {
                                 "dark": "Dark",
                                 "light": "Light",
@@ -1413,10 +1779,14 @@
                             "instructions": "Featured: up to 3 cards (carousel if more). Gallery: full-width image strip.",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "33", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "33",
+                                "class": "",
+                                "id": ""
+                            },
                             "choices": {
                                 "featured": "Cards",
-                                "gallery":  "Gallery"
+                                "gallery": "Gallery"
                             },
                             "default_value": "featured",
                             "return_format": "value",
@@ -1436,7 +1806,11 @@
                             "instructions": "Auto-advance carousel every 5 s (cards layout only, when >3 projects).",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "33", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "33",
+                                "class": "",
+                                "id": ""
+                            },
                             "message": "Enable autoplay",
                             "default_value": 0,
                             "ui": 1,
@@ -1461,7 +1835,11 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
                             "default_value": "",
                             "maxlength": "",
                             "allow_in_bindings": 0,
@@ -1478,7 +1856,11 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
                             "default_value": "",
                             "allow_in_bindings": 0,
                             "tabs": "all",
@@ -1495,7 +1877,11 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
                             "width": "auto",
                             "height": 600,
                             "allow_in_bindings": 0
@@ -1509,8 +1895,16 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "50", "class": "", "id": "" },
-                            "choices": { "dark": "Dark", "light": "Light", "white": "White" },
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "dark": "Dark",
+                                "light": "Light",
+                                "white": "White"
+                            },
                             "default_value": "dark",
                             "return_format": "value",
                             "multiple": 0,
@@ -1529,12 +1923,16 @@
                             "instructions": "Controls the text / video column width ratio.",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "50", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
                             "choices": {
-                                "equal":       "Equal (50 / 50)",
-                                "text-wide":   "Text Wide (60 / 40)",
-                                "media-wide":  "Video Wide (40 / 60)",
-                                "one-column":  "One Column (stacked)"
+                                "equal": "Equal (50 / 50)",
+                                "text-wide": "Text Wide (60 / 40)",
+                                "media-wide": "Video Wide (40 / 60)",
+                                "one-column": "One Column (stacked)"
                             },
                             "default_value": "equal",
                             "return_format": "value",
@@ -1554,8 +1952,15 @@
                             "instructions": "Horizontal alignment of text content.",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "50", "class": "", "id": "" },
-                            "choices": { "left": "Left", "center": "Center" },
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "left": "Left",
+                                "center": "Center"
+                            },
                             "default_value": "left",
                             "allow_null": 0,
                             "other_choice": 0,
@@ -1573,8 +1978,16 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "50", "class": "", "id": "" },
-                            "choices": { "sm": "Small", "md": "Medium", "lg": "Large" },
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "sm": "Small",
+                                "md": "Medium",
+                                "lg": "Large"
+                            },
                             "default_value": "md",
                             "allow_null": 0,
                             "other_choice": 0,
@@ -1592,7 +2005,11 @@
                             "instructions": "Show a 1px line above the text column (desktop only).",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "50", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
                             "message": "Enable top border",
                             "default_value": 0,
                             "ui": 1,
@@ -1617,7 +2034,11 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
                             "default_value": "",
                             "maxlength": "",
                             "allow_in_bindings": 0,
@@ -1634,7 +2055,11 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
                             "default_value": "We are qualified restorers, artists, sculptors, concrete workers and craftsmen.",
                             "maxlength": "",
                             "allow_in_bindings": 0,
@@ -1651,7 +2076,11 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
                             "default_value": "",
                             "allow_in_bindings": 0,
                             "tabs": "all",
@@ -1668,7 +2097,11 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
                             "default_value": "About us",
                             "maxlength": "",
                             "allow_in_bindings": 0,
@@ -1685,7 +2118,11 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
                             "default_value": "",
                             "allow_in_bindings": 0,
                             "placeholder": ""
@@ -1699,7 +2136,11 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
                             "return_format": "array",
                             "library": "all",
                             "min_width": "",
@@ -1721,8 +2162,15 @@
                             "instructions": "Which side the image appears on.",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "50", "class": "", "id": "" },
-                            "choices": { "image_right": "Image Right", "image_left": "Image Left" },
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "image_right": "Image Right",
+                                "image_left": "Image Left"
+                            },
                             "default_value": "image_right",
                             "return_format": "value",
                             "multiple": 0,
@@ -1741,14 +2189,18 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "50", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
                             "choices": {
-                                "dark":    "Dark",
-                                "medium":  "Medium",
-                                "light":   "Light",
-                                "white":   "White",
+                                "dark": "Dark",
+                                "medium": "Medium",
+                                "light": "Light",
+                                "white": "White",
                                 "primary": "Primary (Red)",
-                                "accent":  "Accent"
+                                "accent": "Accent"
                             },
                             "default_value": "dark",
                             "return_format": "value",
@@ -1778,7 +2230,11 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
                             "default_value": "",
                             "maxlength": "",
                             "allow_in_bindings": 0,
@@ -1795,7 +2251,11 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
                             "default_value": "",
                             "maxlength": "",
                             "allow_in_bindings": 0,
@@ -1812,7 +2272,11 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
                             "default_value": "",
                             "allow_in_bindings": 0,
                             "tabs": "all",
@@ -1829,8 +2293,16 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "33", "class": "", "id": "" },
-                            "choices": { "dark": "Dark", "light": "Light", "white": "White" },
+                            "wrapper": {
+                                "width": "33",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "dark": "Dark",
+                                "light": "Light",
+                                "white": "White"
+                            },
                             "default_value": "dark",
                             "return_format": "value",
                             "multiple": 0,
@@ -1849,8 +2321,16 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "33", "class": "", "id": "" },
-                            "choices": { "sm": "Small", "md": "Medium", "lg": "Large" },
+                            "wrapper": {
+                                "width": "33",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "sm": "Small",
+                                "md": "Medium",
+                                "lg": "Large"
+                            },
                             "default_value": "md",
                             "allow_null": 0,
                             "other_choice": 0,
@@ -1868,8 +2348,15 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "33", "class": "", "id": "" },
-                            "choices": { "center": "Center", "left": "Left" },
+                            "wrapper": {
+                                "width": "33",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "center": "Center",
+                                "left": "Left"
+                            },
                             "default_value": "center",
                             "allow_null": 0,
                             "other_choice": 0,
@@ -1887,8 +2374,15 @@
                             "instructions": "B&W: logos desaturated by default, color on hover. Color: logos always in full color.",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "", "class": "", "id": "" },
-                            "choices": { "bw": "Black & White (default)", "color": "Full Color" },
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "bw": "Black & White (default)",
+                                "color": "Full Color"
+                            },
                             "default_value": "bw",
                             "allow_null": 0,
                             "other_choice": 0,
@@ -1906,7 +2400,11 @@
                             "instructions": "Add each logo. Link is optional — if set the logo becomes clickable.",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
                             "layout": "table",
                             "pagination": 0,
                             "min": 1,
@@ -1924,7 +2422,11 @@
                                     "instructions": "",
                                     "required": 1,
                                     "conditional_logic": 0,
-                                    "wrapper": { "width": "70", "class": "", "id": "" },
+                                    "wrapper": {
+                                        "width": "70",
+                                        "class": "",
+                                        "id": ""
+                                    },
                                     "return_format": "array",
                                     "library": "all",
                                     "min_width": "",
@@ -1946,7 +2448,11 @@
                                     "instructions": "Leave blank for no link.",
                                     "required": 0,
                                     "conditional_logic": 0,
-                                    "wrapper": { "width": "30", "class": "", "id": "" },
+                                    "wrapper": {
+                                        "width": "30",
+                                        "class": "",
+                                        "id": ""
+                                    },
                                     "default_value": "",
                                     "allow_in_bindings": 0,
                                     "placeholder": "https://"
@@ -1972,7 +2478,11 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
                             "default_value": "",
                             "maxlength": "",
                             "allow_in_bindings": 0,
@@ -1989,7 +2499,11 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
                             "default_value": "",
                             "maxlength": "",
                             "allow_in_bindings": 0,
@@ -2006,7 +2520,11 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
                             "default_value": "",
                             "allow_in_bindings": 0,
                             "tabs": "all",
@@ -2023,7 +2541,11 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
                             "default_value": "",
                             "maxlength": "",
                             "allow_in_bindings": 0,
@@ -2040,7 +2562,11 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
                             "default_value": "",
                             "allow_in_bindings": 0,
                             "placeholder": ""
@@ -2054,7 +2580,11 @@
                             "instructions": "Paste the contact form shortcode, e.g. [contact-form-7 id=\"1\"]",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
                             "default_value": "",
                             "maxlength": "",
                             "allow_in_bindings": 0,
@@ -2070,8 +2600,16 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "50", "class": "", "id": "" },
-                            "choices": { "dark": "Dark", "light": "Light", "white": "White" },
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "dark": "Dark",
+                                "light": "Light",
+                                "white": "White"
+                            },
                             "default_value": "dark",
                             "return_format": "value",
                             "multiple": 0,
@@ -2090,12 +2628,16 @@
                             "instructions": "Controls the text / form column width ratio.",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "50", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
                             "choices": {
-                                "equal":       "Equal (50 / 50)",
-                                "text-wide":   "Text Wide (60 / 40)",
-                                "media-wide":  "Form Wide (40 / 60)",
-                                "one-column":  "One Column (stacked)"
+                                "equal": "Equal (50 / 50)",
+                                "text-wide": "Text Wide (60 / 40)",
+                                "media-wide": "Form Wide (40 / 60)",
+                                "one-column": "One Column (stacked)"
                             },
                             "default_value": "equal",
                             "return_format": "value",
@@ -2115,8 +2657,15 @@
                             "instructions": "Horizontal alignment of text content.",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "50", "class": "", "id": "" },
-                            "choices": { "left": "Left", "center": "Center" },
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "left": "Left",
+                                "center": "Center"
+                            },
                             "default_value": "left",
                             "allow_null": 0,
                             "other_choice": 0,
@@ -2134,8 +2683,16 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "50", "class": "", "id": "" },
-                            "choices": { "sm": "Small", "md": "Medium", "lg": "Large" },
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "sm": "Small",
+                                "md": "Medium",
+                                "lg": "Large"
+                            },
                             "default_value": "md",
                             "allow_null": 0,
                             "other_choice": 0,
@@ -2153,7 +2710,11 @@
                             "instructions": "Show a 1px line above the text column (desktop only).",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "50", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
                             "message": "Enable top border",
                             "default_value": 0,
                             "ui": 1,
@@ -2178,7 +2739,11 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
                             "default_value": "Start your restoration project",
                             "maxlength": "",
                             "allow_in_bindings": 0,
@@ -2195,7 +2760,11 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
                             "default_value": "",
                             "maxlength": "",
                             "allow_in_bindings": 0,
@@ -2212,7 +2781,11 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "50", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
                             "default_value": "",
                             "maxlength": "",
                             "allow_in_bindings": 0,
@@ -2229,7 +2802,11 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "wrapper": { "width": "50", "class": "", "id": "" },
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
                             "default_value": "",
                             "allow_in_bindings": 0,
                             "placeholder": ""

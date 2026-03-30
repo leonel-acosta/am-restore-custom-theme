@@ -1,6 +1,6 @@
 {
     "key": "group_contact_page_001",
-    "title": "Contact Page",
+    "title": "Page: Contact",
     "fields": [
         {
             "key": "field_contact_block",
@@ -101,7 +101,7 @@
                     "name": "media_type",
                     "aria-label": "",
                     "type": "button_group",
-                    "instructions": "Choose whether to show an image or an embed \/ shortcode on the right column.",
+                    "instructions": "Choose whether to show an image or an embed / shortcode on the right column.",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -111,7 +111,7 @@
                     },
                     "choices": {
                         "image": "Image",
-                        "embed": "Embed \/ Shortcode"
+                        "embed": "Embed / Shortcode"
                     },
                     "default_value": "image",
                     "return_format": "value",
@@ -176,7 +176,7 @@
                 },
                 {
                     "key": "field_contact_embed",
-                    "label": "Embed \/ Shortcode",
+                    "label": "Embed / Shortcode",
                     "name": "embed",
                     "aria-label": "",
                     "type": "textarea",
@@ -259,7 +259,7 @@
             {
                 "param": "post_template",
                 "operator": "==",
-                "value": "templates\/contact-page.php"
+                "value": "templates/template-contact.php"
             }
         ]
     ],

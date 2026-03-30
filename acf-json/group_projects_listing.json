@@ -1,6 +1,6 @@
 {
     "key": "group_6proj_listing_001",
-    "title": "Projects Listing Page",
+    "title": "Page: Projects - Single Category",
     "fields": [
         {
             "key": "field_6proj_heading",
@@ -11,7 +11,11 @@
             "instructions": "Overrides the page title. Leave empty to use the page title (or category name for single-category template).",
             "required": 0,
             "conditional_logic": 0,
-            "wrapper": { "width": "", "class": "", "id": "" },
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "default_value": "",
             "maxlength": "",
             "placeholder": ""
@@ -25,7 +29,11 @@
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
-            "wrapper": { "width": "", "class": "", "id": "" },
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "default_value": "",
             "tabs": "all",
             "toolbar": "basic",
@@ -41,7 +49,11 @@
             "instructions": "Background colour for the project grid sections.",
             "required": 0,
             "conditional_logic": 0,
-            "wrapper": { "width": "", "class": "", "id": "" },
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "choices": {
                 "light": "Light",
                 "white": "White",
@@ -61,10 +73,14 @@
             "name": "posts_per_section",
             "aria-label": "",
             "type": "number",
-            "instructions": "How many project cards to show per category section (default 9). A \u201cMore Projects\u201d link appears automatically when there are more.",
+            "instructions": "How many project cards to show per category section (default 9). A “More Projects” link appears automatically when there are more.",
             "required": 0,
             "conditional_logic": 0,
-            "wrapper": { "width": "", "class": "", "id": "" },
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "default_value": 9,
             "min": 1,
             "max": 50,
@@ -79,10 +95,14 @@
             "name": "category_filter",
             "aria-label": "",
             "type": "taxonomy",
-            "instructions": "Used by the \u201cProjects - Single Category\u201d template. Ignored on the all-categories template. New categories appear here automatically.",
+            "instructions": "Used by the “Projects - Single Category” template. Ignored on the all-categories template. New categories appear here automatically.",
             "required": 0,
             "conditional_logic": 0,
-            "wrapper": { "width": "", "class": "", "id": "" },
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "taxonomy": "category",
             "add_term": 0,
             "save_terms": 0,
@@ -98,10 +118,14 @@
             "name": "enable_pagination",
             "aria-label": "",
             "type": "true_false",
-            "instructions": "On: show posts paginated (uses \u201cPosts per Section\u201d as page size). Off: show all posts at once.",
+            "instructions": "On: show posts paginated (uses “Posts per Section” as page size). Off: show all posts at once.",
             "required": 0,
             "conditional_logic": 0,
-            "wrapper": { "width": "", "class": "", "id": "" },
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "message": "",
             "default_value": 1,
             "ui": 1,
@@ -114,7 +138,7 @@
             {
                 "param": "post_template",
                 "operator": "==",
-                "value": "templates\/projects-single-category.php"
+                "value": "templates/template-projects-category.php"
             }
         ]
     ],

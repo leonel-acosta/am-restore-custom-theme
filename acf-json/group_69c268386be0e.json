@@ -1,6 +1,6 @@
 {
     "key": "group_69c268386be0e",
-    "title": "Service Type Page",
+    "title": "Page: Service Type",
     "fields": [
         {
             "key": "field_69c2683885365",
@@ -455,7 +455,7 @@
             {
                 "param": "post_template",
                 "operator": "==",
-                "value": "templates\/service-type-page.php"
+                "value": "templates/template-service-type.php"
             }
         ]
     ],

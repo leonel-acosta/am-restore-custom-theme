@@ -1,6 +1,6 @@
 {
     "key": "group_6proj_all_cats_001",
-    "title": "Projects - All Categories Page",
+    "title": "Page: Projects - All Categories",
     "fields": [
         {
             "key": "field_6proj_all_sections",
@@ -92,7 +92,7 @@
                             "name": "more_link",
                             "aria-label": "",
                             "type": "url",
-                            "instructions": "Optional. Overrides the automatic link to \/projekte\/{category-slug}\/.",
+                            "instructions": "Optional. Overrides the automatic link to /projekte/{category-slug}/.",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
@@ -167,7 +167,7 @@
             {
                 "param": "post_template",
                 "operator": "==",
-                "value": "templates\/projects-listing.php"
+                "value": "templates/template-projects-listing.php"
             }
         ]
     ],
