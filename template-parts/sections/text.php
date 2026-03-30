@@ -77,7 +77,7 @@ $content_col_class = implode(' ', array_filter([
     <div class="container">
         <div class="text-section__inner">
 
-            <div class="text-section__heading-col">
+            <div class="text-section__heading-col" data-aos="fade-right">
                 <?php if ($heading) : ?>
                     <h2 class="text-section__heading text-section__heading--<?php echo esc_attr($heading_size); ?>">
                         <?php echo esc_html($heading); ?>
@@ -85,7 +85,7 @@ $content_col_class = implode(' ', array_filter([
                 <?php endif; ?>
             </div>
 
-            <div class="<?php echo esc_attr($content_col_class); ?>">
+            <div class="<?php echo esc_attr($content_col_class); ?>" data-aos="fade-up" data-aos-delay="150">
                 <?php if ($text) : ?>
                     <div class="text-section__body"><?php echo wp_kses_post($text); ?></div>
                 <?php endif; ?>

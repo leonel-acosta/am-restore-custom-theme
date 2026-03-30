@@ -58,6 +58,10 @@ $one_column = $column_layout === 'one-column';
 // Row direction: reversed = image left (row-reverse), default = image right (row)
 $row_dir = $one_column ? '' : ($reversed ? 'md:flex-row-reverse' : 'md:flex-row');
 
+// AOS: text and image slide in from opposite sides
+$text_aos  = $reversed ? 'fade-left'  : 'fade-right';
+$image_aos = $reversed ? 'fade-right' : 'fade-left';
+
 $section_class = implode(' ', array_filter([
     'text-image-section',
     'text-image-section--' . $theme,
@@ -74,7 +78,7 @@ $section_class = implode(' ', array_filter([
     <div class="container">
         <div class="text-image-section__inner flex flex-col <?php echo esc_attr($row_dir); ?> items-center gap-10">
 
-            <div class="text-image-section__text<?php echo $border_content ? ' text-image-section__text--bordered' : ''; ?> w-full <?php echo $one_column ? '' : 'md:w-1/2'; ?> py-5">
+            <div class="text-image-section__text<?php echo $border_content ? ' text-image-section__text--bordered' : ''; ?> w-full <?php echo $one_column ? '' : 'md:w-1/2'; ?> py-5" data-aos="<?php echo esc_attr($text_aos); ?>">
                 <?php if ($heading) : ?>
                     <h2 class="text-image-section__heading"><?php echo esc_html($heading); ?></h2>
                 <?php endif; ?>
@@ -91,7 +95,7 @@ $section_class = implode(' ', array_filter([
             </div>
 
             <?php if ($image_url) : ?>
-                <div class="text-image-section__image-wrap w-full <?php echo $one_column ? '' : 'md:w-1/2'; ?> overflow-hidden center">
+                <div class="text-image-section__image-wrap w-full <?php echo $one_column ? '' : 'md:w-1/2'; ?> overflow-hidden center" data-aos="<?php echo esc_attr($image_aos); ?>" data-aos-delay="100">
                     <img
                         src="<?php echo esc_url($image_url); ?>"
                         alt="<?php echo esc_attr($image_alt); ?>"

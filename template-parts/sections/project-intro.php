@@ -37,7 +37,7 @@ $wide_content = $about && strlen(strip_tags($about)) > 300;
         <div class="project-intro__inner">
 
             <?php if ($has_meta) : ?>
-                <div class="project-intro__meta">
+                <div class="project-intro__meta" data-aos="fade-right">
                     <?php if ($client) : ?>
                         <div class="project-intro__meta-item project-intro__meta-item--client">
                             <span class="project-intro__meta-label"><?php esc_html_e('Client', 'am-restore'); ?></span>
@@ -72,12 +72,12 @@ $wide_content = $about && strlen(strip_tags($about)) > 300;
             <?php endif; ?>
 
             <?php if ($about) : ?>
-                <div class="text-section__heading-col">
+                <div class="text-section__heading-col" data-aos="fade-up" data-aos-delay="100">
                     <h2 class="text-section__heading text-section__heading--md">
                         <?php echo esc_html($label); ?>
                     </h2>
                 </div>
-                <div class="text-section__content text-section__content--bordered">
+                <div class="text-section__content text-section__content--bordered" data-aos="fade-up" data-aos-delay="200">
                     <div class="text-section__body"><?php echo wp_kses_post($about); ?></div>
                 </div>
             <?php endif; ?>

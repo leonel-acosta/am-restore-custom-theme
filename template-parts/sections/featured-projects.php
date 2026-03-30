@@ -107,7 +107,7 @@ $carousel_id  = 'fp-carousel-' . uniqid();
     <div class="container">
 
         <?php if ($title || $content || $link) : ?>
-        <div class="featured-projects__header">
+        <div class="featured-projects__header" data-aos="fade-up">
             <div class="featured-projects__header-text">
                 <?php if ($title) : ?>
                     <h2 class="featured-projects__title text-section__heading text-section__heading--md">
@@ -185,8 +185,8 @@ $carousel_id  = 'fp-carousel-' . uniqid();
         <?php else : ?>
 
             <div class="featured-projects__grid">
-                <?php foreach ($cards as $card_html) : ?>
-                    <div class="featured-projects__card">
+                <?php foreach ($cards as $idx => $card_html) : ?>
+                    <div class="featured-projects__card" data-aos="fade-up" data-aos-delay="<?php echo ( $idx % 3 ) * 150; ?>">
                         <?php echo $card_html; ?>
                     </div>
                 <?php endforeach; ?>

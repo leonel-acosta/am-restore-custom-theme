@@ -89,7 +89,7 @@ $section_class = implode(' ', array_filter([
     <div class="container">
 
         <?php if ($section_title || $section_heading || $section_content) : ?>
-            <div class="logo-slider-section__header">
+            <div class="logo-slider-section__header" data-aos="fade-up">
                 <?php if ($section_title) : ?>
                     <p class="logo-slider-section__label"><?php echo esc_html($section_title); ?></p>
                 <?php endif; ?>

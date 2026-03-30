@@ -54,7 +54,7 @@ $section_id = 'multicolumn-' . uniqid();
     <div class="container">
 
         <?php if ($section_heading || $section_subheading) : ?>
-            <div class="multicolumn__header">
+            <div class="multicolumn__header" data-aos="fade-up">
                 <?php if ($section_heading) : ?>
                     <h2 class="multicolumn__heading"><?php echo esc_html($section_heading); ?></h2>
                 <?php endif; ?>

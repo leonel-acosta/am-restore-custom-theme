@@ -11,7 +11,7 @@
 
 <?php $theme = $args['theme'] ?? 'primary'; ?>
 <section id="post-<?php the_ID(); ?>" class="entry-header page-section--<?php echo esc_attr( $theme ); ?> title-section pt-20 lg:pt-40 pb-10">
-    <div class="container">
+    <div class="container" data-aos="fade-up">
         <?php
         $parent_id = wp_get_post_parent_id( get_the_ID() );
         if ( $parent_id ) : ?>
