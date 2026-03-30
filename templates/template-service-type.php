@@ -6,11 +6,11 @@
  * Renders a service type detail page (e.g. Planning, Execution).
  *
  * Sections:
- *   1. Page Title         — template-parts/page-title.php
- *   2. Intro Section      — template-parts/text-section.php
- *   3. Service Items      — template-parts/text-image-section.php (repeater)
- *   4. Additional Info    — template-parts/text-section.php
- *   5. Featured Projects  — template-parts/featured-projects.php
+ *   1. Page Title         — template-parts/sections/page-title.php
+ *   2. Intro Section      — template-parts/sections/text.php
+ *   3. Service Items      — template-parts/sections/text-image.php (repeater)
+ *   4. Additional Info    — template-parts/sections/text.php
+ *   5. Featured Projects  — template-parts/sections/featured-projects.php
  *
  * ACF field group: "Service Type Page" (group_69c268386be0e)
  */
@@ -26,12 +26,12 @@ $additional  = get_field('additional_information_section', $page_id) ?: [];
 
 <div id="content" class="site-content">
 
-    <?php get_template_part('template-parts/page-title'); ?>
+    <?php get_template_part('template-parts/sections/page-title'); ?>
 
     <main id="main" class="site-main service-type-page" role="main">
 
         <?php if (! empty($intro['title']) || ! empty($intro['content'])) :
-            get_template_part('template-parts/text-section', null, [
+            get_template_part('template-parts/sections/text', null, [
                 'heading'        => $intro['title']       ?? '',
                 'text'           => $intro['content']     ?? '',
                 'button_text'    => $intro['button_text'] ?? '',
@@ -43,7 +43,7 @@ $additional  = get_field('additional_information_section', $page_id) ?: [];
 
         <?php if ($items) :
             foreach ($items as $item) :
-                get_template_part('template-parts/text-image-section', null, [
+                get_template_part('template-parts/sections/text-image', null, [
                     'heading'     => $item['heading']      ?? '',
                     'text'        => $item['text']         ?? '',
                     'image'       => $item['image']        ?? null,
@@ -56,7 +56,7 @@ $additional  = get_field('additional_information_section', $page_id) ?: [];
         endif; ?>
 
         <?php if (! empty($additional['title']) || ! empty($additional['content'])) :
-            get_template_part('template-parts/text-section', null, [
+            get_template_part('template-parts/sections/text', null, [
                 'heading'        => $additional['title']       ?? '',
                 'text'           => $additional['content']     ?? '',
                 'button_text'    => $additional['button_text'] ?? '',
@@ -70,6 +70,6 @@ $additional  = get_field('additional_information_section', $page_id) ?: [];
 
 </div>
 
-<?php get_template_part('template-parts/featured-projects'); ?>
-<?php get_template_part('template-parts/cta'); ?>
+<?php get_template_part('template-parts/sections/featured-projects'); ?>
+<?php get_template_part('template-parts/sections/cta'); ?>
 <?php get_footer(); ?>

@@ -284,7 +284,7 @@ function screenr_body_classes( $classes ) {
 	}
 
 	if ( is_page() ) {
-		if ( is_page_template( 'templates/full-width-page.php' ) ) {
+		if ( is_page_template( 'templates/template-full-width.php' ) ) {
 			$classes[] = 'full-width-page';
 		}
 	}

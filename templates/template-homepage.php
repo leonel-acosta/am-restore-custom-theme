@@ -34,14 +34,14 @@ $page_id = get_the_ID();
 
             <?php /* ── 1. Hero Slider ─────────────────────────────────────── */ ?>
             <?php if ($layout === 'hero_slider') :
-                get_template_part('template-parts/hero-slider', null, [
+                get_template_part('template-parts/sections/hero-slider', null, [
                     'slides' => get_sub_field('slides') ?: [],
                 ]);
             ?>
 
             <?php /* ── 2/5. Text Section (intro, about us) ────────────────── */ ?>
             <?php elseif ($layout === 'text_section') :
-                get_template_part('template-parts/text-section', null, [
+                get_template_part('template-parts/sections/text', null, [
                     'heading'    => get_sub_field('section_heading'),
                     'text'       => get_sub_field('section_content'),
                     'button_text'=> get_sub_field('button_text'),
@@ -55,7 +55,7 @@ $page_id = get_the_ID();
 
             <?php /* ── 3. Planning (Text + Image) ───────────────────────── */ ?>
             <?php elseif ($layout === 'planning') :
-                get_template_part('template-parts/text-image-section', null, [
+                get_template_part('template-parts/sections/text-image', null, [
                     'heading'        => get_sub_field('section_title'),
                     'text'           => get_sub_field('section_content'),
                     'button_text'    => get_sub_field('button_text'),
@@ -72,7 +72,7 @@ $page_id = get_the_ID();
 
             <?php /* ── 4. Execution (Text + Image) ──────────────────────── */ ?>
             <?php elseif ($layout === 'execution') :
-                get_template_part('template-parts/text-image-section', null, [
+                get_template_part('template-parts/sections/text-image', null, [
                     'heading'        => get_sub_field('section_title'),
                     'text'           => get_sub_field('section_content'),
                     'button_text'    => get_sub_field('button_text'),
@@ -89,7 +89,7 @@ $page_id = get_the_ID();
 
             <?php /* ── 5. In Numbers (multi-column) ─────────────────────── */ ?>
             <?php elseif ($layout === 'numbers') :
-                get_template_part('template-parts/multicolumn', null, [
+                get_template_part('template-parts/sections/multicolumn', null, [
                     'section_heading'    => get_sub_field('section_heading'),
                     'section_subheading' => get_sub_field('section_subheading'),
                     'section_theme'      => get_sub_field('section_theme')   ?: 'dark',
@@ -147,7 +147,7 @@ $page_id = get_the_ID();
                         </div>
                         <?php endif; ?>
 
-                        <?php get_template_part('template-parts/projects-gallery', null, [
+                        <?php get_template_part('template-parts/sections/projects-gallery', null, [
                             'posts' => $ps_query->posts,
                         ]); ?>
 
@@ -155,7 +155,7 @@ $page_id = get_the_ID();
                     <?php
                     wp_reset_postdata();
                 else :
-                    get_template_part('template-parts/featured-projects', null, [
+                    get_template_part('template-parts/sections/featured-projects', null, [
                         'title'    => $ps_title,
                         'content'  => $ps_content,
                         'link'     => $ps_link,
@@ -167,7 +167,7 @@ $page_id = get_the_ID();
 
             <?php /* ── 7. Video Section (title + video below) ─────────────── */ ?>
             <?php elseif ($layout === 'video_section') :
-                get_template_part('template-parts/text-media-section', null, [
+                get_template_part('template-parts/sections/text-media', null, [
                     'heading'        => get_sub_field('section_title'),
                     'text'           => get_sub_field('section_content'),
                     'media_type'     => 'embed',
@@ -184,7 +184,7 @@ $page_id = get_the_ID();
 
             <?php /* ── 8. Our Team (service-card style) ───────────────────── */ ?>
             <?php elseif ($layout === 'our_team') :
-                get_template_part('template-parts/components/service-card', null, [
+                get_template_part('template-parts/components/card-service', null, [
                     'heading'     => get_sub_field('section_heading'),
                     'text'        => get_sub_field('section_content'),
                     'button_text' => get_sub_field('button_text'),
@@ -197,7 +197,7 @@ $page_id = get_the_ID();
 
             <?php /* ── 9. Partners / Clients (logo slider) ───────────────── */ ?>
             <?php elseif ($layout === 'partners') :
-                get_template_part('template-parts/logo-slider', null, [
+                get_template_part('template-parts/sections/logo-slider', null, [
                     'logos'           => get_sub_field('partners_logos'),
                     'section_title'   => get_sub_field('section_title'),
                     'section_heading' => get_sub_field('section_heading'),
@@ -211,7 +211,7 @@ $page_id = get_the_ID();
 
             <?php /* ── CTA (simple, reusable anywhere) ───────────────────── */ ?>
             <?php elseif ($layout === 'cta') :
-                get_template_part('template-parts/cta', null, [
+                get_template_part('template-parts/sections/cta', null, [
                     'cta_heading' => get_sub_field('cta_heading'),
                     'cta_content' => get_sub_field('cta_content'),
                     'button_text' => get_sub_field('button_text'),
@@ -221,7 +221,7 @@ $page_id = get_the_ID();
 
             <?php /* ── 10. Contact CTA (text left + form right) ──────────── */ ?>
             <?php elseif ($layout === 'contact_cta') :
-                get_template_part('template-parts/text-media-section', null, [
+                get_template_part('template-parts/sections/text-media', null, [
                     'heading'        => get_sub_field('section_heading'),
                     'text'           => get_sub_field('section_content'),
                     'button_text'    => get_sub_field('button_text'),

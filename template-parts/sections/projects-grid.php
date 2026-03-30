@@ -6,7 +6,7 @@
  * Loops through project posts filtered by category and renders each via
  * template-parts/components/card-project.php.
  *
- * Usage: get_template_part( 'template-parts/projects-grid' );
+ * Usage: get_template_part( 'template-parts/sections/projects-grid' );
  *
  * Optional args (via $args):
  *   posts_per_page  int     default -1

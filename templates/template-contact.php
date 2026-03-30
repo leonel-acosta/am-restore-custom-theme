@@ -4,8 +4,8 @@
  * Template Name: Contact Page
  *
  * Sections:
- *   1. Page Title      — template-parts/page-title.php
- *   2. Contact Block   — template-parts/text-media-section.php
+ *   1. Page Title      — template-parts/sections/page-title.php
+ *   2. Contact Block   — template-parts/sections/text-media.php
  *
  * ACF field group: "Contact Page" (group_contact_page_001)
  */
@@ -19,12 +19,12 @@ $block   = get_field('contact_block', $page_id) ?: [];
 
 <div id="content" class="site-content">
 
-    <?php get_template_part('template-parts/page-title'); ?>
+    <?php get_template_part('template-parts/sections/page-title'); ?>
 
     <main id="main" class="site-main contact-page" role="main">
 
         <?php if (! empty($block['heading']) || ! empty($block['text']) || ! empty($block['embed']) || ! empty($block['image'])) :
-            get_template_part('template-parts/text-media-section', null, [
+            get_template_part('template-parts/sections/text-media', null, [
                 'heading'     => $block['heading']     ?? '',
                 'text'        => $block['text']        ?? '',
                 'button_text' => $block['button_text'] ?? '',

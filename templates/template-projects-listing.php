@@ -16,7 +16,7 @@ $sections = get_field('category_sections', $page_id);
 
 <div id="content" class="site-content">
 
-    <?php get_template_part('template-parts/page-title'); ?>
+    <?php get_template_part('template-parts/sections/page-title'); ?>
 
     <main id="main" class="site-main" role="main">
         <?php if ($sections) :
@@ -30,7 +30,7 @@ $sections = get_field('category_sections', $page_id);
                 $theme     = $section['theme']            ?? 'light';
                 $limit     = max(1, intval($section['posts_limit'] ?? 9));
 
-                get_template_part('template-parts/projects-category-section', null, [
+                get_template_part('template-parts/sections/projects-category', null, [
                     'category_slug'      => $cat_slug,
                     'category_label'     => $title,
                     'subtitle'           => $subtitle,
@@ -55,7 +55,7 @@ $sections = get_field('category_sections', $page_id);
                 $themes = ['light', 'white', 'dark'];
                 $i = 0;
                 foreach ($project_cats as $cat) :
-                    get_template_part('template-parts/projects-category-section', null, [
+                    get_template_part('template-parts/sections/projects-category', null, [
                         'category_slug'  => $cat->slug,
                         'category_label' => $cat->name,
                         'limit'          => 9,
@@ -70,5 +70,5 @@ $sections = get_field('category_sections', $page_id);
 
 </div>
 
-<?php get_template_part('template-parts/cta'); ?>
+<?php get_template_part('template-parts/sections/cta'); ?>
 <?php get_footer(); ?>
