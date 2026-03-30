@@ -18,7 +18,7 @@
 get_header();
 ?>
 <div id="content" class="site-content">
-    <?php get_template_part('template-parts/page-title'); ?>
+    <?php get_template_part('template-parts/sections/page-title'); ?>
     <div id="content-inside" class="container no-sidebar">
 
         <div id="primary" class="content-area">
@@ -36,7 +36,7 @@ get_header();
                 ?>
             </main><!-- #main -->
         </div><!-- #primary -->
-        <?php get_template_part('template-parts/logo-slider') ?>
+        <?php get_template_part('template-parts/sections/logo-slider') ?>
 
     </div><!--#content-inside -->
 

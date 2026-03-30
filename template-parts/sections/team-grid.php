@@ -5,7 +5,7 @@
  * Loops through team-member posts and renders each via
  * template-parts/components/card-team.php.
  *
- * Usage: get_template_part( 'template-parts/team-grid' );
+ * Usage: get_template_part( 'template-parts/sections/team-grid' );
  *
  * Optional args (via $args):
  *   posts_per_page  int     default -1

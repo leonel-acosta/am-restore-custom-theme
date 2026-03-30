@@ -19,12 +19,12 @@ $about_us = get_field('about_us_section', $page_id) ?: [];
 
 <div id="content" class="site-content">
 
-    <?php get_template_part('template-parts/page-title'); ?>
+    <?php get_template_part('template-parts/sections/page-title'); ?>
 
     <main id="main" class="site-main services-page" role="main">
 
         <?php if (! empty($intro['title']) || ! empty($intro['content'])) :
-            get_template_part('template-parts/text-section', null, [
+            get_template_part('template-parts/sections/text', null, [
                 'heading'     => $intro['title']       ?? '',
                 'text'        => $intro['content']     ?? '',
                 'button_text' => $intro['button_text'] ?? '',
@@ -36,7 +36,7 @@ $about_us = get_field('about_us_section', $page_id) ?: [];
 
         <?php if ($items) :
             foreach ($items as $item) :
-                get_template_part('template-parts/components/service-card', null, [
+                get_template_part('template-parts/components/card-service', null, [
                     'heading'     => $item['heading']      ?? '',
                     'text'        => $item['text']         ?? '',
                     'image'       => $item['image']        ?? null,
@@ -49,7 +49,7 @@ $about_us = get_field('about_us_section', $page_id) ?: [];
         endif; ?>
 
         <?php if (! empty($about_us['title']) || ! empty($about_us['content'])) :
-            get_template_part('template-parts/text-section', null, [
+            get_template_part('template-parts/sections/text', null, [
                 'heading'     => $about_us['title']       ?? '',
                 'text'        => $about_us['content']     ?? '',
                 'button_text' => $about_us['button_text'] ?? '',
@@ -62,6 +62,6 @@ $about_us = get_field('about_us_section', $page_id) ?: [];
 
 </div>
 
-<?php get_template_part('template-parts/featured-projects'); ?>
-<?php get_template_part('template-parts/cta'); ?>
+<?php get_template_part('template-parts/sections/featured-projects'); ?>
+<?php get_template_part('template-parts/sections/cta'); ?>
 <?php get_footer(); ?>

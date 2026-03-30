@@ -402,7 +402,7 @@ add_filter('single_template', function ($template) {
 	if (!is_singular('post')) return $template;
 	$post_categories = ['betonrestaurierung', 'restaurierung', 'sichtbetonretusche', 'untersuchungen'];
 	if (in_category($post_categories)) {
-		$custom = get_stylesheet_directory() . '/templates/project-page.php';
+		$custom = get_stylesheet_directory() . '/templates/template-project.php';
 		if (file_exists($custom)) return $custom;
 	}
 	return $template;

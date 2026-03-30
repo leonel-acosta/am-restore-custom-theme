@@ -28,10 +28,10 @@ $post_limit  = $enable_pagination ? $limit : -1;
 
 <div id="content" class="site-content projects-single-cat-page">
 
-    <?php get_template_part('template-parts/page-title'); ?>
+    <?php get_template_part('template-parts/sections/page-title'); ?>
 
     <main id="main" class="site-main" role="main">
-        <?php get_template_part('template-parts/projects-category-section', null, [
+        <?php get_template_part('template-parts/sections/projects-category', null, [
             'category_slug' => $cat_slug,
             'show_heading'  => false,
             'limit'         => $post_limit,
@@ -43,5 +43,5 @@ $post_limit  = $enable_pagination ? $limit : -1;
 
 </div>
 
-<?php get_template_part('template-parts/cta'); ?>
+<?php get_template_part('template-parts/sections/cta'); ?>
 <?php get_footer(); ?>
