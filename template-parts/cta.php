@@ -7,10 +7,10 @@
  *   cta_heading, cta_content, button_text, button_link
  */
 
-$heading      = get_field('cta_heading')  ?: '';
-$content      = get_field('cta_content')  ?: '';
-$button_text  = get_field('button_text')  ?: '';
-$button_link  = get_field('button_link')  ?: '';
+$heading      = $args['cta_heading']  ?? get_field('cta_heading')  ?: '';
+$content      = $args['cta_content']  ?? get_field('cta_content')  ?: '';
+$button_text  = $args['button_text']  ?? get_field('button_text')  ?: '';
+$button_link  = $args['button_link']  ?? get_field('button_link')  ?: '';
 
 if (! $heading && ! $content) return;
 ?>

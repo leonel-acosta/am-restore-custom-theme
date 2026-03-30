@@ -601,7 +601,7 @@ add_action( 'wp_enqueue_scripts', 'screenr_custom_style', 55 );
  * @since 1.2.0
  */
 function screenr_page_header_cover() {
-	if ( is_page_template( 'template-frontpage.php' ) ) {
+	if ( is_front_page() || is_page_template( 'template-frontpage.php' ) || is_page_template( 'templates/template-homepage.php' ) ) {
 		return false;
 	}
 
