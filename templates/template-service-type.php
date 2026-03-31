@@ -51,6 +51,8 @@ $additional  = get_field('additional_information_section', $page_id) ?: [];
                     'button_url'  => $item['button_url']   ?? '',
                     'reversed'    => ! empty($item['image_position']) && $item['image_position'] === 'left',
                     'theme'       => $item['theme']        ?? 'light',
+                    'border'      => ! empty($item['border']),
+                    'padding'     => $item['padding']      ?? 'sm',
                 ]);
             endforeach;
         endif; ?>

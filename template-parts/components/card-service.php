@@ -25,10 +25,15 @@ $button_text = $args['button_text'] ?? '';
 $button_url  = $args['button_url']  ?? '';
 $reversed    = ! empty($args['reversed']);
 $theme       = $args['theme']       ?? 'light';
+$padding     = $args['padding']     ?? 'sm';
 
-$valid_themes = ['dark', 'medium', 'light', 'white', 'primary', 'accent'];
+$valid_themes  = ['dark', 'medium', 'light', 'white', 'primary', 'accent'];
+$valid_padding = ['none', 'sm', 'md', 'lg'];
 if (! in_array($theme, $valid_themes, true)) {
     $theme = 'light';
+}
+if (! in_array($padding, $valid_padding, true)) {
+    $padding = 'sm';
 }
 
 $image_url = '';
@@ -42,6 +47,8 @@ if (! $heading && ! $text && ! $image_url) {
     return;
 }
 
+$section_class = 'service-card-section service-card-section--padding-' . $padding;
+
 $card_class = 'service-card service-card--' . $theme;
 if ($reversed) {
     $card_class .= ' service-card--reversed';
@@ -51,7 +58,7 @@ $text_aos  = $reversed ? 'fade-left'  : 'fade-right';
 $image_aos = $reversed ? 'fade-right' : 'fade-left';
 ?>
 
-<section class="service-card-section">
+<section class="<?php echo esc_attr($section_class); ?>">
     <div class="container">
         <div class="<?php echo esc_attr($card_class); ?>">
 
