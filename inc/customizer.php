@@ -143,14 +143,70 @@ function screenr_customize_register( $wp_customize ) {
 
     /* Typography
     ----------------------------------------------------------------------*/
-    $wp_customize->add_section( new Screenr_Customize_Section_Plus( $wp_customize, 'screenr_typography_plus',
-            array(
-                'title'     => esc_html__( 'Typography', 'screenr' ),
-                'priority'  => 4,
-                'panel'     => 'screenr_options',
-                'plus_text' => esc_html__( 'Go Plus', 'screenr' ),
-                'plus_url'  => screenr_get_plus_url()
-            )
+    $wp_customize->add_section( 'am_typography',
+        array(
+            'priority'    => 4,
+            'title'       => esc_html__( 'Typography', 'screenr' ),
+            'description' => '',
+            'panel'       => 'screenr_options',
+        )
+    );
+
+    $am_font_choices = array(
+        ''                 => esc_html__( 'Barlow (default)', 'screenr' ),
+        'Inter'            => 'Inter',
+        'Open Sans'        => 'Open Sans',
+        'Roboto'           => 'Roboto',
+        'Lato'             => 'Lato',
+        'Montserrat'       => 'Montserrat',
+        'Raleway'          => 'Raleway',
+        'Oswald'           => 'Oswald',
+        'Playfair Display' => 'Playfair Display',
+        'Merriweather'     => 'Merriweather',
+    );
+
+    $wp_customize->add_setting( 'am_body_font_family',
+        array(
+            'sanitize_callback' => 'sanitize_text_field',
+            'default'           => '',
+        )
+    );
+    $wp_customize->add_control( 'am_body_font_family',
+        array(
+            'type'    => 'select',
+            'label'   => esc_html__( 'Body Font', 'screenr' ),
+            'section' => 'am_typography',
+            'choices' => $am_font_choices,
+        )
+    );
+
+    $wp_customize->add_setting( 'am_body_font_size',
+        array(
+            'sanitize_callback' => 'absint',
+            'default'           => 16,
+        )
+    );
+    $wp_customize->add_control( 'am_body_font_size',
+        array(
+            'type'        => 'number',
+            'label'       => esc_html__( 'Body Font Size (px)', 'screenr' ),
+            'section'     => 'am_typography',
+            'input_attrs' => array( 'min' => 12, 'max' => 24, 'step' => 1 ),
+        )
+    );
+
+    $wp_customize->add_setting( 'am_heading_font_family',
+        array(
+            'sanitize_callback' => 'sanitize_text_field',
+            'default'           => '',
+        )
+    );
+    $wp_customize->add_control( 'am_heading_font_family',
+        array(
+            'type'    => 'select',
+            'label'   => esc_html__( 'Headings Font', 'screenr' ),
+            'section' => 'am_typography',
+            'choices' => $am_font_choices,
         )
     );
 
@@ -413,10 +469,10 @@ function screenr_customize_register( $wp_customize ) {
         )
     );
 
-    /* Page Header
+    /* Page Header (shown on inner pages above main content)
    ----------------------------------------------------------------------*/
 
-        // Header background BG Color
+        // Page header background color
         $wp_customize->add_setting( 'page_header_bg_color',
             array(
                 'sanitize_callback'     => 'sanitize_hex_color_no_hash',
@@ -425,8 +481,8 @@ function screenr_customize_register( $wp_customize ) {
             ) );
         $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'page_header_bg_color',
             array(
-                'label'       => esc_html__( 'Background color', 'screenr' ),
-                'section'     => 'header_image',
+                'label'       => esc_html__( 'Page Header Background Color', 'screenr' ),
+                'section'     => 'header_settings',
                 'description' => '',
             )
         ));
@@ -438,14 +494,13 @@ function screenr_customize_register( $wp_customize ) {
             ) );
         $wp_customize->add_control( new Screenr_Alpha_Color_Control( $wp_customize, 'page_header_bg_overlay',
             array(
-                'label'       => esc_html__( 'Background image overlay color', 'screenr' ),
-                'section'     => 'header_image',
+                'label'       => esc_html__( 'Page Header Image Overlay Color', 'screenr' ),
+                'section'     => 'header_settings',
                 'description' => '',
             )
         ));
 
-
-        // Header page padding top
+        // Page header padding top
         $wp_customize->add_setting( 'page_header_pdtop',
             array(
                 'sanitize_callback' => 'sanitize_text_field',
@@ -454,13 +509,13 @@ function screenr_customize_register( $wp_customize ) {
         );
         $wp_customize->add_control( 'page_header_pdtop',
             array(
-                'label'       => esc_html__('Padding top', 'screenr'),
-                'section'     => 'header_image',
+                'label'       => esc_html__( 'Page Header Padding Top (%)', 'screenr' ),
+                'section'     => 'header_settings',
                 'description' => esc_html__('The page header padding top in percent (%).', 'screenr'),
             )
         );
 
-        // Header page padding top
+        // Page header padding bottom
         $wp_customize->add_setting( 'page_header_pdbottom',
             array(
                 'sanitize_callback' => 'sanitize_text_field',
@@ -469,8 +524,8 @@ function screenr_customize_register( $wp_customize ) {
         );
         $wp_customize->add_control( 'page_header_pdbottom',
             array(
-                'label'       => esc_html__('Padding bottom', 'screenr'),
-                'section'     => 'header_image',
+                'label'       => esc_html__( 'Page Header Padding Bottom (%)', 'screenr' ),
+                'section'     => 'header_settings',
                 'description' => esc_html__('The page header padding bottom in percent (%).', 'screenr'),
             )
         );
@@ -3043,6 +3098,29 @@ function screenr_customize_register( $wp_customize ) {
             )
         )
     );
+
+    /* Remove obsolete sections / panels
+    ----------------------------------------------------------------------*/
+    // Built-in WP sections no longer needed
+    $wp_customize->remove_section( 'header_image' );
+    $wp_customize->remove_section( 'background_image' );
+
+    // Original Screenr frontpage builder — replaced by ACF templates
+    $wp_customize->remove_panel( 'front_page_sections' );
+    $wp_customize->remove_section( 'front_page_sections_order_styling' );
+    foreach ( array(
+        'section_slider', 'section_features', 'section_services', 'section_about',
+        'section_counter', 'section_gallery', 'section_videolightbox',
+        'section_news', 'section_contact', 'section_clients',
+    ) as $obsolete_section ) {
+        $wp_customize->remove_section( $obsolete_section );
+    }
+
+    // Premium upgrade banners — not relevant
+    $wp_customize->remove_section( 'screenr_plus_upgrade' );
+
+    // Dot navigation for old frontpage sections — no longer used
+    $wp_customize->remove_section( 'sections_navigation' );
 
     do_action( 'screenr_customize_after_register', $wp_customize );
 }

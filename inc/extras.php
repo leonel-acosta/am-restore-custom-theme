@@ -379,6 +379,40 @@ function screenr_custom_style() {
 		<?php
 	}
 
+	/**
+	 * Body font family
+	 */
+	$body_font = get_theme_mod( 'am_body_font_family', '' );
+	if ( $body_font ) {
+		?>
+	body, p, li, td, th, input, textarea, select, button {
+		font-family: '<?php echo esc_attr( $body_font ); ?>', sans-serif;
+	}
+		<?php
+	}
+
+	/**
+	 * Body font size
+	 */
+	$body_font_size = absint( get_theme_mod( 'am_body_font_size', 16 ) );
+	if ( $body_font_size && $body_font_size !== 16 ) {
+		?>
+	body { font-size: <?php echo $body_font_size; ?>px; }
+		<?php
+	}
+
+	/**
+	 * Headings font family
+	 */
+	$heading_font = get_theme_mod( 'am_heading_font_family', '' );
+	if ( $heading_font ) {
+		?>
+	h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+		font-family: '<?php echo esc_attr( $heading_font ); ?>', sans-serif;
+	}
+		<?php
+	}
+
 	$slider_overlay_color = get_theme_mod( 'slider_overlay_color' );
 	$c                    = screenr_color_alpha_parse( $slider_overlay_color );
 	if ( $slider_overlay_color && $c ) {
