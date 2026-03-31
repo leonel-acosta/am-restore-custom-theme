@@ -389,6 +389,29 @@ function am_restore_scripts()
 }
 add_action('wp_enqueue_scripts', 'am_restore_scripts');
 
+/**
+ * Enqueue Google Fonts selected in the customizer Typography section.
+ * Runs at priority 6 so it loads after the local Barlow stylesheet.
+ */
+function am_restore_enqueue_google_fonts() {
+    $fonts       = array();
+    $body_font   = get_theme_mod( 'am_body_font_family', '' );
+    $heading_font = get_theme_mod( 'am_heading_font_family', '' );
+
+    if ( $body_font ) {
+        $fonts[] = str_replace( ' ', '+', $body_font ) . ':wght@400;500;700';
+    }
+    if ( $heading_font && $heading_font !== $body_font ) {
+        $fonts[] = str_replace( ' ', '+', $heading_font ) . ':wght@400;600;700';
+    }
+
+    if ( ! empty( $fonts ) ) {
+        $url = 'https://fonts.googleapis.com/css2?family=' . implode( '&family=', $fonts ) . '&display=swap';
+        wp_enqueue_style( 'am-restore-google-fonts', $url, array( 'am-restore-fonts' ), null );
+    }
+}
+add_action( 'wp_enqueue_scripts', 'am_restore_enqueue_google_fonts', 6 );
+
 if (!function_exists('am_restore_fonts_url')) :
 	/**
 	 * Returns false — fonts are served locally via barlow.css.
