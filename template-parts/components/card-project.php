@@ -20,7 +20,7 @@ $year     = $args['year']     ?? '';
                 alt="<?php echo esc_attr( $img_alt ); ?>">
         <?php else : ?>
             <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;">
-                <span style="color:#a0a0a0;font-size:0.8rem;"><?php esc_html_e( 'No image', 'am-restore' ); ?></span>
+                <span style="color:#595959;font-size:0.875rem;"><?php esc_html_e( 'No image', 'am-restore' ); ?></span>
             </div>
         <?php endif; ?>
     </div>

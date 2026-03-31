@@ -173,12 +173,12 @@ $uid         = 'pm-' . $post_id;
 
 <div class="pm-modal" id="<?php echo esc_attr($uid); ?>-modal" role="dialog" aria-modal="true" hidden>
     <button class="pm-modal__close" aria-label="<?php esc_attr_e('Close', 'am-restore'); ?>">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
         </svg>
     </button>
     <button class="pm-modal__nav pm-modal__prev" aria-label="<?php esc_attr_e('Previous', 'am-restore'); ?>">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
         </svg>
     </button>
@@ -186,7 +186,7 @@ $uid         = 'pm-' . $post_id;
         <img class="pm-modal__img" src="" alt="">
     </div>
     <button class="pm-modal__nav pm-modal__next" aria-label="<?php esc_attr_e('Next', 'am-restore'); ?>">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
         </svg>
     </button>
@@ -201,7 +201,26 @@ $uid         = 'pm-' . $post_id;
         if (!gallery || !modal) return;
 
         var modalImg = modal.querySelector('.pm-modal__img');
+        var closeBtn = modal.querySelector('.pm-modal__close');
+        var focusableSelectors = 'button:not([disabled])';
         var current = 0;
+        var opener = null;
+
+        function getFocusable() {
+            return Array.prototype.slice.call(modal.querySelectorAll(focusableSelectors));
+        }
+
+        function trapFocus(e) {
+            if (e.key !== 'Tab') return;
+            var focusable = getFocusable();
+            var first = focusable[0];
+            var last  = focusable[focusable.length - 1];
+            if (e.shiftKey) {
+                if (document.activeElement === first) { e.preventDefault(); last.focus(); }
+            } else {
+                if (document.activeElement === last)  { e.preventDefault(); first.focus(); }
+            }
+        }
 
         function open(index) {
             current = ((index % images.length) + images.length) % images.length;
@@ -209,15 +228,20 @@ $uid         = 'pm-' . $post_id;
             modalImg.alt = images[current].alt;
             modal.hidden = false;
             document.body.style.overflow = 'hidden';
+            closeBtn.focus();
+            modal.addEventListener('keydown', trapFocus);
         }
 
         function close() {
             modal.hidden = true;
             document.body.style.overflow = '';
+            modal.removeEventListener('keydown', trapFocus);
+            if (opener) opener.focus();
         }
 
         gallery.querySelectorAll('[data-modal]').forEach(function(btn) {
             btn.addEventListener('click', function() {
+                opener = btn;
                 open(parseInt(btn.dataset.index, 10));
             });
         });
