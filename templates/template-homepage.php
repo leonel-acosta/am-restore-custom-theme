@@ -194,6 +194,7 @@ $page_id = get_the_ID();
                     'image'       => get_sub_field('image'),
                     'reversed'    => get_sub_field('image_position') === 'image_left',
                     'theme'       => get_sub_field('theme') ?: 'dark',
+                    'padding'     => get_sub_field('padding')        ?: 'sm',
                 ]);
             ?>
 

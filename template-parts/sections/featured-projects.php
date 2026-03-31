@@ -29,9 +29,10 @@ $content  = $args['content']  ?? get_field('section_content',   $post_id) ?: '';
 $cat      = $args['cat']      ?? get_field('categories',        $post_id) ?: '';
 $link     = $args['link']     ?? get_field('all_projects_link', $post_id) ?: '';
 $theme    = $args['theme']    ?? $args['theme_override'] ?? (get_field('theme', $post_id) ?: 'dark');
-$autoplay         = ! empty($args['autoplay']);
-$enable_carousel  = isset($args['enable_carousel']) ? (bool) $args['enable_carousel'] : true;
-$columns          = max(1, min(3, intval($args['columns'] ?? 3)));
+$acf_enable_carousel = get_field('enable_carousel', $post_id);
+$autoplay         = isset($args['autoplay'])         ? (bool) $args['autoplay']         : (bool) get_field('autoplay', $post_id);
+$enable_carousel  = isset($args['enable_carousel'])  ? (bool) $args['enable_carousel']  : ( $acf_enable_carousel !== false ? (bool) $acf_enable_carousel : true );
+$columns          = max(1, min(3, intval($args['columns'] ?? ( get_field('columns', $post_id) ?: 3 ))));
 
 if (! in_array($theme, ['dark', 'light', 'white'], true)) {
     $theme = 'dark';
@@ -40,7 +41,7 @@ if (! in_array($theme, ['dark', 'light', 'white'], true)) {
 // ── Build WP_Query args ──────────────────────────────────────────────────────
 $query_args = [
     'post_type'           => 'post',
-    'posts_per_page'      => 12,
+    'posts_per_page'      => $enable_carousel ? 12 : 3,
     'post_status'         => 'publish',
     'orderby'             => 'date',
     'order'               => 'DESC',
