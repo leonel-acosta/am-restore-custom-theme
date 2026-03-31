@@ -6,22 +6,22 @@
  * Renders a service type detail page (e.g. Planning, Execution).
  *
  * Sections:
- *   1. Page Title         — template-parts/sections/page-title.php
- *   2. Intro Section      — template-parts/sections/text.php
- *   3. Service Items      — template-parts/sections/text-image.php (repeater)
- *   4. Additional Info    — template-parts/sections/text.php
- *   5. Featured Projects  — template-parts/sections/featured-projects.php
+ *   1. Page Title              — template-parts/sections/page-title.php
+ *   2. Intro Section           — template-parts/sections/text.php
+ *   3. Service Items           — template-parts/sections/text-image.php (repeater)
+ *   4. Additional Information  — template-parts/sections/text.php
+ *   5. Featured Projects       — template-parts/sections/featured-projects.php
  *
- * ACF field group: "Service Type Page" (group_69c268386be0e)
+ * ACF field group: "Page: Service Type" (group_69c268386be0e)
  */
 
 get_header();
 the_post();
 
-$page_id     = get_the_ID();
-$intro       = get_field('intro_section',                  $page_id) ?: [];
-$items       = get_field('service_items',                  $page_id);
-$additional  = get_field('additional_information_section', $page_id) ?: [];
+$page_id    = get_the_ID();
+$intro      = get_field('intro_section',                  $page_id) ?: [];
+$items      = get_field('service_items',                  $page_id);
+$additional = get_field('additional_information_section', $page_id) ?: [];
 ?>
 
 <div id="content" class="site-content">
@@ -30,14 +30,17 @@ $additional  = get_field('additional_information_section', $page_id) ?: [];
 
     <main id="main" class="site-main service-type-page" role="main">
 
-        <?php if (! empty($intro['title']) || ! empty($intro['content'])) :
+        <?php if (! empty($intro['heading']) || ! empty($intro['content'])) :
             get_template_part('template-parts/sections/text', null, [
-                'heading'        => $intro['title']       ?? '',
-                'text'           => $intro['content']     ?? '',
-                'button_text'    => $intro['button_text'] ?? '',
-                'button_url'     => $intro['button_url']  ?? '',
-                'theme'          => $intro['theme']       ?? 'light',
-                'border_content' => true,
+                'heading'        => $intro['heading']        ?? '',
+                'text'           => $intro['content']        ?? '',
+                'button_text'    => $intro['button_text']    ?? '',
+                'button_url'     => $intro['button_url']     ?? '',
+                'theme'          => $intro['theme']          ?? 'light',
+                'direction'      => $intro['direction']      ?? 'row',
+                'align'          => $intro['align']          ?? 'left',
+                'padding'        => $intro['padding']        ?? 'md',
+                'border_content' => $intro['border_content'] ?? true,
             ]);
         endif; ?>
 
@@ -45,7 +48,7 @@ $additional  = get_field('additional_information_section', $page_id) ?: [];
             foreach ($items as $item) :
                 get_template_part('template-parts/sections/text-image', null, [
                     'heading'     => $item['heading']      ?? '',
-                    'text'        => $item['text']         ?? '',
+                    'text'        => $item['content']      ?? '',
                     'image'       => $item['image']        ?? null,
                     'button_text' => $item['button_text']  ?? '',
                     'button_url'  => $item['button_url']   ?? '',
@@ -57,14 +60,17 @@ $additional  = get_field('additional_information_section', $page_id) ?: [];
             endforeach;
         endif; ?>
 
-        <?php if (! empty($additional['title']) || ! empty($additional['content'])) :
+        <?php if (! empty($additional['heading']) || ! empty($additional['content'])) :
             get_template_part('template-parts/sections/text', null, [
-                'heading'        => $additional['title']       ?? '',
-                'text'           => $additional['content']     ?? '',
-                'button_text'    => $additional['button_text'] ?? '',
-                'button_url'     => $additional['button_url']  ?? '',
-                'theme'          => $additional['theme']       ?? 'light',
-                'border_content' => true,
+                'heading'        => $additional['heading']        ?? '',
+                'text'           => $additional['content']        ?? '',
+                'button_text'    => $additional['button_text']    ?? '',
+                'button_url'     => $additional['button_url']     ?? '',
+                'theme'          => $additional['theme']          ?? 'light',
+                'direction'      => $additional['direction']      ?? 'row',
+                'align'          => $additional['align']          ?? 'left',
+                'padding'        => $additional['padding']        ?? 'md',
+                'border_content' => $additional['border_content'] ?? true,
             ]);
         endif; ?>
 

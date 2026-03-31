@@ -4,8 +4,8 @@
     "fields": [
         {
             "key": "field_69b4288a36a1c",
-            "label": "Section Title",
-            "name": "section_title",
+            "label": "Heading",
+            "name": "heading",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -25,8 +25,8 @@
         },
         {
             "key": "field_69b428f1b1e3f",
-            "label": "Section Content",
-            "name": "section_content",
+            "label": "Content",
+            "name": "content",
             "aria-label": "",
             "type": "wysiwyg",
             "instructions": "",
@@ -101,7 +101,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "33",
                 "class": "",
                 "id": ""
             },
@@ -117,6 +117,80 @@
             "ui": 0,
             "ajax": 0,
             "placeholder": ""
+        },
+        {
+            "key": "field_global_fp_columns",
+            "label": "Columns",
+            "name": "columns",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "Number of cards per row on desktop (mobile always 1).",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "1": "1 column",
+                "2": "2 columns",
+                "3": "3 columns"
+            },
+            "default_value": "3",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_global_fp_enable_carousel",
+            "label": "Enable Carousel",
+            "name": "enable_carousel",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "Slide through cards when there are more than fit in one row.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "message": "Enable carousel",
+            "default_value": 1,
+            "ui": 1,
+            "allow_in_bindings": 0
+        },
+        {
+            "key": "field_global_fp_autoplay",
+            "label": "Autoplay",
+            "name": "autoplay",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "Auto-advance carousel slides every 5 s.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_global_fp_enable_carousel",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "message": "Enable autoplay",
+            "default_value": 0,
+            "ui": 1,
+            "allow_in_bindings": 0
         }
     ],
     "location": [
@@ -170,7 +244,7 @@
             }
         ]
     ],
-    "menu_order": 5,
+    "menu_order": 80,
     "position": "normal",
     "style": "default",
     "label_placement": "top",

@@ -42,8 +42,8 @@ $page_id = get_the_ID();
             <?php /* ── 2/5. Text Section (intro, about us) ────────────────── */ ?>
             <?php elseif ($layout === 'text_section') :
                 get_template_part('template-parts/sections/text', null, [
-                    'heading'    => get_sub_field('section_heading'),
-                    'text'       => get_sub_field('section_content'),
+                    'heading'    => get_sub_field('heading'),
+                    'text'       => get_sub_field('content'),
                     'button_text'=> get_sub_field('button_text'),
                     'button_url' => get_sub_field('button_url'),
                     'theme'      => get_sub_field('theme')     ?: 'dark',
@@ -56,12 +56,12 @@ $page_id = get_the_ID();
             <?php /* ── 3. Planning (Text + Image) ───────────────────────── */ ?>
             <?php elseif ($layout === 'planning') :
                 get_template_part('template-parts/sections/text-image', null, [
-                    'heading'        => get_sub_field('section_title'),
-                    'text'           => get_sub_field('section_content'),
+                    'heading'        => get_sub_field('heading'),
+                    'text'           => get_sub_field('content'),
                     'button_text'    => get_sub_field('button_text'),
-                    'button_url'     => get_sub_field('button_link'),
+                    'button_url'     => get_sub_field('button_url'),
                     'image'          => get_sub_field('image'),
-                    'reversed'       => get_sub_field('image_position') === 'image_left',
+                    'reversed'       => get_sub_field('image_position') === 'left',
                     'theme'          => get_sub_field('theme')         ?: 'dark',
                     'column_layout'  => get_sub_field('column_layout') ?: 'equal',
                     'align'          => get_sub_field('align')         ?: 'left',
@@ -73,12 +73,12 @@ $page_id = get_the_ID();
             <?php /* ── 4. Execution (Text + Image) ──────────────────────── */ ?>
             <?php elseif ($layout === 'execution') :
                 get_template_part('template-parts/sections/text-image', null, [
-                    'heading'        => get_sub_field('section_title'),
-                    'text'           => get_sub_field('section_content'),
+                    'heading'        => get_sub_field('heading'),
+                    'text'           => get_sub_field('content'),
                     'button_text'    => get_sub_field('button_text'),
-                    'button_url'     => get_sub_field('button_link'),
+                    'button_url'     => get_sub_field('button_url'),
                     'image'          => get_sub_field('image'),
-                    'reversed'       => get_sub_field('image_position') === 'image_left',
+                    'reversed'       => get_sub_field('image_position') === 'left',
                     'theme'          => get_sub_field('theme')         ?: 'dark',
                     'column_layout'  => get_sub_field('column_layout') ?: 'equal',
                     'align'          => get_sub_field('align')         ?: 'left',
@@ -104,8 +104,8 @@ $page_id = get_the_ID();
             <?php elseif ($layout === 'projects_section') :
                 $ps_display_mode = get_sub_field('display_mode') ?: 'featured';
                 $ps_theme        = get_sub_field('theme') ?: 'dark';
-                $ps_title        = get_sub_field('section_title');
-                $ps_content      = get_sub_field('section_content');
+                $ps_title        = get_sub_field('heading');
+                $ps_content      = get_sub_field('content');
                 $ps_link         = get_sub_field('all_projects_link');
 
                 if ($ps_display_mode === 'gallery') :
@@ -170,8 +170,8 @@ $page_id = get_the_ID();
             <?php /* ── 7. Video Section (title + video below) ─────────────── */ ?>
             <?php elseif ($layout === 'video_section') :
                 get_template_part('template-parts/sections/text-media', null, [
-                    'heading'        => get_sub_field('section_title'),
-                    'text'           => get_sub_field('section_content'),
+                    'heading'        => get_sub_field('heading'),
+                    'text'           => get_sub_field('content'),
                     'media_type'     => 'embed',
                     'embed'          => get_sub_field('video'),
                     'embed_type'     => 'video',
@@ -187,12 +187,12 @@ $page_id = get_the_ID();
             <?php /* ── 8. Our Team (service-card style) ───────────────────── */ ?>
             <?php elseif ($layout === 'our_team') :
                 get_template_part('template-parts/components/card-service', null, [
-                    'heading'     => get_sub_field('section_heading'),
-                    'text'        => get_sub_field('section_content'),
+                    'heading'     => get_sub_field('heading'),
+                    'text'        => get_sub_field('content'),
                     'button_text' => get_sub_field('button_text'),
-                    'button_url'  => get_sub_field('button_link'),
+                    'button_url'  => get_sub_field('button_url'),
                     'image'       => get_sub_field('image'),
-                    'reversed'    => get_sub_field('image_position') === 'image_left',
+                    'reversed'    => get_sub_field('image_position') === 'left',
                     'theme'       => get_sub_field('theme') ?: 'dark',
                     'padding'     => get_sub_field('padding')        ?: 'sm',
                 ]);
@@ -215,20 +215,20 @@ $page_id = get_the_ID();
             <?php /* ── CTA (simple, reusable anywhere) ───────────────────── */ ?>
             <?php elseif ($layout === 'cta') :
                 get_template_part('template-parts/sections/cta', null, [
-                    'cta_heading' => get_sub_field('cta_heading'),
-                    'cta_content' => get_sub_field('cta_content'),
+                    'heading'     => get_sub_field('heading'),
+                    'content'     => get_sub_field('content'),
                     'button_text' => get_sub_field('button_text'),
-                    'button_link' => get_sub_field('button_link'),
+                    'button_url'  => get_sub_field('button_url'),
                 ]);
             ?>
 
             <?php /* ── 10. Contact CTA (text left + form right) ──────────── */ ?>
             <?php elseif ($layout === 'contact_cta') :
                 get_template_part('template-parts/sections/text-media', null, [
-                    'heading'        => get_sub_field('section_heading'),
-                    'text'           => get_sub_field('section_content'),
+                    'heading'        => get_sub_field('heading'),
+                    'text'           => get_sub_field('content'),
                     'button_text'    => get_sub_field('button_text'),
-                    'button_url'     => get_sub_field('button_link'),
+                    'button_url'     => get_sub_field('button_url'),
                     'media_type'     => 'embed',
                     'embed'          => get_sub_field('form_embed'),
                     'reversed'       => false,

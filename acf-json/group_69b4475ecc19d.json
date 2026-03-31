@@ -4,8 +4,8 @@
     "fields": [
         {
             "key": "field_69b4475f1f530",
-            "label": "CTA Heading",
-            "name": "cta_heading",
+            "label": "Heading",
+            "name": "heading",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -24,8 +24,8 @@
         },
         {
             "key": "field_69b4479c1f531",
-            "label": "CTA Content",
-            "name": "cta_content",
+            "label": "Content",
+            "name": "content",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -52,7 +52,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
@@ -64,15 +64,15 @@
         },
         {
             "key": "field_69b447bc1f533",
-            "label": "Button Link",
-            "name": "button_link",
+            "label": "Button URL",
+            "name": "button_url",
             "aria-label": "",
             "type": "url",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
@@ -96,7 +96,7 @@
             }
         ]
     ],
-    "menu_order": 0,
+    "menu_order": 90,
     "position": "normal",
     "style": "default",
     "label_placement": "top",
@@ -105,5 +105,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1773422561
+    "modified": 1774350001
 }

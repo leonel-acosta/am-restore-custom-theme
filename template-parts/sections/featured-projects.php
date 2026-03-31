@@ -24,8 +24,8 @@
  */
 
 $post_id  = $args['post_id']  ?? get_the_ID();
-$title    = $args['title']    ?? get_field('section_title',     $post_id) ?: '';
-$content  = $args['content']  ?? get_field('section_content',   $post_id) ?: '';
+$title    = $args['title']    ?? get_field('heading',         $post_id) ?: '';
+$content  = $args['content']  ?? get_field('content',          $post_id) ?: '';
 $cat      = $args['cat']      ?? get_field('categories',        $post_id) ?: '';
 $link     = $args['link']     ?? get_field('all_projects_link', $post_id) ?: '';
 $theme    = $args['theme']    ?? $args['theme_override'] ?? (get_field('theme', $post_id) ?: 'dark');
