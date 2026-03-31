@@ -13,7 +13,7 @@ $categories    = get_the_category();
     <div class="project-hero__content container" data-aos="fade-up">
         <h1 class="project-hero__title"><?php the_title(); ?></h1>
         <?php if (!empty($categories)) : ?>
-            <h4 class="project-hero__category" data-aos="fade-up" data-aos-delay="150"><?php echo esc_html($categories[0]->name); ?></h4>
+            <h4 class="project-hero__category" data-aos="fade-up" data-aos-delay="80"><?php echo esc_html($categories[0]->name); ?></h4>
         <?php endif; ?>
     </div>
 </section>

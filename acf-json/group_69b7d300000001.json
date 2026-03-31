@@ -1776,7 +1776,7 @@
                             "name": "display_mode",
                             "aria-label": "",
                             "type": "select",
-                            "instructions": "Featured: up to 3 cards (carousel if more). Gallery: full-width image strip.",
+                            "instructions": "Cards: project card grid. Gallery: full-width image strip.",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
@@ -1798,14 +1798,90 @@
                             "placeholder": ""
                         },
                         {
+                            "key": "field_hp_ps_columns",
+                            "label": "Columns",
+                            "name": "columns",
+                            "aria-label": "",
+                            "type": "select",
+                            "instructions": "Number of cards per row on desktop (mobile always 1).",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_hp_ps_display_mode",
+                                        "operator": "==",
+                                        "value": "featured"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "33",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "1": "1 column",
+                                "2": "2 columns",
+                                "3": "3 columns"
+                            },
+                            "default_value": "3",
+                            "return_format": "value",
+                            "multiple": 0,
+                            "allow_null": 0,
+                            "allow_in_bindings": 0,
+                            "ui": 0,
+                            "ajax": 0,
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_hp_ps_enable_carousel",
+                            "label": "Enable Carousel",
+                            "name": "enable_carousel",
+                            "aria-label": "",
+                            "type": "true_false",
+                            "instructions": "Slide through cards when there are more than fit in one row.",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_hp_ps_display_mode",
+                                        "operator": "==",
+                                        "value": "featured"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "33",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "Enable carousel",
+                            "default_value": 1,
+                            "ui": 1,
+                            "allow_in_bindings": 0
+                        },
+                        {
                             "key": "field_hp_ps_autoplay",
                             "label": "Autoplay",
                             "name": "autoplay",
                             "aria-label": "",
                             "type": "true_false",
-                            "instructions": "Auto-advance carousel every 5 s (cards layout only, when >3 projects).",
+                            "instructions": "Auto-advance carousel slides every 5 s.",
                             "required": 0,
-                            "conditional_logic": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_hp_ps_display_mode",
+                                        "operator": "==",
+                                        "value": "featured"
+                                    },
+                                    {
+                                        "field": "field_hp_ps_enable_carousel",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
                             "wrapper": {
                                 "width": "33",
                                 "class": "",

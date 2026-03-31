@@ -156,11 +156,13 @@ $page_id = get_the_ID();
                     wp_reset_postdata();
                 else :
                     get_template_part('template-parts/sections/featured-projects', null, [
-                        'title'    => $ps_title,
-                        'content'  => $ps_content,
-                        'link'     => $ps_link,
-                        'theme'    => $ps_theme,
-                        'autoplay' => get_sub_field('autoplay'),
+                        'title'           => $ps_title,
+                        'content'         => $ps_content,
+                        'link'            => $ps_link,
+                        'theme'           => $ps_theme,
+                        'columns'         => get_sub_field('columns'),
+                        'enable_carousel' => get_sub_field('enable_carousel'),
+                        'autoplay'        => get_sub_field('autoplay'),
                     ]);
                 endif;
             ?>

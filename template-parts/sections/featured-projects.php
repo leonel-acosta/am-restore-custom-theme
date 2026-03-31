@@ -29,7 +29,9 @@ $content  = $args['content']  ?? get_field('section_content',   $post_id) ?: '';
 $cat      = $args['cat']      ?? get_field('categories',        $post_id) ?: '';
 $link     = $args['link']     ?? get_field('all_projects_link', $post_id) ?: '';
 $theme    = $args['theme']    ?? $args['theme_override'] ?? (get_field('theme', $post_id) ?: 'dark');
-$autoplay = ! empty($args['autoplay']);
+$autoplay         = ! empty($args['autoplay']);
+$enable_carousel  = isset($args['enable_carousel']) ? (bool) $args['enable_carousel'] : true;
+$columns          = max(1, min(3, intval($args['columns'] ?? 3)));
 
 if (! in_array($theme, ['dark', 'light', 'white'], true)) {
     $theme = 'dark';
@@ -97,8 +99,9 @@ endwhile;
 wp_reset_postdata();
 
 $total        = count($cards);
-$use_carousel = $total > 3;
-$pages        = $use_carousel ? array_chunk($cards, 3) : [ $cards ];
+$use_carousel = $enable_carousel && $total > $columns;
+$pages        = $use_carousel ? array_chunk($cards, $columns) : [ $cards ];
+$grid_class   = 'featured-projects__grid' . ( $columns < 3 ? ' featured-projects__grid--cols-' . $columns : '' );
 $page_count   = count($pages);
 $carousel_id  = 'fp-carousel-' . uniqid();
 ?>
@@ -140,7 +143,7 @@ $carousel_id  = 'fp-carousel-' . uniqid();
                     <div class="featured-projects__track">
                         <?php foreach ($pages as $page_cards) : ?>
                             <div class="featured-projects__slide">
-                                <div class="featured-projects__grid">
+                                <div class="<?php echo esc_attr($grid_class); ?>">
                                     <?php foreach ($page_cards as $card_html) : ?>
                                         <div class="featured-projects__card">
                                             <?php echo $card_html; ?>
@@ -184,9 +187,9 @@ $carousel_id  = 'fp-carousel-' . uniqid();
 
         <?php else : ?>
 
-            <div class="featured-projects__grid">
+            <div class="<?php echo esc_attr($grid_class); ?>">
                 <?php foreach ($cards as $idx => $card_html) : ?>
-                    <div class="featured-projects__card" data-aos="fade-up" data-aos-delay="<?php echo ( $idx % 3 ) * 150; ?>">
+                    <div class="featured-projects__card" data-aos="fade-up" data-aos-delay="<?php echo ( $idx % $columns ) * 80; ?>">
                         <?php echo $card_html; ?>
                     </div>
                 <?php endforeach; ?>
