@@ -69,7 +69,7 @@ $page_id = get_the_ID();
         $results = get_field('results_section', $page_id) ?: [];
         if ($results) :
         ?>
-            <div class="page-section--darker pb-10">
+            <div class="page-section--darker">
                 <?php
                 get_template_part('template-parts/sections/text', null, [
                     'heading'        => $results['title']       ?? '',
@@ -94,35 +94,33 @@ $page_id = get_the_ID();
 
         <?php
         $team = get_field('team_section', $page_id) ?: [];
+        get_template_part('template-parts/sections/team-section', null, [
+            'heading'        => $team['section_heading'] ?? '',
+            'text'           => $team['section_content'] ?? '',
+            'button_text'    => $team['button_text']     ?? '',
+            'button_url'     => $team['button_url']      ?? '',
+            'theme'          => $team['theme']           ?? 'light',
+            'direction'      => $team['direction']       ?? 'row',
+            'align'          => $team['align']           ?? 'left',
+            'padding'        => $team['padding']         ?? 'md',
+            'border_content' => $team['border_content']  ?? false,
+        ]);
         ?>
-        <div class="page-section--light" id="team">
-            <?php
-            get_template_part('template-parts/sections/text', null, [
-                'heading'        => $team['title']   ?? '',
-                'text'           => $team['content'] ?? '',
-                'button_text'    => '',
-                'button_url'     => '',
-                'heading_size'   => 'lg',
-                'direction'      => 'row',
-                'layout'         => 'equal',
-                'theme'          => 'white',
-                'padding'        => 'md',
-                'border_content' => true,
-            ]);
-            ?>
-            <div class="container pb-16">
-                <?php get_template_part('template-parts/sections/team-grid'); ?>
-            </div>
-        </div>
 
     </main>
 </div>
-<div class="page-section--white py-5" id="partners">
-    <?php
-    // Partners logos — reads partners_logos + section fields from this page (ID 2873)
-    get_template_part('template-parts/sections/logo-slider', null, ['post_id' => $page_id]);
-    ?>
-</div>
+<?php
+        get_template_part('template-parts/sections/logo-slider', null, [
+            'logos'           => get_field('partners_logos',  $page_id),
+            'section_title'   => get_field('section_title',   $page_id),
+            'section_heading' => get_field('section_heading', $page_id),
+            'section_content' => get_field('section_content', $page_id),
+            'theme'           => get_field('theme',           $page_id) ?: 'white',
+            'align'           => get_field('align',           $page_id) ?: 'center',
+            'padding'         => get_field('padding',         $page_id) ?: 'md',
+            'color_mode'      => get_field('color_mode',      $page_id) ?: 'bw',
+        ]);
+        ?>
 <?php get_template_part('template-parts/sections/cta'); ?>
 
 <?php get_footer(); ?>
