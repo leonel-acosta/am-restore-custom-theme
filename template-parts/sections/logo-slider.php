@@ -121,7 +121,8 @@ $section_class = implode(' ', array_filter([
             ?>
                 <div class="logo-item">
                     <?php if ($link) : ?>
-                        <a href="<?php echo esc_url($link); ?>" target="_blank" rel="noopener noreferrer">
+                        <a href="<?php echo esc_url($link); ?>" target="_blank" rel="noopener noreferrer"
+                           aria-label="<?php echo esc_attr($alt); ?> (<?php esc_attr_e('opens in new tab', 'am-restore'); ?>)">
                             <img src="<?php echo esc_url($src); ?>" alt="<?php echo esc_attr($alt); ?>">
                         </a>
                     <?php else : ?>

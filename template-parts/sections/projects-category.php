@@ -141,8 +141,8 @@ $more_link = $more_link_override ?: $auto_link;
                 'format'    => '?pg=%#%',
                 'current'   => $paged,
                 'total'     => $section_query->max_num_pages,
-                'prev_text' => '<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>',
-                'next_text' => '<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+                'prev_text' => '<span class="screen-reader-text">' . __( 'Previous', 'am-restore' ) . '</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+                'next_text' => '<span class="screen-reader-text">' . __( 'Next', 'am-restore' ) . '</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>',
                 'type'      => 'array',
             ]);
         ?>
