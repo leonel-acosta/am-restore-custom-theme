@@ -76,6 +76,47 @@
 - No wpcf7 spinner/loading state styled
 - text-media-section.php uses same .text-image-section CSS classes (shared with image variant)
 
+## New Component System (style.css — compiled, not SCSS partials)
+- All new components written directly to style.css (no SCSS source): page-section, am-card, cta-section, logo-slider, text-section, text-image-section, service-card, multicolumn, featured-projects, project-hero, project-intro
+- Two CSS systems coexist: legacy SCSS ($text:#777777, $primary:#e86240) and new components (#8b1a2f primary, #1e1e1e dark, #f5f5f3 light)
+- $variables.scss palette is NOT used by new components — new palette is hardcoded inline in style.css
+
+## New Component Contrast & Typography Notes
+- text-section body (dark): rgba(255,255,255,0.85) on #1e1e1e — ~11.5:1 PASSES
+- text-section body (light): #222222 on #f5f5f3 — ~9.7:1 PASSES
+- text-section__heading (dark): #ffffff on #1e1e1e — ~16:1 PASSES, but font-weight: 400 — weak hierarchy
+- text-image-section__heading: font-weight 700, uppercase, 28px/36px — strong, good
+- featured-projects__subtitle (dark): rgba(255,255,255,0.65) on #1e1e1e — ~7.6:1 PASSES
+- featured-projects__subtitle (light): #666666 on #f5f5f3 — ~4.9:1 PASSES
+- project-hero__title: font-size 22px mobile only — very small for a hero h1
+- project-hero__category: font-size 13px — below 16px minimum for body copy
+- project-hero overlay: gradient to top (0.75 at bottom, 0.2 at 50%, transparent at top) — solid text contrast zone at bottom only
+- multicolumn__heading: font-size 0.7rem (11.2px) uppercase — critically small
+- multicolumn__label: opacity 0.6 — risky on borderline backgrounds
+- multicolumn__col-heading (stat): font-weight 400 at 2.25rem — weak visual weight for primary stat
+- project-intro__meta-label: 11px, rgba(255,255,255,0.5) on #1a1a1a — ~5.5:1, passes for large text but 11px is NOT large text — FAILS AA
+- project-intro__meta-value: 18px rgba(255,255,255,0.9) on #1a1a1a — ~15:1 PASSES
+- CTA heading: font-weight 400, 2rem/2.5rem — undersells the CTA; no font-weight hierarchy with body
+- btn-cta hover: background-color transparent — button disappears on hover
+- service-card body (dark/medium): rgba(255,255,255,0.8) on #1e1e1e/#3a3a3a — passes (~9:1 / ~7.5:1)
+- am-card background: #e0e0e0 (gray); title/meta: #1a1a1a on #e0e0e0 — ~11:1 PASSES
+
+## Animation / Motion Notes
+- AOS.init: duration 700ms, easing ease-out, once:true, offset:60 — duration is slightly long for entrance animations
+- multicolumn animate: opacity+translateY, 550ms ease — no prefers-reduced-motion guard on JS observer
+- featured-projects AOS stagger: 0ms / 150ms / 300ms delay — can feel laggy on slower devices
+- logo-slider has prefers-reduced-motion guard (stops animation)
+- contact form has prefers-reduced-motion guard
+- multicolumn JS animate does NOT check prefers-reduced-motion
+
+## Padding / Spacing System
+- New components use their own internal padding scale: sm=40px, md=80px, lg=120px
+- page-section utility classes: sm=1.5rem, default=3rem, lg=5rem, xl=8rem
+- page-title uses Tailwind: pt-20 lg:pt-40 pb-10 (80px top / 160px top / 40px bottom)
+- Mixed px / rem / Tailwind units across sections — no single source of truth
+- text-image-section desktop text padding: 80px top/bottom, 60px right (or left if reversed) — generous but asymmetric
+
 ## Details Links
 - Full site review delivered on 2026-03-16.
 - Contact form audit delivered on 2026-03-24.
+- Full theme component review (new component system) delivered on 2026-03-30.

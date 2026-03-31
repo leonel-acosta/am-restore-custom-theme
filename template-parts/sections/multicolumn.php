@@ -151,11 +151,13 @@ $section_id = 'multicolumn-' . uniqid();
         return;
     }
 
+    var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
     var observer = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
             if (!entry.isIntersecting) return;
             var col   = entry.target;
-            var delay = parseInt(col.style.getPropertyValue('--col-delay'), 10) || 0;
+            var delay = reducedMotion ? 0 : (parseInt(col.style.getPropertyValue('--col-delay'), 10) || 0);
             setTimeout(function () { col.classList.add('is-visible'); }, delay);
             observer.unobserve(col);
         });
