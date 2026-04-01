@@ -38,9 +38,13 @@ if (! in_array($padding, $valid_padding, true)) {
 
 $image_url = '';
 $image_alt = '';
+$image_w   = 0;
+$image_h   = 0;
 if ($image) {
-    $image_url = $image['sizes']['large'] ?? $image['url'] ?? '';
-    $image_alt = $image['alt'] ?? '';
+    $image_url = $image['sizes']['large']        ?? $image['url']    ?? '';
+    $image_alt = $image['alt']                   ?? '';
+    $image_w   = $image['sizes']['large-width']  ?? $image['width']  ?? 0;
+    $image_h   = $image['sizes']['large-height'] ?? $image['height'] ?? 0;
 }
 
 if (! $heading && ! $text && ! $image_url) {
@@ -83,7 +87,12 @@ $image_aos = $reversed ? 'fade-right' : 'fade-left';
                     <img
                         src="<?php echo esc_url($image_url); ?>"
                         alt="<?php echo esc_attr($image_alt); ?>"
-                        loading="lazy">
+                        loading="lazy"
+                        decoding="async"
+                        <?php if ($image_w && $image_h) : ?>
+                        width="<?php echo (int) $image_w; ?>"
+                        height="<?php echo (int) $image_h; ?>"
+                        <?php endif; ?>>
                 </div>
             <?php endif; ?>
 

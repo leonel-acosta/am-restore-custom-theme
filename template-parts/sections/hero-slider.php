@@ -87,8 +87,12 @@ function hp_hero_overlay_rgba( string $hex, int $opacity ): string {
         $btn2_color = $slide['button_2_color']    ?? '#ffffff';
 
         $bg_img_url    = '';
+        $bg_img_w      = 0;
+        $bg_img_h      = 0;
         if ($bg_type === 'image' && $bg_image) {
             $bg_img_url = $bg_image['sizes']['large'] ?? $bg_image['url'] ?? '';
+            $bg_img_w   = $bg_image['sizes']['large-width']  ?? $bg_image['width']  ?? 0;
+            $bg_img_h   = $bg_image['sizes']['large-height'] ?? $bg_image['height'] ?? 0;
         }
 
         $parallax      = !empty($slide['parallax']) && $bg_type === 'image';
@@ -111,11 +115,27 @@ function hp_hero_overlay_rgba( string $hex, int $opacity ): string {
                     aria-hidden="true">
                 </video>
             <?php elseif ($bg_img_url) : ?>
-                <div
-                    class="hp-hero__bg hp-hero__bg--image"
-                    style="background-image:url('<?php echo esc_url($bg_img_url); ?>');"
-                    aria-hidden="true">
-                </div>
+                <?php if ($i === 0) : ?>
+                    <?php /* First slide: <img> with fetchpriority=high for best LCP */ ?>
+                    <img
+                        class="hp-hero__bg hp-hero__bg--image"
+                        src="<?php echo esc_url($bg_img_url); ?>"
+                        alt=""
+                        aria-hidden="true"
+                        fetchpriority="high"
+                        decoding="async"
+                        <?php if ($bg_img_w && $bg_img_h) : ?>
+                        width="<?php echo (int) $bg_img_w; ?>"
+                        height="<?php echo (int) $bg_img_h; ?>"
+                        <?php endif; ?>>
+                <?php else : ?>
+                    <?php /* Subsequent slides: background-image, lazy via CSS (hidden until active) */ ?>
+                    <div
+                        class="hp-hero__bg hp-hero__bg--image"
+                        style="background-image:url('<?php echo esc_url($bg_img_url); ?>');"
+                        aria-hidden="true">
+                    </div>
+                <?php endif; ?>
             <?php endif; ?>
 
             <div class="hp-hero__overlay" style="background-color:<?php echo esc_attr($ov_rgba); ?>;"></div>
@@ -262,19 +282,23 @@ function hp_hero_overlay_rgba( string $hex, int $opacity ): string {
     hero.addEventListener('mouseenter', function () { paused = true; });
     hero.addEventListener('mouseleave', function () { paused = false; });
 
-    // Parallax
+    // Parallax (rAF-throttled)
     var parallaxSlides = hero.querySelectorAll('[data-parallax="1"]');
     if (parallaxSlides.length > 0) {
+        var rafPending = false;
         function updateParallax() {
             var rect = hero.getBoundingClientRect();
-            if (rect.bottom < 0 || rect.top > window.innerHeight) return;
+            if (rect.bottom < 0 || rect.top > window.innerHeight) { rafPending = false; return; }
             var offset = -rect.top * 0.25;
             parallaxSlides.forEach(function (slide) {
                 var bg = slide.querySelector('.hp-hero__bg--image');
                 if (bg) bg.style.transform = 'translateY(' + offset + 'px)';
             });
+            rafPending = false;
         }
-        window.addEventListener('scroll', updateParallax, { passive: true });
+        window.addEventListener('scroll', function () {
+            if (!rafPending) { rafPending = true; requestAnimationFrame(updateParallax); }
+        }, { passive: true });
         updateParallax();
     }
 
