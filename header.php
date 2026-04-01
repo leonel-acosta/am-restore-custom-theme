@@ -11,6 +11,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+<?php
+// Preconnect to Google Fonts only if a custom font is selected in the customizer.
+if ( get_theme_mod( 'am_body_font_family', '' ) || get_theme_mod( 'am_heading_font_family', '' ) ) : ?>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<?php endif; ?>
 <?php wp_head(); ?>
 </head>
 

@@ -72,11 +72,23 @@ if ($projects_query->have_posts()) : ?>
             }
 
             // Image: featured image → first gallery image → site logo fallback
-            $img_src = get_the_post_thumbnail_url(null, 'medium_large');
+            $img_src  = '';
+            $img_w    = 0;
+            $img_h    = 0;
+            $thumb_id = get_post_thumbnail_id();
+            if ($thumb_id) {
+                $img_src = wp_get_attachment_image_url($thumb_id, 'medium_large');
+                $meta    = wp_get_attachment_metadata($thumb_id);
+                $img_w   = $meta['sizes']['medium_large']['width']  ?? $meta['width']  ?? 0;
+                $img_h   = $meta['sizes']['medium_large']['height'] ?? $meta['height'] ?? 0;
+            }
             if (! $img_src && $sections) {
                 foreach ($sections as $section) {
                     if ($section['acf_fc_layout'] === 'project_gallery' && ! empty($section['gallery'])) {
-                        $img_src = $section['gallery'][0]['sizes']['medium_large'] ?? $section['gallery'][0]['url'] ?? '';
+                        $g       = $section['gallery'][0];
+                        $img_src = $g['sizes']['medium_large']        ?? $g['url']    ?? '';
+                        $img_w   = $g['sizes']['medium_large-width']  ?? $g['width']  ?? 0;
+                        $img_h   = $g['sizes']['medium_large-height'] ?? $g['height'] ?? 0;
                         break;
                     }
                 }
@@ -88,10 +100,12 @@ if ($projects_query->have_posts()) : ?>
                 <?php get_template_part('template-parts/components/card-project', null, [
                     'img_src'  => $img_src,
                     'img_alt'  => get_the_title(),
+                    'img_w'    => $img_w,
+                    'img_h'    => $img_h,
                     'type'     => $type,
                     'client'   => $client,
                     'location' => $location,
-                    'year' => $year,
+                    'year'     => $year,
                 ]); ?>
             </div>
 

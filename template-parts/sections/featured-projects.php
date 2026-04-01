@@ -76,9 +76,21 @@ while ($fp_query->have_posts()) :
     $pid   = get_the_ID();
     $pdata = get_field('project_page', $pid) ?: [];
 
-    $img_src = get_the_post_thumbnail_url($pid, 'large');
+    $img_src = '';
+    $img_w   = 0;
+    $img_h   = 0;
+    $thumb_id = get_post_thumbnail_id($pid);
+    if ($thumb_id) {
+        $img_src = wp_get_attachment_image_url($thumb_id, 'large');
+        $meta    = wp_get_attachment_metadata($thumb_id);
+        $img_w   = $meta['sizes']['large']['width']  ?? $meta['width']  ?? 0;
+        $img_h   = $meta['sizes']['large']['height'] ?? $meta['height'] ?? 0;
+    }
     if (! $img_src && ! empty($pdata['gallery'][0])) {
-        $img_src = $pdata['gallery'][0]['sizes']['large'] ?? $pdata['gallery'][0]['url'] ?? '';
+        $g       = $pdata['gallery'][0];
+        $img_src = $g['sizes']['large']        ?? $g['url']    ?? '';
+        $img_w   = $g['sizes']['large-width']  ?? $g['width']  ?? 0;
+        $img_h   = $g['sizes']['large-height'] ?? $g['height'] ?? 0;
     }
 
     $type     = ! empty($pdata['type']) ? implode(', ', (array) $pdata['type']) : '';
@@ -90,6 +102,8 @@ while ($fp_query->have_posts()) :
     get_template_part('template-parts/components/card-project', null, [
         'img_src'  => $img_src,
         'img_alt'  => get_the_title(),
+        'img_w'    => $img_w,
+        'img_h'    => $img_h,
         'type'     => $type,
         'client'   => $client,
         'location' => $location,

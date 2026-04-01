@@ -344,10 +344,11 @@ function am_restore_scripts()
 		'gallery_enable'     => '',
 	);
 
-	// Load gallery scripts
+	// Load gallery scripts + styles only when gallery feature is enabled
 	$galley_disable = get_theme_mod('gallery_disable') == 1 ? true : false;
 	if (!$galley_disable || is_customize_preview()) {
 		$am_restore_js['gallery_enable'] = 1;
+		wp_enqueue_style('am-restore-gallery-lightgallery', get_template_directory_uri() . '/assets/css/lightgallery.css');
 		$display                         = get_theme_mod('gallery_display', 'grid');
 		if (!is_customize_preview()) {
 			switch ($display) {
@@ -370,8 +371,6 @@ function am_restore_scripts()
 			wp_enqueue_script('am-restore-gallery-carousel', get_template_directory_uri() . '/assets/js/owl.carousel.min.js', array(), $version, true);
 		}
 	}
-
-	wp_enqueue_style('am-restore-gallery-lightgallery', get_template_directory_uri() . '/assets/css/lightgallery.css');
 
 	wp_enqueue_script('am-restore-aos', get_stylesheet_directory_uri() . '/assets/js/aos.min.js', array(), '2.3.4', true);
 	wp_add_inline_script('am-restore-aos', 'document.addEventListener("DOMContentLoaded",function(){if(typeof AOS!=="undefined"){AOS.init({duration:500,easing:"ease-out",once:true,offset:60});}});');
@@ -421,6 +420,72 @@ if (!function_exists('am_restore_fonts_url')) :
 		return false;
 	}
 endif;
+
+/**
+ * Preload the first hero slide image for improved LCP on the homepage.
+ * Outputs a <link rel="preload"> in <head> before wp_head assets.
+ */
+function am_restore_preload_hero_image() {
+    if ( ! is_front_page() ) {
+        return;
+    }
+    $page_id = get_option( 'page_on_front' );
+    if ( ! $page_id ) {
+        return;
+    }
+    $sections = get_field( 'sections', $page_id );
+    if ( ! $sections ) {
+        return;
+    }
+    foreach ( $sections as $row ) {
+        if ( ( $row['acf_fc_layout'] ?? '' ) !== 'hero_slider' ) {
+            continue;
+        }
+        $slides = $row['slides'] ?? [];
+        if ( empty( $slides ) ) {
+            break;
+        }
+        $first = $slides[0];
+        if ( ( $first['background_type'] ?? 'image' ) !== 'image' ) {
+            break;
+        }
+        $img = $first['background_image'] ?? null;
+        if ( ! $img ) {
+            break;
+        }
+        $url = $img['sizes']['large'] ?? $img['url'] ?? '';
+        if ( $url ) {
+            echo '<link rel="preload" as="image" href="' . esc_url( $url ) . '">' . "\n";
+        }
+        break;
+    }
+}
+add_action( 'wp_head', 'am_restore_preload_hero_image', 1 );
+
+/**
+ * Performance: remove unnecessary WordPress default outputs.
+ */
+function am_restore_performance_cleanup() {
+    // Remove emoji detection script (~10KB, unused)
+    remove_action( 'wp_head',             'print_emoji_detection_script', 7 );
+    remove_action( 'wp_print_styles',     'print_emoji_styles' );
+    remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
+    remove_action( 'admin_print_styles',  'print_emoji_styles' );
+    remove_filter( 'the_content_feed',    'wp_staticize_emoji' );
+    remove_filter( 'comment_text_rss',    'wp_staticize_emoji' );
+    remove_filter( 'wp_mail',             'wp_staticize_emoji_for_email' );
+
+    // Remove WP generator meta tag (security + cleanliness)
+    remove_action( 'wp_head', 'wp_generator' );
+
+    // Remove RSD and Windows Live Writer links (unused)
+    remove_action( 'wp_head', 'rsd_link' );
+    remove_action( 'wp_head', 'wlwmanifest_link' );
+
+    // Remove shortlink tag
+    remove_action( 'wp_head', 'wp_shortlink_wp_head' );
+}
+add_action( 'init', 'am_restore_performance_cleanup' );
 
 // Parent theme handles all inc/ file requires.
 

@@ -40,12 +40,16 @@ $column_layout = in_array($column_layout, $valid_col_layouts, true) ? $column_la
 $align         = in_array($align, ['left', 'center'], true) ? $align : 'left';
 $padding       = in_array($padding, ['sm', 'md', 'lg'], true) ? $padding : 'md';
 
-// Resolve image URL: prefer large size, fall back to full URL
+// Resolve image URL + dimensions: prefer large size, fall back to full URL
 $image_url = '';
 $image_alt = '';
+$image_w   = 0;
+$image_h   = 0;
 if ($image) {
-    $image_url = $image['sizes']['large'] ?? $image['url'] ?? '';
-    $image_alt = $image['alt'] ?? '';
+    $image_url = $image['sizes']['large']        ?? $image['url']    ?? '';
+    $image_alt = $image['alt']                   ?? '';
+    $image_w   = $image['sizes']['large-width']  ?? $image['width']  ?? 0;
+    $image_h   = $image['sizes']['large-height'] ?? $image['height'] ?? 0;
 }
 
 if (! $heading && ! $text && ! $image_url) {
@@ -95,11 +99,17 @@ $section_class = implode(' ', array_filter([
             </div>
 
             <?php if ($image_url) : ?>
-                <div class="text-image-section__image-wrap w-full <?php echo $one_column ? '' : 'md:w-1/2'; ?> overflow-hidden center" data-aos="<?php echo esc_attr($image_aos); ?>" data-aos-delay="100">
+                <div class="text-image-section__image-wrap w-full <?php echo $one_column ? '' : 'md:w-1/2'; ?> overflow-hidden center" data-aos="<?php echo esc_attr($image_aos); ?>">
                     <img
                         src="<?php echo esc_url($image_url); ?>"
                         alt="<?php echo esc_attr($image_alt); ?>"
-                        class="text-image-section__image w-full h-full object-cover block">
+                        class="text-image-section__image w-full h-full object-cover block"
+                        loading="lazy"
+                        decoding="async"
+                        <?php if ($image_w && $image_h) : ?>
+                        width="<?php echo (int) $image_w; ?>"
+                        height="<?php echo (int) $image_h; ?>"
+                        <?php endif; ?>>
                 </div>
             <?php endif; ?>
 

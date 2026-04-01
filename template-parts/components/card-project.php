@@ -5,6 +5,8 @@
 
 $img_src  = $args['img_src']  ?? '';
 $img_alt  = $args['img_alt']  ?? get_the_title();
+$img_w    = $args['img_w']    ?? 0;
+$img_h    = $args['img_h']    ?? 0;
 $type     = $args['type']     ?? '';
 $client   = $args['client']   ?? '';
 $location = $args['location'] ?? '';
@@ -17,7 +19,13 @@ $year     = $args['year']     ?? '';
         <?php if ( $img_src ) : ?>
             <img
                 src="<?php echo esc_url( $img_src ); ?>"
-                alt="<?php echo esc_attr( $img_alt ); ?>">
+                alt="<?php echo esc_attr( $img_alt ); ?>"
+                loading="lazy"
+                decoding="async"
+                <?php if ( $img_w && $img_h ) : ?>
+                width="<?php echo (int) $img_w; ?>"
+                height="<?php echo (int) $img_h; ?>"
+                <?php endif; ?>>
         <?php else : ?>
             <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;">
                 <span style="color:#595959;font-size:0.875rem;"><?php esc_html_e( 'No image', 'am-restore' ); ?></span>
