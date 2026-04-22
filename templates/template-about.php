@@ -36,6 +36,7 @@ $page_id = get_the_ID();
                 'align'          => $intro['align']          ?? 'left',
                 'theme'          => $intro['theme']          ?? 'light',
                 'padding'        => $intro['padding']        ?? 'lg',
+                'border'         => $intro['border']         ?? false,
                 'border_content' => $intro['border_content'] ?? true,
             ]);
         endif;
@@ -87,6 +88,7 @@ $page_id = get_the_ID();
                     'layout'         => 'equal',
                     'theme'          => $results['theme']          ?? 'dark',
                     'padding'        => $results['padding']        ?? 'md',
+                    'border'         => $results['border']         ?? false,
                     'border_content' => $results['border_content'] ?? true,
                 ]);
 

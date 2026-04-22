@@ -87,7 +87,7 @@ $content_col_class = implode(' ', array_filter([
 
             <div class="<?php echo esc_attr($content_col_class); ?>" data-aos="fade-up" data-aos-delay="80">
                 <?php if ($text) : ?>
-                    <div class="text-section__body"><?php echo wp_kses_post($text); ?></div>
+                    <div class="text-section__body"><?php echo wp_kses_post(wpautop($text)); ?></div>
                 <?php endif; ?>
 
                 <?php if ($button_text && $button_url) : ?>
