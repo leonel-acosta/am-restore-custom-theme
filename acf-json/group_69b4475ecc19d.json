@@ -3,6 +3,26 @@
     "title": "Global: Call To Action",
     "fields": [
         {
+            "key": "field_69b4475ecc19d_show",
+            "label": "Show CTA section",
+            "name": "show_cta",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "Uncheck to hide the Call To Action section on this page.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 1,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
             "key": "field_69b4475f1f530",
             "label": "Heading",
             "name": "heading",
@@ -105,5 +125,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1774350001
+    "modified": 1745280001
 }

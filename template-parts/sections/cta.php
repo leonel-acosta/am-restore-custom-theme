@@ -7,6 +7,10 @@
  *   heading, content, button_text, button_url
  */
 
+// Respect per-page toggle: null/missing = show (backward compat); false/0 = hide
+$show = $args['show_cta'] ?? get_field('show_cta');
+if ($show !== null && $show !== '' && ! $show) return;
+
 $heading     = $args['heading']      ?? get_field('heading')      ?: '';
 $content     = $args['content']      ?? get_field('content')      ?: '';
 $button_text = $args['button_text']  ?? get_field('button_text')  ?: '';
