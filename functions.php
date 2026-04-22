@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 
 /**
  * am-restore functions and definitions.
@@ -276,13 +277,9 @@ add_action('after_setup_theme', 'am_restore_editor_styles');
 function am_restore_enqueue_styles()
 {
 	wp_enqueue_style(
-		'screenr-parent-style',
-		get_template_directory_uri() . '/style.css'
-	);
-	wp_enqueue_style(
 		'am-restore-style',
 		get_stylesheet_directory_uri() . '/style.css',
-		['screenr-parent-style', 'am-restore-tailwind'],
+		['am-restore-tailwind'],
 		wp_get_theme()->get('Version')
 	);
 }
@@ -380,13 +377,13 @@ function am_restore_scripts()
 		wp_enqueue_script('comment-reply');
 	}
 
-	wp_localize_script('am-restore-theme', 'am_restore', apply_filters('am_restore_localize_script', $am_restore_js));
+	wp_localize_script('am-restore-theme', 'Screenr', apply_filters('am_restore_localize_script', $am_restore_js));
 
 	if (class_exists('WooCommerce')) {
 		wp_enqueue_style('am-restore-woocommerce', get_template_directory_uri() . '/woocommerce.css');
 	}
 }
-add_action('wp_enqueue_scripts', 'am_restore_scripts');
+add_action('wp_enqueue_scripts', 'am_restore_scripts', 9);
 
 /**
  * Enqueue Google Fonts selected in the customizer Typography section.
@@ -416,6 +413,13 @@ if (!function_exists('am_restore_fonts_url')) :
 	 * Returns false — fonts are served locally via barlow.css.
 	 */
 	function am_restore_fonts_url()
+	{
+		return false;
+	}
+endif;
+
+if (!function_exists('screenr_fonts_url')) :
+	function screenr_fonts_url()
 	{
 		return false;
 	}
@@ -487,7 +491,12 @@ function am_restore_performance_cleanup() {
 }
 add_action( 'init', 'am_restore_performance_cleanup' );
 
-// Parent theme handles all inc/ file requires.
+require get_stylesheet_directory() . '/inc/am-restore-extras.php';
+require get_stylesheet_directory() . '/inc/am-restore-customizer.php';
+
+if ( class_exists( 'WooCommerce' ) ) {
+	require get_template_directory() . '/inc/wc.php';
+}
 
 add_filter('single_template', function ($template) {
 	if (!is_singular('post')) return $template;
