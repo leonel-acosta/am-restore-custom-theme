@@ -50,6 +50,7 @@ $page_id = get_the_ID();
                     'direction'  => get_sub_field('direction') ?: 'row',
                     'align'      => get_sub_field('align')     ?: 'left',
                     'padding'    => get_sub_field('padding')   ?: 'md',
+                    'border'     => (bool) get_sub_field('border'),
                 ]);
             ?>
 
@@ -66,6 +67,7 @@ $page_id = get_the_ID();
                     'column_layout'  => get_sub_field('column_layout') ?: 'equal',
                     'align'          => get_sub_field('align')         ?: 'left',
                     'padding'        => get_sub_field('padding')       ?: 'md',
+                    'border'         => (bool) get_sub_field('border'),
                     'border_content' => get_sub_field('border_content'),
                 ]);
             ?>
@@ -83,6 +85,7 @@ $page_id = get_the_ID();
                     'column_layout'  => get_sub_field('column_layout') ?: 'equal',
                     'align'          => get_sub_field('align')         ?: 'left',
                     'padding'        => get_sub_field('padding')       ?: 'md',
+                    'border'         => (bool) get_sub_field('border'),
                     'border_content' => get_sub_field('border_content'),
                 ]);
             ?>

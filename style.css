@@ -1,9 +1,8 @@
 @charset "UTF-8";
 /*
 Theme Name:   AM Restore
-Template:     screenr
 Text Domain:  am-restore
-Version:      1.0.0
+Version:      1.0.1
 Theme URI: https://www.famethemes.com/themes/screenr
 Author: FameThemes
 Author URI: https://www.famethemes.com
@@ -8536,7 +8535,8 @@ footer p {
   margin-left: auto;
 }
 
-.am-header__menu {
+.am-header__menu,
+.am-header__menu > ul {
   display: flex;
   align-items: center;
   list-style: none;
@@ -8545,13 +8545,15 @@ footer p {
   gap: 4px;
 }
 
-.am-header__menu li {
+.am-header__menu li,
+.am-header__menu > ul > li {
   position: relative;
   margin: 0;
   padding: 0;
 }
 
-.am-header__menu > li > a {
+.am-header__menu > li > a,
+.am-header__menu > ul > li > a {
   display: block;
   padding: 6px 14px;
   color: var(--am-header-link);
@@ -8564,14 +8566,18 @@ footer p {
 }
 
 .am-header__menu > li > a:hover,
+.am-header__menu > ul > li > a:hover,
 .am-header__menu > li.current-menu-item > a,
-.am-header__menu > li.current-menu-ancestor > a {
+.am-header__menu > li.current-menu-ancestor > a,
+.am-header__menu > ul > li.current_page_item > a,
+.am-header__menu > ul > li.current_page_ancestor > a {
   color: var(--am-header-link-hover);
 }
 
 /* Desktop sub-menu
 -------------------------------------------------------------- */
-.am-header__menu .sub-menu {
+.am-header__menu .sub-menu,
+.am-header__menu .children {
   display: none;
   position: absolute;
   top: 100%;
@@ -8586,11 +8592,13 @@ footer p {
   z-index: 201;
 }
 
-.am-header__menu li:hover > .sub-menu {
+.am-header__menu li:hover > .sub-menu,
+.am-header__menu li:hover > .children {
   display: block;
 }
 
-.am-header__menu .sub-menu a {
+.am-header__menu .sub-menu a,
+.am-header__menu .children a {
   display: block;
   padding: 10px 20px;
   color: var(--am-header-sub-link);
@@ -8601,7 +8609,8 @@ footer p {
   transition: color 0.2s ease;
 }
 
-.am-header__menu .sub-menu a:hover {
+.am-header__menu .sub-menu a:hover,
+.am-header__menu .children a:hover {
   color: var(--am-header-link-hover);
   padding-left: 24px;
   border-left: 3px solid #8b1a2f;
@@ -8713,7 +8722,8 @@ footer p {
   }
 
   /* Sub-menus: always visible, indented with bordeaux left accent */
-  .am-header__menu .sub-menu {
+  .am-header__menu .sub-menu,
+  .am-header__menu .children {
     display: block;
     position: static;
     background: transparent;
@@ -8723,13 +8733,15 @@ footer p {
     margin-left: 2px;
   }
 
-  .am-header__menu .sub-menu a {
+  .am-header__menu .sub-menu a,
+  .am-header__menu .children a {
     padding: 8px 0;
     font-size: 12px;
     color: var(--am-header-sub-link);
   }
 
-  .am-header__menu .sub-menu a:hover {
+  .am-header__menu .sub-menu a:hover,
+  .am-header__menu .children a:hover {
     color: #8b1a2f;
   }
 }
@@ -8771,6 +8783,10 @@ footer p {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .hp-hero__bg--video {
@@ -9623,3 +9639,31 @@ footer p {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* ── Default Page: full container width, left-aligned ──────────────────── */
+.default-page-content {
+  max-width: 100%;
+}
+
+/* ── Services page: flush consecutive service cards (no gap between them) ── */
+.services-page .service-card-section + .service-card-section {
+  padding-top: 0;
+}
+
+/* ── Team grid: 3 columns, wider gutter (aligns with text section above) ── */
+@media (min-width: 1024px) {
+  .team-section__grid .flex-wrap {
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+  }
+  .team-section__grid .flex-wrap > div {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+/* ── About page: padding below results section ─────────────────────────── */
+.page-section--darker {
+  padding-bottom: 4rem;
+}
+

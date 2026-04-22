@@ -94,7 +94,7 @@ $section_class = implode(' ', array_filter([
                 <?php endif; ?>
 
                 <?php if ($text) : ?>
-                    <div class="text-image-section__body"><?php echo wp_kses_post($text); ?></div>
+                    <div class="text-image-section__body"><?php echo wp_kses_post(wpautop($text)); ?></div>
                 <?php endif; ?>
 
                 <?php if ($button_text && $button_url) : ?>
@@ -107,10 +107,29 @@ $section_class = implode(' ', array_filter([
             <?php if ($has_media) : ?>
                 <div class="text-image-section__image-wrap w-full <?php echo $one_column ? '' : 'md:w-1/2'; ?>">
                     <?php if ($media_type === 'embed' && $embed) : ?>
-                        <?php if ($embed_type === 'video') : ?>
+                        <?php if ($embed_type === 'video') :
+                            // Detect type: direct video file, oEmbed URL, or shortcode/embed HTML
+                            $video_extensions = ['mp4', 'webm', 'ogg', 'mov'];
+                            $parsed_ext       = strtolower(pathinfo(strtok($embed, '?'), PATHINFO_EXTENSION));
+                            $is_video_file    = in_array($parsed_ext, $video_extensions, true);
+                            $is_url           = filter_var(trim($embed), FILTER_VALIDATE_URL) !== false;
+                            $oembed_html      = '';
+                            if ($is_url && ! $is_video_file) {
+                                $oembed_html = wp_oembed_get(trim($embed), ['width' => 1280]);
+                            }
+                        ?>
                             <div class="text-image-section__embed text-image-section__embed--video">
                                 <div class="text-image-section__video-container">
-                                    <?php echo do_shortcode($embed); ?>
+                                    <?php if ($is_video_file) : ?>
+                                        <video controls preload="metadata" class="w-full h-full" style="display:block;">
+                                            <source src="<?php echo esc_url(trim($embed)); ?>"
+                                                    type="video/<?php echo esc_attr($parsed_ext === 'mov' ? 'mp4' : $parsed_ext); ?>">
+                                        </video>
+                                    <?php elseif ($oembed_html) : ?>
+                                        <?php echo $oembed_html; ?>
+                                    <?php else : ?>
+                                        <?php echo do_shortcode($embed); ?>
+                                    <?php endif; ?>
                                 </div>
                             </div>
                         <?php else : ?>

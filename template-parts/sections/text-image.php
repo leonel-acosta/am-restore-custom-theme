@@ -88,7 +88,7 @@ $section_class = implode(' ', array_filter([
                 <?php endif; ?>
 
                 <?php if ($text) : ?>
-                    <div class="text-image-section__body"><?php echo wp_kses_post($text); ?></div>
+                    <div class="text-image-section__body"><?php echo wp_kses_post(wpautop($text)); ?></div>
                 <?php endif; ?>
 
                 <?php if ($button_text && $button_url) : ?>

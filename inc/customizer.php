@@ -1438,7 +1438,7 @@ function screenr_customize_register( $wp_customize ) {
             'default' => array(
                 array(
                     'image'=> array(
-                        'url' => get_template_directory_uri().'/assets/images/slider5.jpg',
+                        'url' => get_template_directory_uri().'/assets/images/hero.jpg',
                         'id' => ''
                     )
                 )
