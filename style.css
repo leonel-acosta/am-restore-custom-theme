@@ -7668,11 +7668,22 @@ footer p {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   background-color: #ffffff;
+  align-items: start;
+}
+
+/* All direct children must not overflow their column */
+.project-process > * {
+  min-width: 0;
 }
 
 /* Wide process: label shrinks, content expands — image stays at 1fr/3fr = 1/3 of the row */
 .project-process--wide {
   grid-template-columns: 0.5fr 1.5fr 1fr;
+}
+
+/* No gallery images: label + content only, content spans 2 columns */
+.project-process--no-image {
+  grid-template-columns: 1fr 2fr;
 }
 
 /* Padding matches project-intro columns: responsive top/bottom, no sides */
@@ -7696,16 +7707,20 @@ footer p {
   font-size: 15px;
   line-height: 1.8;
   color: #222222;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .project-process__body p:last-child {
   margin-bottom: 0;
 }
 
-/* Image: square, fills the column */
+/* Image: square, stays at top of column regardless of text height */
 .project-process__image {
   position: relative;
   aspect-ratio: 1 / 1;
+  align-self: start;
+  width: 100%;
 }
 
 .project-process__image .project-masonry__cell {
@@ -7844,13 +7859,29 @@ footer p {
   }
 }
 
+/* No masonry section follows: extra bottom padding */
+.project-intro--last .project-intro__inner {
+  padding-bottom: 3rem;
+}
+@media (min-width: 940px) {
+  .project-intro--last .project-intro__inner {
+    padding-bottom: 5rem;
+  }
+}
+
 /* Column padding — replaces text-section__inner padding */
 .project-intro .text-section__heading-col,
 .project-intro .text-section__content,
 .project-intro__meta {
   width: 100%;
+  min-width: 0; /* prevent long content blowing out grid column */
   padding-top: 2.5rem;
   padding-bottom: 2.5rem;
+}
+
+.project-intro .text-section__body {
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 /* Content column: no border on the column itself */

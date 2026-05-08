@@ -28,11 +28,12 @@ $has_meta = $client || $architects || $location || $year || $duration;
 
 if (! $about && ! $has_meta) return;
 
-$cols        = ($about && $has_meta) ? 3 : 2;
+$cols         = ($about && $has_meta) ? 3 : 2;
 $wide_content = $about && strlen(strip_tags($about)) > 300;
+$is_last      = empty($data['gallery']) && empty($data['second_section_content']);
 ?>
 
-<section class="text-section text-section--light project-intro project-intro--cols-<?php echo $cols; ?><?php echo $wide_content ? ' project-intro--wide-content' : ''; ?>">
+<section class="text-section text-section--light project-intro project-intro--cols-<?php echo $cols; ?><?php echo $wide_content ? ' project-intro--wide-content' : ''; ?><?php echo $is_last ? ' project-intro--last' : ''; ?>">
     <div class="container">
         <div class="project-intro__inner">
 

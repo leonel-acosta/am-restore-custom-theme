@@ -28,7 +28,9 @@ $additional_info = $data['additional_info']        ?? '';
 $process         = $data['second_section_content'] ?? '';
 $process_label   = $data['second_section_label']   ?? 'Process';
 
-if (empty($images)) return;
+if (empty($images) && !$process) return;
+
+$images = is_array($images) ? $images : [];
 
 $all_images = array_values(array_map(fn($img) => [
     'url' => $img['url'] ?? '',
@@ -36,8 +38,9 @@ $all_images = array_values(array_map(fn($img) => [
 ], $images));
 
 // Long-text flags
-$process_long = $process && strlen(strip_tags($process)) > 300;
-$info_long    = $additional_info && strlen(strip_tags($additional_info)) > 300;
+$process_long    = $process && strlen(strip_tags($process)) > 300;
+$info_long       = $additional_info && strlen(strip_tags($additional_info)) > 300;
+$process_no_img  = $process && empty($images);
 
 // Which masonry block gets the additional_info text cell
 $text_block_index = -1;
@@ -57,7 +60,7 @@ $uid         = 'pm-' . $post_id;
     <div class="project-masonry" id="<?php echo esc_attr($uid); ?>">
 
         <?php if ($process) : ?>
-            <section class="project-process<?php echo $process_long ? ' project-process--wide' : ''; ?>" data-aos="fade-up">
+            <section class="project-process<?php echo $process_long ? ' project-process--wide' : ''; ?><?php echo $process_no_img ? ' project-process--no-image' : ''; ?>" data-aos="fade-up">
 
                 <div class="project-process__label">
                     <h2 class="project-process__heading text-section__heading text-section__heading--md">
