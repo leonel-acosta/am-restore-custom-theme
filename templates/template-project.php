@@ -20,7 +20,9 @@ $page_id = get_the_ID();
     </main>
 </div>
 
+<?php if ( get_post_meta( $page_id, 'enabled', true ) !== '0' ) : ?>
 <?php get_template_part('template-parts/sections/featured-projects', null, ['post_id' => $page_id]); ?>
+<?php endif; ?>
 <?php get_template_part('template-parts/sections/cta'); ?>
 
 <?php get_footer(); ?>

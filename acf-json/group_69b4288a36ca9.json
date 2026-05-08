@@ -3,12 +3,12 @@
     "title": "Global: Related Projects",
     "fields": [
         {
-            "key": "field_69b4288a36a1c",
-            "label": "Heading",
-            "name": "heading",
+            "key": "field_global_fp_enabled",
+            "label": "Enable Section",
+            "name": "enabled",
             "aria-label": "",
-            "type": "text",
-            "instructions": "",
+            "type": "true_false",
+            "instructions": "Toggle to show or hide this Related Projects section.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -16,7 +16,34 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "Our Projects",
+            "message": "Show Related Projects section",
+            "default_value": 1,
+            "ui": 1,
+            "allow_in_bindings": 0
+        },
+        {
+            "key": "field_69b4288a36a1c",
+            "label": "Heading",
+            "name": "heading",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_global_fp_enabled",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Related Projects",
             "maxlength": "",
             "allow_in_bindings": 0,
             "placeholder": "",
@@ -31,7 +58,15 @@
             "type": "wysiwyg",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_global_fp_enabled",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -52,7 +87,15 @@
             "type": "radio",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_global_fp_enabled",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -82,7 +125,15 @@
             "type": "url",
             "instructions": "URL for the “All Projects →” button.",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_global_fp_enabled",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -99,7 +150,15 @@
             "type": "select",
             "instructions": "Background colour of this section.",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_global_fp_enabled",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "33",
                 "class": "",
@@ -126,7 +185,15 @@
             "type": "select",
             "instructions": "Number of cards per row on desktop (mobile always 1).",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_global_fp_enabled",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "33",
                 "class": "",
@@ -154,7 +221,15 @@
             "type": "true_false",
             "instructions": "Slide through cards when there are more than fit in one row.",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_global_fp_enabled",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "33",
                 "class": "",
@@ -253,5 +328,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1774348823
+    "modified": 1778284800
 }
