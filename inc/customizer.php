@@ -745,6 +745,62 @@ function screenr_customize_register( $wp_customize ) {
         )
     );
 
+    /* Footer social media
+    ----------------------------------------------------------------------*/
+    $wp_customize->add_section( 'footer_social_settings',
+        array(
+            'priority'    => 21,
+            'title'       => esc_html__( 'Footer Social Media', 'screenr' ),
+            'description' => '',
+            'panel'       => 'screenr_options',
+        )
+    );
+
+    $wp_customize->add_setting( 'footer_social_label',
+        array(
+            'sanitize_callback' => 'sanitize_text_field',
+            'default'           => 'Folge Sie uns',
+        )
+    );
+    $wp_customize->add_control( 'footer_social_label',
+        array(
+            'label'       => esc_html__( 'Label text', 'screenr' ),
+            'description' => esc_html__( 'Text shown above the social icons. Leave blank to hide.', 'screenr' ),
+            'section'     => 'footer_social_settings',
+            'type'        => 'text',
+        )
+    );
+
+    $wp_customize->add_setting( 'footer_social_instagram',
+        array(
+            'sanitize_callback' => 'esc_url_raw',
+            'default'           => 'https://www.instagram.com/am.restore',
+        )
+    );
+    $wp_customize->add_control( 'footer_social_instagram',
+        array(
+            'label'       => esc_html__( 'Instagram URL', 'screenr' ),
+            'description' => esc_html__( 'Leave blank to hide the Instagram icon.', 'screenr' ),
+            'section'     => 'footer_social_settings',
+            'type'        => 'url',
+        )
+    );
+
+    $wp_customize->add_setting( 'footer_social_linkedin',
+        array(
+            'sanitize_callback' => 'esc_url_raw',
+            'default'           => '',
+        )
+    );
+    $wp_customize->add_control( 'footer_social_linkedin',
+        array(
+            'label'       => esc_html__( 'LinkedIn URL', 'screenr' ),
+            'description' => esc_html__( 'Leave blank to hide the LinkedIn icon.', 'screenr' ),
+            'section'     => 'footer_social_settings',
+            'type'        => 'url',
+        )
+    );
+
         // Features columns
         $wp_customize->add_setting( 'footer_layout',
             array(

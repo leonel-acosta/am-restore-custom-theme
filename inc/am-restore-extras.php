@@ -378,3 +378,40 @@ function am_restore_page_header_cover() {
 	}
 	screenr_page_header_cover();
 }
+
+/**
+ * Footer social media icons bar.
+ */
+function am_restore_footer_social() {
+	$label     = get_theme_mod( 'footer_social_label', 'Folge Sie uns' );
+	$instagram = get_theme_mod( 'footer_social_instagram', 'https://www.instagram.com/am.restore' );
+	$linkedin  = get_theme_mod( 'footer_social_linkedin', '' );
+
+	if ( ! $instagram && ! $linkedin ) {
+		return;
+	}
+	?>
+	<div class="footer-social-bar">
+		<div class="container">
+			<div class="footer-social-inner">
+				<?php if ( $label ) : ?>
+					<span class="footer-social-label"><?php echo esc_html( $label ); ?></span>
+				<?php endif; ?>
+				<div class="footer-social-icons">
+					<?php if ( $instagram ) : ?>
+						<a href="<?php echo esc_url( $instagram ); ?>" target="_blank" rel="noopener noreferrer" class="footer-social-icon" aria-label="Instagram">
+							<i class="fa fa-instagram"></i>
+						</a>
+					<?php endif; ?>
+					<?php if ( $linkedin ) : ?>
+						<a href="<?php echo esc_url( $linkedin ); ?>" target="_blank" rel="noopener noreferrer" class="footer-social-icon" aria-label="LinkedIn">
+							<i class="fa fa-linkedin"></i>
+						</a>
+					<?php endif; ?>
+				</div>
+			</div>
+		</div>
+	</div>
+	<?php
+}
+add_action( 'screenr_footer', 'am_restore_footer_social', 5 );
