@@ -24,6 +24,10 @@
  */
 
 $post_id  = $args['post_id']  ?? get_the_ID();
+
+// Hide only when explicitly saved as '0' (ACF true_false stores strings in postmeta).
+if ( get_post_meta( $post_id, 'enabled', true ) === '0' ) return;
+
 $title    = $args['title']    ?? get_field('heading',         $post_id) ?: '';
 $content  = $args['content']  ?? get_field('content',          $post_id) ?: '';
 $cat      = $args['cat']      ?? get_field('categories',        $post_id) ?: '';

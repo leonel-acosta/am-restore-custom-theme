@@ -78,6 +78,8 @@ $additional = get_field('additional_information_section', $page_id) ?: [];
 
 </div>
 
+<?php if ( get_post_meta( $page_id, 'enabled', true ) !== '0' ) : ?>
 <?php get_template_part('template-parts/sections/featured-projects'); ?>
+<?php endif; ?>
 <?php get_template_part('template-parts/sections/cta'); ?>
 <?php get_footer(); ?>
